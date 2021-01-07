@@ -1,0 +1,19 @@
+<div class="admin-login-page">
+    <div class="wrapper-login">
+        <mat-progress-bar *ngIf="isLoading" class="mat-progress-bar" mode="indeterminate"></mat-progress-bar>
+        <span class="title">จรรยาบรรณ</span>
+        <mat-form-field style="width: 100%;">
+            <input matInput type="email" (keyup.enter)="clickLogin()" placeholder="Username" [(ngModel)]="username">
+            <button mat-button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username = ''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+            <input matInput type="password" (keyup.enter)="clickLogin()" placeholder="Password" [(ngModel)]="password">
+            <button mat-button *ngIf="password" matSuffix mat-icon-button aria-label="Clear" (click)="password = ''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <button mat-raised-button (click)="clickLogin()">Login</button>
+    </div>
+</div>

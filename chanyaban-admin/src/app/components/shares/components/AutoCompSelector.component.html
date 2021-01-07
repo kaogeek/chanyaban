@@ -1,0 +1,27 @@
+<div class="wrapper-autocomp-selector">
+        <div class="wrapper-selector">
+            <div class="selected" *ngFor="let selected of data[this.field]">
+                <div>
+                    {{selected.name ? selected.name : selected.title}}
+                </div>
+                <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="changeSelect(selected, true)">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+    <div class="wrapper-autocomp">
+        <mat-form-field class="autocomp">
+            <input #inPut [(ngModel)]="search" type="text" placeholder="{{title}}" matInput>
+            <button mat-button *ngIf="inPut.value !== ''" matSuffix mat-icon-button aria-label="Clear" (click)="clearAutoComp()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="wrapper-checkbox" [class.active]="options.length > 0">
+            <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+            <ng-container *ngIf="!isLoading">
+                <mat-checkbox *ngFor="let option of options" [(ngModel)]="option.selected"
+                    (change)="changeSelect(option)">{{option.name ? option.name : option.title}}</mat-checkbox>
+            </ng-container>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,12 @@
+app-trend { 
+  > .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13pt 0;
+    color: $text-color2;
+    background-color: $bg-color1;
+    font-weight: bold;
+    @include font-size-8-300;
+  }
+}  

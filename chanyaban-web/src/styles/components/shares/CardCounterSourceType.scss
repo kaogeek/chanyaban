@@ -1,0 +1,133 @@
+card-counter-source-type {
+  >.card-counter-source-type {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 20pt;
+    > .wrapper-list-counter-source-type {
+      display: flex;
+      width: 100%;
+      overflow-y: hidden;
+      > .wrapper-counter-source-type {
+        padding: 10pt 20pt 10pt 0;
+        margin-right: 20pt;
+        text-align: right; 
+        @include border-right;
+        > .wrapper-source-type-chart {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          @include font-size-6-300;
+          font-weight: bold;
+          > .source-type-chart {
+            width: 55pt;
+            height: 35pt;
+            margin-right: 10pt;
+          }
+        }
+        > .wrapper-source-type-detail {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          @include font-size-9-300;
+          color: $text-color2;
+          cursor: pointer;
+          &:hover{
+            color: $text-color3;
+          }
+          > .icon-source-type {
+            display: flex;
+            height: 25pt;
+            margin-top: 5pt;
+            margin-left: 10pt;
+          }
+        }
+      }
+      > .wrapper-counter-total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        > .label-total {
+          display: flex;
+          @include font-size-7-300;
+          color: $text-color2;
+          font-weight: bold;
+          padding-right: 10pt;
+          background-color: $bgmaincolor;
+        }
+        > .counter-total {
+          text-align: right;
+          > .label-counter-total {
+            margin-left: 10pt;
+            @include font-size-4-300;
+            font-weight: bold;
+          }
+          > .label-counter {
+            @include font-size-8-300;
+            font-weight: bold;
+            color: $text-color2;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  card-counter-source-type {
+    >.card-counter-source-type {
+      padding-top: 15pt !important;
+      > .wrapper-list-counter-source-type {
+        flex-wrap: wrap;
+        overflow: hidden !important;
+        > .wrapper-counter-source-type {
+          margin-bottom: 10pt;
+          width: calc(50% - 15.5pt) !important;
+          &:last-of-type {
+            margin-bottom: unset;
+          }
+          &:nth-child(odd) {
+            padding: 5pt 15pt 5pt 0 !important;
+            margin-right: unset !important;
+            margin-left: unset !important;
+          }
+          &:nth-child(even) {
+            padding: 5pt 0 5pt 15pt !important;
+            margin-right: unset !important;
+            border-right: unset !important;
+          }
+          > .wrapper-source-type-chart {
+            > .source-type-chart {
+              width: calc(100% - 55pt) !important;
+              height: 60pt !important;
+            }
+          }
+          > .wrapper-source-type-detail {
+            font-size: 14px !important;
+            > .icon-source-type {
+              width: 15pt !important;
+              height: 15pt !important;
+            }
+          }
+        }
+        > .wrapper-counter-total {
+          width: calc(50% - 1pt) !important;
+          min-height: 100pt;
+          > .label-total {
+            padding: 0 10pt !important;
+          }
+          > .counter-total {
+            > .label-counter-total {
+              margin-left: unset !important;
+              font-size: 28px !important;
+            }
+            > .label-counter {
+            }
+          }
+        }
+      }
+    }
+  }
+}

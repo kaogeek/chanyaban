@@ -1,0 +1,234 @@
+menu-top {
+  .wrapper-menu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50pt;
+    background-color: $menucolor;
+    transition: top 0.3s;
+    z-index: 1000;
+    > .wrapper-brand {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      outline: unset;
+      img {
+        display: flex;
+        width: 35pt;
+        margin: 0 5pt 0 20pt;
+      }
+      > .title-brand {
+        @include font-size-6-300;
+        font-weight: bold;
+        padding-bottom: 7pt;
+      }
+    }
+    > .wrapper-search-keyword {
+      display: flex;
+      justify-content: center;
+      width: calc(100% - 555pt);
+      &.range {
+        width: calc(100% - 565pt);
+      }
+      &.full {
+        width: calc(100% - 400pt);
+        margin-right: 155pt;
+      }
+    }
+    > .select-date {
+      display: flex;
+      height: calc(100% - 20pt);
+      align-items: center;
+      @include border-left;
+      margin: 10pt 0;
+      &.hide {
+        display: none;
+        visibility: hidden;
+      }
+      img {
+        margin: 0 25pt 0 30pt;
+        height: 25pt;
+      }
+      .mat-form-field {
+        padding-right: 20pt;
+        .mat-form-field-infix {
+          width: 80px;
+          .mat-input-element {
+            color: $white;
+          }
+        }
+        .mat-form-field-underline {
+          display: none;
+        }
+        .mat-datepicker-toggle-default-icon {
+          fill: $white;
+        }
+      }
+    }
+    .wrapper-select-date {
+      &.range {
+        .mat-form-field-wrapper {
+          width: 145pt;
+        }
+      }
+      .md-drppicker {
+        top: 0 !important;
+        left: unset !important;
+        right: 0 !important;
+        width: 480pt !important;
+        transform-origin: 100% 0 !important;
+        .off {
+          color: #999 !important;
+        }
+        .available {
+          color: #081c33;
+        }
+        .btn {
+          padding: 0 15px;
+          margin-left: 10pt;
+        }
+        .start-date,
+        .end-date {
+          color: $white;
+        }
+      }
+      .mat-form-field-wrapper {
+        width: 90pt;
+        .fx-date-range {
+          cursor: pointer;
+        }
+        .mat-form-field-infix {
+          z-index: 1;
+        }
+        .mat-form-field-suffix {
+          position: absolute;
+          top: 16px;
+          right: 5px;
+        }
+        .mat-form-field-underline {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  menu-top {
+    .wrapper-menu-top {
+      > .wrapper-brand {
+        height: 45pt;
+        > .title-brand {
+          display: none;
+        }
+      }
+      > .select-date {
+        height: 30pt !important;
+        padding-left: 15pt;
+        img {
+          display: none;
+        }
+        .mat-input-element {
+          @include font-size-8-300;
+        }
+      }
+      .wrapper-select-date {
+        .md-drppicker {
+          display: flex;
+          flex-wrap: wrap;
+          position: fixed;
+          width: 100% !important;
+          max-width: 450pt;
+          .ranges {
+            width: 65pt !important;
+          }
+          .calendar {
+            width: calc(50% - 40pt) !important;
+          }
+          .buttons {
+            width: 100% !important;
+          }
+        }
+      }
+      .wrapper-search-keyword {
+        width: calc(100% - 280pt) !important;
+        &.range {
+          width: calc(100% - 290pt) !important;
+        } 
+        &.full {
+          width: calc(100% - 250pt) !important;
+          margin-right: 110pt !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  menu-top {
+    .wrapper-menu-top {
+      height: auto !important;
+      > .wrapper-brand {
+        img {
+          margin: 0 5pt 0 5pt !important;
+        }
+      }
+      > .select-date {
+        height: 25pt !important;
+        justify-content: center !important;
+        border-left: unset !important;
+        padding-left: 10pt !important;
+        .wrapper-select-date {
+          width: auto !important;
+          padding-right: unset !important;
+          &.range {
+            .mat-form-field-wrapper {
+              width: 125pt !important;
+            }
+          }
+          .mat-form-field-wrapper {
+            width: 80pt !important;
+          }
+          .md-drppicker {
+            display: block;
+            top: 10pt !important;
+            max-height: 470pt;
+            height: 100%;
+            overflow-y: scroll;
+            .ranges {
+              width: 100% !important;
+              ul {
+                display: flex;
+                li {
+                  display: flex;
+                  white-space: nowrap;
+                  justify-content: center;
+                }
+              }
+            }
+            .calendar {
+              width: 100% !important;
+              max-width: 100% !important;
+            }
+          }
+        }
+      }
+      .wrapper-search-keyword {
+        width: calc(100% - 170pt) !important;
+        &.range {
+          width: calc(100% - 200pt) !important;
+        }
+        &.full { 
+          width: calc(100% - 125pt) !important;
+          margin-right: 50pt !important;
+        }
+        .mat-form-field {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}

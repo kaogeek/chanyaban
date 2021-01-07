@@ -1,0 +1,12 @@
+<menu-top [isHideDateRange]="true" [isAddSearch]="false" [selectedDate]="selectedDate" [keepDate]="data.keepDate" [searchKeywordAll]="[]" (changeSelectdate)="changeSelectdate($event)"></menu-top>
+<div class="card-header-list-trend">
+    <span class="label">ที่กำลังอยู่ในกระแสทั้งหมด</span>
+    <span class="subline">อัปเดตล่าสุดเมื่อ {{updateTime}}</span>
+</div>
+<card-list-trend [listTrending]="listTrending" [keywordTop]="data.keywordTop" [newsAgencys]="data.newsAgencys" [listEntityRelate]="data.listEntityRelate"
+    [isLoadTrend]="isLoadTrend" [isLoadNewsAgency]="isLoadNewsAgency" [isLoadKeywordTop]="isLoadKeywordTop" [isLoadMoreTrend]="isLoadMoreTrend"
+    [showLoadMoreTrend]="showLoadMoreTrend" (clickLoadMoreTrend)="clickLoadMore()" (clickTrendDetail)="clickTrendDetail($event)"></card-list-trend>
+
+<div class="footer">
+    ความช่วยเหลือ ส่งความคิดเห็น ความเป็นส่วนตัว ข้อกำหนด
+</div>

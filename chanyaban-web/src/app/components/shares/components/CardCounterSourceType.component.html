@@ -1,0 +1,24 @@
+<div class="card-counter-source-type">
+    <div class="wrapper-list-counter-source-type" *ngIf="trendingSourceType">
+        <div class="wrapper-counter-source-type" *ngFor="let sourceType of trendingSourceType; let index = index">
+            <div class="wrapper-source-type-chart">
+                <div class="source-type-chart" id="sourceTypeChart{{index+1}}"></div>
+                {{sourceType.count | shortNumber}}
+            </div>
+            <div class="wrapper-source-type-detail" (click)="newTabSourceType(sourceType._id)">
+                <img class="icon-source-type" *ngIf="sourceType._id === 'facebook'" src="../../../../assets/img/facebook.svg" alt="">
+                <img class="icon-source-type" *ngIf="sourceType._id === 'twitter'" src="../../../../assets/img/twitter.svg" alt="">
+                <img class="icon-source-type" *ngIf="sourceType._id === 'web'" src="../../../../assets/img/web.svg" alt="">                {{sourceType._id}}
+            </div>
+        </div>
+        <div class="wrapper-counter-total">
+            <div class="label-total">รวม:</div>
+            <div class="counter-total">
+                <span class="label-counter-total" *ngIf="totalNews">
+                    {{totalNews | shortNumber}}
+                </span>
+                <div class="label-counter">ครั้ง</div>
+            </div>
+        </div>
+    </div>
+</div>

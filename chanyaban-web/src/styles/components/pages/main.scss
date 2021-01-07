@@ -1,0 +1,37 @@
+@import "~rfs/scss";
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #000000;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::selection {
+  background: #000000;
+  color: $text-color3;
+  /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: #000000;
+  color: $text-color3;
+  /* Gecko Browsers */
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $text-color3 !important;
+}

@@ -1,0 +1,86 @@
+.wrapper-menu-item {
+  width: 100%;
+  background-color: #292d34;
+  color: #fff;
+  font-size: 16px;
+  .count-keyword {
+    padding: 3pt 5pt;
+    background-color: $menu-color-active;
+    border-radius: 20px;
+    margin-left: 5pt;
+  }
+  > .menu-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 30pt);
+    height: 50pt;
+    padding: 0 15pt;
+    border-bottom: 0.7px solid $border-color;
+    outline: 0;
+    cursor: pointer;
+    &:hover { 
+      background-color: $color-active;
+      .count-keyword {
+        background-color: $menucolor;
+      }
+    }
+    &.active {
+      background-color: $color-active;
+      .count-keyword {
+        background-color: $menucolor;
+      }
+    }
+    &.activeRoute {
+      background-color: $menu-color-active;
+      .count-keyword {
+        background-color: $menucolor;
+      }
+    }
+    > .wrapper-url {
+      display: flex;
+      width: calc(100% - 25pt);
+      height: 100%;
+      align-items: center;
+    }
+    > .icon-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10pt;
+      height: 10pt;
+      transform: rotate(90deg);
+      fill: white;
+      &.up {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+  > .wrapper-iems {
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    span {
+      display: flex;
+      align-items: center;
+      padding-left: 35pt;
+      width: calc(100% - 35pt);
+      height: 40pt;
+      border-bottom: 0.35px solid $border-color;
+      background-color: $bgmaincolor;
+      cursor: pointer;
+      outline: 0;
+      &:hover {
+        background-color: $color-active;
+        .count-keyword {
+          background-color: $menucolor;
+        }
+      }
+      &.active {
+        background-color: $menu-color-active;
+        .count-keyword {
+          background-color: $menucolor;
+        }
+      } 
+    }
+  }
+}

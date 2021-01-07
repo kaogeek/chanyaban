@@ -1,0 +1,91 @@
+<div class="wrapper-list-news">
+    <ng-container *ngIf="newsRelated && newsRelated.length > 0; else elseNewsRelate">
+        <ng-container *ngFor="let lNews of newsRelated">
+            <div class="date-time">
+                <span>
+                    {{lNews._id}}
+                </span>
+            </div>
+            <div class="list-news">
+                <ng-container *ngFor="let news of lNews.listNews; let index = index">
+                    <div class="wrapper-news" *ngIf="(!lNews.isLoad && index < 6) || lNews.isLoad" [class.full-news]="((!lNews.isLoad && index < 6 && lNews.listNews.length < 6) || lNews.isLoad) && lNews.listNews.length % 2 > 0  && lNews.listNews.length - 1 === index">
+                        <a class="news" href="{{news.link}}" target="_blank">
+                            <div class="news-source" *ngIf="news.sourceDetail">
+                                <div class="wrapper-source">
+                                    <img class="icon-source" src="{{news.sourceDetail.image}}" alt="">
+                                    <div class="label-source">{{news.sourceDetail.name}}</div>
+                                </div>
+                                <img class="icon-source-type" *ngIf="news.sourceTypeDetail.name === 'facebook'" src="../../../../assets/img/facebook.svg"
+                                    alt="">
+                                <img class="icon-source-type" *ngIf="news.sourceTypeDetail.name === 'twitter'" src="../../../../assets/img/twitter.svg" alt="">
+                                <img class="icon-source-type" *ngIf="news.sourceTypeDetail.name === 'web'" src="../../../../assets/img/web.svg" alt="">
+                            </div>
+                            <div class="news-body">
+                                <div class="news-title">{{news.title}}</div>
+                                <div class="news-content">
+                                    {{news.content}}
+                                </div>
+                            </div>
+                        </a>
+                        <div class="wrapper-footer-news">
+                            <div class="list-journalist" [class.full-list]="!news.listEntity || news.listEntity.length === 0" *ngIf="news.listJournalist && news.listJournalist.length > 0">
+                                <div class="label">นักข่าว: </div>
+                                <ng-container *ngFor="let journalist of news.listJournalist">
+                                    <img class="avatar" matTooltip="{{journalist.name}}" matTooltipClass="avatar-tooltip" src="{{journalist.image}}" alt="">
+                                </ng-container>
+                            </div>
+                            <div class="list-entity" [class.full-list]="!news.listJournalist || news.listJournalist.length === 0" *ngIf="news.listEntity && news.listEntity.length > 0">
+                                <div class="label" *ngIf="news.listJournalist && news.listJournalist.length > 0">อื่นๆ:
+                                </div>
+                                <div class="group-entity" *ngFor="let groupEntity of news.listEntity">
+                                    <img class="avatar" *ngFor="let entity of groupEntity" matTooltip="{{entity.entityType.name+': '+entity.name}}" matTooltipClass="avatar-tooltip"
+                                        (click)="addEntityInUrl(entity.name)" src="{{entity.image}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <ng-container *ngIf="lNews.count > 6 && !lNews.isLoad; else elseIsMore">
+                <div class="wrapper-btn-show" (click)="lNews.isLoad = true">
+                    - แสดงทั้งหมด -
+                </div>
+                <span class="space"></span>
+            </ng-container>
+            <ng-template #elseIsMore>
+                <ng-container *ngIf="lNews.count > 6 && lNews.isLoad; else elseShowLess">
+                    <div class="wrapper-btn-show" (click)="lNews.isLoad = false">
+                        - แสดงน้อยลง -
+                    </div>
+                    <span class="space"></span>
+                </ng-container>
+                <ng-template #elseShowLess>
+                    <span class="space with-margin"></span>
+                </ng-template>
+            </ng-template>
+        </ng-container>
+        <ng-container *ngIf="!isloadNews; else elseIsLoadNewsMore">
+            <ng-container *ngIf="totalNews > countNews || !totalNews">
+                <div class="wrapper-btn-load-more" (click)="searchRelateNews.emit()">
+                    โหลดเพิ่มเติม
+                </div>
+                <span class="space"></span>
+            </ng-container>
+        </ng-container>
+        <ng-template #elseIsLoadNewsMore>
+            <mat-spinner></mat-spinner>
+        </ng-template>
+    </ng-container>
+    <ng-template #elseNewsRelate>
+        <ng-container *ngIf="isloadNews; else elseLoadNews">
+            <div class="wrapper-loader-news">
+                <mat-spinner></mat-spinner>
+            </div>
+        </ng-container>
+        <ng-template #elseLoadNews>
+            <div class="not-news">
+                ไม่มีข่าวที่ค้นหา
+            </div>
+        </ng-template>
+    </ng-template>
+</div>

@@ -1,0 +1,26 @@
+web-main-page {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  background-color: #2d3036;
+  .web-main-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: 1920px;
+    overflow-x: hidden;
+    color: $text-color1;
+    background-color: $bgmaincolor;
+    scrollbar-color: $menucolor $bgmaincolor;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+  }
+}
+
+.mat-option-text {
+  user-select: none;
+}

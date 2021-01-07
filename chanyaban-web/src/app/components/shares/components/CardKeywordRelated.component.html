@@ -1,0 +1,15 @@
+<div class="wrapper-keyword-related" *ngIf="keywordRelated && keywordRelated.length > 0">
+    <div class="header">
+        คีย์เวิร์ดที่เกี่ยวข้องทั้งหมด
+    </div>
+    <ng-container *ngFor="let keyword of keywordRelated; let index = index">
+        <div *ngIf="(!isMoreKeyword && index < 10) || isMoreKeyword" class="relate-keyword" (click)="clickAddKeywordInUrl.emit(keyword.name)">
+            {{keyword.isTag ? "# "+keyword.name : keyword.name}}
+        </div>
+    </ng-container>
+    <div class="wrapper-more-keyword">
+        <span class="more-keyword" (click)="clickMoreKeyword()">
+            {{isMoreKeyword ? '- แสดงน้อยลง -' : '- แสดงเพิ่มเติม -'}}
+        </span>
+    </div>
+</div>

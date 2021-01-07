@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.224" height="29.248" viewBox="0 0 29.224 29.248">
+  <defs>
+    <filter id="Path_12" x="0" y="2.953" width="29.224" height="26.295" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="calendar_2_" data-name="calendar (2)" transform="translate(-7.71 -8.968)">
+    <g transform="matrix(1, 0, 0, 1, 7.71, 8.97)" filter="url(#Path_12)">
+      <path id="Path_12-2" data-name="Path 12" d="M129.513,131.6h-23.2a1.5,1.5,0,0,0-1.512,1.512v18.772a1.5,1.5,0,0,0,1.512,1.512h23.2a1.5,1.5,0,0,0,1.512-1.512V133.112A1.546,1.546,0,0,0,129.513,131.6Z" transform="translate(-103.3 -128.65)" fill="#fff"/>
+    </g>
+    <path id="Path_13" data-name="Path 13" d="M130.989,137.4v-4.289a1.5,1.5,0,0,0-1.512-1.512H106.312a1.5,1.5,0,0,0-1.512,1.512V137.4Z" transform="translate(-95.59 -119.679)" fill="#f47933"/>
+    <g id="Group_4" data-name="Group 4" transform="translate(14.167 8.968)">
+      <path id="Path_14" data-name="Path 14" d="M162.149,103.871h0a.945.945,0,0,1-.949-.949V98.949a.945.945,0,0,1,.949-.949h0a.945.945,0,0,1,.949.949v3.972A.945.945,0,0,1,162.149,103.871Z" transform="translate(-161.2 -98)" fill="#0a3456"/>
+      <path id="Path_15" data-name="Path 15" d="M326.149,103.871h0a.945.945,0,0,1-.949-.949V98.949a.945.945,0,0,1,.949-.949h0a.945.945,0,0,1,.949.949v3.972A.968.968,0,0,1,326.149,103.871Z" transform="translate(-310.787 -98)" fill="#0a3456"/>
+    </g>
+    <g id="Group_5" data-name="Group 5" transform="translate(12.479 19.795)">
+      <rect id="Rectangle_4" data-name="Rectangle 4" width="2.636" height="2.636" transform="translate(5.695)" fill="#ced5e0"/>
+      <rect id="Rectangle_5" data-name="Rectangle 5" width="2.636" height="2.636" transform="translate(11.355)" fill="#ced5e0"/>
+      <rect id="Rectangle_6" data-name="Rectangle 6" width="2.636" height="2.636" transform="translate(17.049)" fill="#ced5e0"/>
+      <rect id="Rectangle_7" data-name="Rectangle 7" width="2.636" height="2.636" transform="translate(0 4.429)" fill="#ced5e0"/>
+      <rect id="Rectangle_8" data-name="Rectangle 8" width="2.636" height="2.636" transform="translate(5.695 4.429)" fill="#ced5e0"/>
+      <rect id="Rectangle_9" data-name="Rectangle 9" width="2.636" height="2.636" transform="translate(11.355 4.429)" fill="#ced5e0"/>
+    </g>
+    <rect id="Rectangle_10" data-name="Rectangle 10" width="2.636" height="2.636" transform="translate(29.529 24.224)" fill="#ff7058"/>
+    <g id="Group_6" data-name="Group 6" transform="translate(12 28.654)">
+      <rect id="Rectangle_11" data-name="Rectangle 11" width="3" height="2" transform="translate(0 0.38)" fill="#ced5e0"/>
+      <rect id="Rectangle_12" data-name="Rectangle 12" width="2.636" height="2.636" transform="translate(6.174)" fill="#ced5e0"/>
+      <rect id="Rectangle_13" data-name="Rectangle 13" width="2.636" height="2.636" transform="translate(11.834)" fill="#ced5e0"/>
+    </g>
+  </g>
+</svg>

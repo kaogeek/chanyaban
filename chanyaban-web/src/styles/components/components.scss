@@ -1,0 +1,32 @@
+@import "pages/pages";
+@import "shares/shares";
+ 
+.admin-sidenav {
+    transform: none !important;
+    visibility: visible !important;
+   .wrapper-side-menu {
+       display: flex;
+       flex-direction: column;
+       position: relative;
+       width: 200pt;
+       height: 100%;
+       background-color: #6586a9;
+       a {
+           display: flex; 
+           align-items: center;
+           width: 100%;
+           height: 55pt;
+           padding-left: 25pt;
+           background-color: #4f7197;
+           border-bottom: 0.7px solid #294c74;
+           color: white;
+           cursor: pointer;
+           &:hover {
+               background-color: #284a70;
+            }
+            &.active {
+                background-color: #1e4066;
+           }
+       }
+   } 
+}

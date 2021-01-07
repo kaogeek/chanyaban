@@ -1,0 +1,98 @@
+.form-admin {
+  height: 100%;
+  min-width: 275pt;
+  max-width: 380pt;
+  overflow: auto;
+  > .wrapper {
+    position: relative;
+    width: calc(100% - 40pt);
+    height: calc(100% - 40pt);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20pt;
+    > .form-header {
+      display: flex;
+      align-items: center;
+      height: 50pt;
+      > .title {
+        @include font-size-7-400;
+      }
+    }
+    > .form-body {
+      position: relative;
+      padding-bottom: 40pt;
+      .convert-year {
+        margin-bottom: 10pt;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap; 
+        flex-direction: column;
+        margin-bottom: 1rem; 
+      }
+      .btn-test-source {
+        .mat-button-wrapper {
+          display: flex;
+          align-items: center;
+          padding: 5pt 0;
+          div {
+            padding-right: 10pt;
+          }
+          mat-spinner {
+            width: 25px !important;
+            height: 25px !important;
+            svg {
+              width: 25px !important;
+              height: 25px !important;
+            }
+          }
+        }
+      }      
+      .correct { 
+        width: 25px;
+        height: 25px;
+      }
+    }
+    > .wrapper-action {
+      display: flex;
+      position: sticky;
+      justify-content: center;
+      width: 100%;
+      height: 30pt;
+      bottom: -20pt;
+      padding: 10pt 0 20pt;
+      background-color: $bgmaincolor;
+      z-index: 99;
+      .mat-raised-button {
+        margin-right: 15pt;
+        box-shadow: 2px 5px 8px -6px #252222;
+        &.btn-close {
+          background-color: #f5f5f5;
+          color: #837a7a;
+        }
+        &.btn-delete {
+          background-color: red;
+          color: #fff;
+        }
+        &.btn-save {
+          display: flex;
+          background-color: $color-active;
+          color: #fff;
+          >.mat-spinner {
+            display: flex;
+          }
+        }
+        &.btn-save-none {
+          opacity: 0.8;
+          background-color: $color-active;
+          color: #fff;
+          cursor: not-allowed;
+          &.active {
+            background-color: $color-active; 
+            cursor: pointer !important;
+          }
+        }
+      }
+    }
+  }
+}

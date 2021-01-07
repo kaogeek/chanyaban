@@ -1,0 +1,78 @@
+<div class="trend-news-agency-chart-compare">
+    <div class="wrapper-newsagency-left">
+        <div class="header">
+            <mat-form-field class="selecte-newsagency">
+                <mat-select [(value)]="selectNewsAgencyChart" (selectionChange)="selectedNewsAgencyChart()">
+                    <mat-option *ngFor="let option of listNewsAgencyChartType" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="wrapper-list" *ngIf="listChartAgenJouran.newsAgencys && listChartAgenJouran.newsAgencys.length > 0" [class.full-list]="!listChartAgenJouran.jouranlist || listChartAgenJouran.jouranlist.length === 0">
+            <div class="item" *ngFor="let newsAgency of listChartAgenJouran.newsAgencys; let i=index">
+                <div class="chart" id="newsagency_chart{{i+1}}"></div>
+                <div class="newsagency-detail" (click)="newTabNewsAgency(newsAgency.name)">
+                    <div class="newsagency">
+                        <img class="icon" src="{{newsAgency.icon}}" alt="">
+                        <div class="label-newsagency">
+                            {{newsAgency.name}}
+                        </div>
+                    </div>
+                    <div class="wrapper-count">
+                        {{newsAgency.count | shortNumber}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-list" *ngIf="listChartAgenJouran.jouranlist && listChartAgenJouran.jouranlist.length > 0" [class.full-list]="!listChartAgenJouran.newsAgencys || listChartAgenJouran.newsAgencys.length === 0">
+            <div class="item" *ngFor="let jouranlist of listChartAgenJouran.jouranlist">
+                <div class="wrapper-journalist">
+                    <div class="journalist-detail">
+                        <img class="avatar" src="{{jouranlist.image}}" alt="">
+                        <div class="label-journalist">
+                            {{jouranlist.name}}
+                        </div>
+                    </div>
+                    <div class="journalist-counter">
+                        <div class="counter">{{jouranlist.count | shortNumber}}</div>
+                        ครั้ง
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-newsagency-right">
+        <div class="header">
+            <mat-form-field class="selecte-newsagency" *ngIf="data && data.listNewsAgency">
+                <mat-select [(value)]="selectNewsAgencyCompare" (selectionChange)="selectedNewsAgencyCompare()">
+                    <mat-option disabled [value]="'เปรียบเทียบกับ'">
+                        เปรียบเทียบกับ
+                    </mat-option>
+                    <mat-option *ngFor="let option of data.listNewsAgency" [value]="option._id">
+                        {{option.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <ng-container *ngIf="dataNewsAgencyCompare; else elseNewsAgencyCompare">
+            <div class="item full-width">
+                <div class="chart" id="newsagency_chart_compare"></div>
+                <div class="newsagency-detail" (click)="newTabNewsAgency(dataNewsAgencyCompare.name)">
+                    <div class="newsagency">
+                        <img class="icon" src="{{dataNewsAgencyCompare.icon}}" alt="">
+                        <div class="label-newsagency">
+                            {{dataNewsAgencyCompare.name}}
+                        </div>
+                    </div>
+                    <div class="wrapper-count">
+                        {{dataNewsAgencyCompare.count | shortNumber}}
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #elseNewsAgencyCompare>
+            <span class="not-select-newsagency-compare">เลือกสื่อที่ต้องเปรียบเทียบ</span>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div style="display: flex;">
+    <mat-form-field>
+        <mat-label>{{title}}</mat-label>
+        <mat-select [(value)]="data[field]">
+            <mat-option *ngFor="let option of options" [value]="option.id">
+                {{option.name}}
+            </mat-option> 
+        </mat-select>
+    </mat-form-field>
+</div>

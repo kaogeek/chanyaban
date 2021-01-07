@@ -1,0 +1,130 @@
+// Newconsensus variables
+// --------------------
+
+// 1.Color
+// 2.Font Size
+// 2 Breakpoints
+// 3.mixin
+
+
+
+
+// 1. Color
+// ---------
+
+// ----- root color -----
+$blue:          #007bff;
+$indigo:        #6610f2;
+$purple:        #6f42c1;
+$pink:          #e83e8c;
+$red:           #dc3545;
+$orange:        #fd7e14;
+$yellow:        #ffc107;
+$green:         #28a745;
+$teal:          #20c997;
+$cyan:          #17a2b8;
+$white:         #fff;
+$gray:          #6c757d;
+$gray-dark:     #343a40;
+$primary:       #007bff;
+$secondary:     #6c757d;
+$success:       #28a745;
+$info:          #17a2b8;
+$warning:       #ffc107;
+$danger:        #dc3545;
+$light:         #f8f9fa;
+$dark:          #343a40;
+$back:          #000000;
+$goldenrod:     #DAA520;
+
+$color:         rgb(249, 113, 84);
+$color-1:       rgb(126, 121, 115);
+$color-2:       rgb(89, 178, 204);
+$color-3:       rgba(0,179,225,1);
+$color-4:       rgb(194, 194, 194);
+$color-5:       rgb(30, 44, 61);
+$color-6:       rgb(0, 110, 176);
+$color-7:       #279d90;
+$color-8:       #41f3e3;
+$color-9:       rgb(243, 243, 243);
+$color-10:      rgba(255,255,255,1);
+$color-11:      #8e8e8e;
+
+$brandcolor:    #313f40;
+$bg-color3:     rgb(255, 101, 101);
+
+// monitor
+$menucolor: #25292f;
+$bgmaincolor: #2d3036;
+$bg-color1:     #252a2f;
+$bg-color2:     #2d3036;
+
+$text-color1: #d4d4d4;
+$text-color2: #5d5d5d; 
+$text-color3: #d4692c;
+$border-color: #464545;
+
+$shadow-vote-vard: #d3d3d4;
+$shadow-vote-vard-hover: #adadb0;
+$shwdow-cards: #c2c2cc;
+
+// 3.font size
+$font-size-1: 72px;
+$font-size-2: 68px;
+$font-size-3: 62px;
+$font-size-4: 54px;
+$font-size-5: 44px;
+$font-size-6: 36px;
+$font-size-7: 24px;
+$font-size-8: 18px;
+$font-size-9: 16px;
+$font-size-10: 14px;
+
+// @media (max-width: )
+
+// 2. Breakpoints
+// --------------
+
+$small: 479px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 1200px;
+$xxlarge: 1440px; 
+
+$breakpoints: (
+  small: 479px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+);
+$print-breakpoint: large;
+$breakpoint-classes: (small medium large);
+
+
+// 3.mixin
+
+// newcon-container
+$newcon-container-padding: 50pt;
+$newcon-header-padding: 15pt;
+
+// 4.monitor
+$padding-top-date-time: 45pt;
+$padding-bottom-date-time: 25pt;
+$padding-side-date-time: 45pt;
+$padding-side-list-news: 100pt;
+$margin-side-wrapper-news: 20pt;
+$padding-side-wrapper-news: 10pt;
+
+
+@media (max-width: $large) {
+}
+
+@media (max-width: $medium) { 
+  // $padding-side-list-news: 25pt !global;
+  // $padding-side-wrapper-news: 5pt !global;
+  // $margin-side-wrapper-news: 0pt !global; 
+}
+
+@media (max-width: $small) { 
+}

@@ -1,0 +1,56 @@
+<menu-top [isAddSearch]="false" [selectedDate]="selectedDate" [keepDate]="data.keepDate" [searchKeywordAll]="[]" (changeSelectdate)="changeSelectdate($event)"></menu-top>
+<ng-container *ngIf="!entityType && isInitial; else elseNotFind">
+    <div class="wrapper-not-find">
+        <div class="not-find">
+            <span>ไม่พบข้อมูล</span>
+            {{entityTypeName}}
+        </div>
+    </div>
+</ng-container>
+<ng-template #elseNotFind>
+    <div class="card-main-entity-type">
+        <div class="wrapper-main">
+            <div class="wrapper-left">
+                <div class="wrapper-overview">
+                    <div class="wrapper-entity-type" *ngIf="entityType">
+                        <span (click)="loadDataPage()">
+                            <img class="icon-entity-type" src="{{entityType.icon}}" alt=""> {{ entityType.name}}
+                        </span>
+                    </div>
+                    <div class="wrapper-subline-entity-type">
+                        <span class="subline" *ngIf="data.keepDate">
+                            <div class="label">เริ่มเก็บข้อมูลตั้งแต่:</div>
+                            <div class="value">
+                                {{data.keepDate | date:'dd/MM/yy'}}
+                            </div>
+                        </span>
+                        <span class="subline" *ngIf="data.lastDate">
+                            <div class="label">ถูกกล่าวถึงล่าสุด:</div>
+                            <div class="value">
+                                {{data.lastDate}}
+                            </div>
+                        </span>
+                    </div>
+                    <card-counter-source-type [trendingSourceType]="data.trendingSourceType" [totalNews]="data.totalNews"></card-counter-source-type>
+                </div>
+            </div>
+            <div class="wrapper-right">
+                <trend-chart-all [trendingKeyword]="data.trendingEntityType"></trend-chart-all>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-header-list-trend">
+        <span class="label">{{entityTypeName}}</span>
+        <span class="subline">ทั้งหมดที่กำลังอยู่ในกระแส</span>
+    </div>
+
+    <card-list-trend [listTrending]="data.entitys" [keywordTop]="data.keywordTop" [newsAgencys]="data.newsAgencys" [listEntityRelate]="data.listEntityRelate"
+        [selectedDate]="selectedDate" [isLoadTrend]="isLoadEntitys" [isLoadNewsAgency]="isLoadNewsAgency" [isLoadKeywordTop]="isLoadKeywordTop"
+        [isLoadMoreTrend]="isLoadMoreEntitys" [showLoadMoreTrend]="showLoadMoreEntitys" (clickLoadMoreTrend)="loadDataPageEntitys()"
+        (clickTrendDetail)="clickTrendDetail($event)"></card-list-trend>
+</ng-template>
+
+<div class="footer">
+    ความช่วยเหลือ ส่งความคิดเห็น ความเป็นส่วนตัว ข้อกำหนด
+</div>

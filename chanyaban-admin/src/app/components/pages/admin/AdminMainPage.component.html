@@ -1,0 +1,21 @@
+<div class="toolbar" role="banner">
+  <img width="40" alt="Angular Logo" src="../assets/img/logo.svg" />
+  <span>จรรยาบรรณ</span>
+  <div class="spacer"></div>
+</div>
+
+<!-- contents -->
+<div class="wrapper-body">
+  <mat-sidenav-container class="example-container" style="overflow: hidden;">
+    <mat-sidenav class="admin-sidenav" #sidenav mode="side" [opened]="true">
+      <div class="wrapper-side-menu"> 
+          <admin-menu-item *ngFor="let menu of menuItems" [menu]="menu" [isOpen]="false"></admin-menu-item> 
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="main-content" [ngStyle]="{'margin-left': sidenav.isOpen ? '407px' : '0px'}">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

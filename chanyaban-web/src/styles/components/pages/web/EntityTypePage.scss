@@ -1,0 +1,180 @@
+app-entity-type {  
+  .card-main-entity-type {
+    width: 100%;
+    > .wrapper-main {
+      display: flex;
+      width: 100%;
+      > .wrapper-left {
+        width: 60%;
+        @include border-bottom;
+        > .wrapper-overview {
+          width: calc(100% - 50pt);
+          padding: 20pt 20pt 20pt 30pt; 
+          > .wrapper-entity-type {
+            display: flex;
+            align-items: center;
+            user-select: none;
+            color: $text-color1;
+            @include font-size-4-300;
+            font-weight: bold;
+            margin-bottom: 20pt;
+            // visibility: hidden;
+            span {
+              display: flex;
+              align-items: center;
+              color: $text-color1;
+              cursor: pointer;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              > .icon-entity-type {
+                width: 60pt;
+                height: 60pt;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-right: 15pt;
+              }
+              &:hover {
+                color: $text-color3;
+              }
+            }
+          }
+          > .wrapper-subline-entity-type {
+            display: flex;
+            align-items: center;
+            > .subline {
+              display: flex;
+              align-items: center;
+              > .label {
+                @include font-size-9-300;
+                color: $text-color2;
+              }
+              > .value {
+                @include font-size-9-300;
+                margin: 0 10pt;
+              }
+            }
+          }
+        }
+      }
+      > .wrapper-right {
+        width: 40%;
+        @include border-bottom;
+        @include border-left; 
+      }
+    }
+  } 
+  > .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13pt 0;
+    color: $text-color2;
+    background-color: $bg-color1;
+    font-weight: bold;
+    @include font-size-8-300;
+  }
+} 
+
+@media (max-width: $xlarge) {
+  app-entity-type { 
+    .wrapper-main {
+      display: block !important;
+      > .wrapper-left {
+        width: 100% !important;
+        > .wrapper-overview {
+          width: calc(100% - 40pt) !important;
+          padding: 20pt !important;
+        }
+      }
+      > .wrapper-right {
+        width: 100% !important;
+        border-left: unset !important;
+      }
+    } 
+  }
+} 
+
+@media (max-width: $medium) {
+  app-entity-type { 
+    .wrapper-main {
+      > .wrapper-left {
+        > .wrapper-overview {
+          width: calc(100% - 30pt) !important;
+          padding: 15pt !important;
+          > .wrapper-group-keyword {
+            > .label-group-keyword {
+              width: 85pt !important;
+            }
+            > .list-group-keyword {
+              width: calc(100% - 85pt) !important;
+            }
+          }
+          > .wrapper-entity-type {
+            margin-bottom: 15pt !important;
+            span {
+              font-size: 36px;
+            }
+            .icon-entity-type {
+              width: 50pt !important;
+              height: 50pt !important;
+              margin-right: 10pt !important;
+            }
+          }
+        }
+      }
+      > .wrapper-right { 
+      }
+    } 
+  }
+}
+
+@media (max-width: $small) {
+  app-entity-type {
+    .menu-top > .select-date .wrapper-select-date {
+      .md-drppicker {
+        max-width: unset !important;
+      }
+      &.range {
+        .mat-form-field-wrapper {
+          width: 112pt !important;
+        }
+      }
+      .mat-form-field-wrapper {
+        width: 70pt !important;
+      }
+    } 
+    .wrapper-main {
+      > .wrapper-left {
+        > .wrapper-overview {
+          width: calc(100% - 20pt) !important;
+          padding: 10pt !important;
+          > .wrapper-entity-type {
+            margin-bottom: 10pt !important;
+            span {
+              font-size: 32px;
+              max-width: 80%;
+            }
+            .icon-entity-type {
+              width: 45pt !important;
+              height: 45pt !important;
+              margin-right: 10pt !important;
+            }
+          }
+          > .wrapper-subline-entity-type {
+            flex-wrap: wrap;
+            > .subline {
+              margin-bottom: 3pt;
+              max-width: 65%;
+              > .value {
+                margin: 0 5pt;
+              }
+            }
+          }
+        }
+      }
+      > .wrapper-right { 
+      }
+    } 
+  }
+}

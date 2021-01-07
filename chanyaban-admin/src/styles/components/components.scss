@@ -1,0 +1,42 @@
+@import "pages/pages";
+@import "shares/shares";
+
+.admin-sidenav {
+  background-color: $bgmaincolor;
+  transform: none !important;
+  visibility: visible !important;
+  .wrapper-side-menu {
+    position: relative;
+    width: 200pt;
+    height: 100%;
+    overflow-x: hidden;
+    a {
+      display: flex;
+      align-items: center;
+      height: 45pt;
+      padding-left: 25pt;
+      background-color: #292d34;
+      border-bottom: 0.7px solid $border-color;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        background-color: $color-active;
+        span {
+          background-color: $menucolor;
+        }
+      }
+      &.active {
+        background-color: $menu-color-active;
+        span {
+          background-color: $menucolor;
+        }
+      }
+      span {
+        padding: 3pt 5pt;
+        background-color: $menu-color-active;
+        border-radius: 20px;
+        margin-left: 5pt;
+      }
+    }
+  }
+}

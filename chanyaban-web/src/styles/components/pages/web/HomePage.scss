@@ -1,0 +1,251 @@
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  15%,
+  85% {
+    opacity: 1;
+  }
+}
+
+@keyframes cursorFade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeKeyword {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.app-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-width: 300px;
+  min-height: 400pt;
+  position: relative;
+  top: 0;
+  left: 0;
+  > .trending {
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    white-space: nowrap;
+    cursor: pointer;
+    // opacity: 1;
+    animation-name: fade;
+    // animation: fadeKeyword 1000ms linear;
+    // transition: all .1s ease-in-out;
+    > .image {
+      display: flex;
+      width: 40pt;
+      height: 40pt;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 10pt;
+    }
+    > .keyword-entity {
+      display: flex;
+      position: relative;
+      max-width: 175pt;
+      padding: 5pt 10pt;
+      align-items: center;
+      background-color: $text-color3;
+      color: $text-color1;
+      @include font-size-9-300;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-bottom: 5pt;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      animation: fadeKeyword 0.5s linear;
+      > .avatar {
+        display: flex;
+        width: 25pt;
+        height: 25pt;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10pt;
+      }
+      > .cursor {
+        margin-left: 2.5pt;
+        animation: cursorFade 1.5s linear infinite;
+        height: 12pt;
+        border-right: 0.7px solid $text-color1;
+      }
+      > .arrow {
+        width: 9pt;
+        height: 9pt;
+        transform: rotate(45deg);
+        position: absolute;
+        bottom: 8pt;
+        right: -2.5pt;
+        background-color: $text-color3;
+        z-index: -1;
+        &.left {
+          right: unset;
+          left: -2.5pt;
+        }
+      }
+    }
+  }
+  > .wrapper-search-keyword {
+    width: 40%;
+  }
+  > .wrapper-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include font-size-6-300;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50pt;
+    z-index: 100;
+    img {
+      display: flex;
+      width: 35pt;
+      margin-right: 10pt;
+    }
+    > .title-brand {
+      display: flex;
+      padding-bottom: 8pt;
+    }
+    > .trend-date {
+      display: flex;
+      align-items: center;
+      @include font-size-8-300;
+      position: absolute;
+      right: 10pt;
+      bottom: 10pt;
+      color: $text-color2;
+      > .btn-refresh {
+        display: flex;
+        cursor: pointer;
+        width: 8pt !important;
+        height: 8pt !important;
+        padding-top: 3pt;
+        margin-right: 5pt;
+        fill: $text-color2;
+        mat-spinner {
+          width: 8pt !important;
+          height: 8pt !important;
+        }
+        svg {
+          width: 8pt !important;
+          height: 8pt !important;
+        }
+        &:hover {
+          fill: $text-color3;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .app-home {
+    align-items: flex-start !important;
+    > .wrapper-brand {
+      padding-bottom: 20pt !important;
+      img { 
+        margin-right: 8pt !important;
+      } 
+    }
+    > .wrapper-search-keyword {
+      padding-top: 25pt !important;
+      width: 75% !important;
+      position: sticky;
+      top: 0;
+    }
+    > .trending {
+      > .image {
+        width: 35pt;
+        height: 35pt;
+        margin: 0 7pt;
+      }
+      > .keyword-entity {
+        max-width: 150pt;
+        padding: 3pt 7pt;
+        margin-bottom: 3pt;
+        > .avatar {
+          width: 20pt;
+          height: 20pt;
+          margin-right: 7pt;
+        }
+        > .cursor {
+          height: 10pt !important;
+        }
+        > .arrow {
+          bottom: 4pt;
+          right: -2pt;
+          &.left {
+            right: unset;
+            left: -2pt;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .app-home {
+    > .wrapper-brand { 
+      img {
+        width: 30pt !important;
+        margin-right: 5pt !important;
+      }
+      > .title-brand {
+        padding-bottom: 4pt !important;
+      }
+    }
+    > .wrapper-search-keyword {
+      padding-top: 20pt !important;
+    }
+    > .trending {
+      > .image {
+        width: 30pt;
+        height: 30pt;
+        margin: 0 5pt;
+      }
+      > .keyword-entity {
+        max-width: 125pt;
+        padding: 1.5pt 5pt;
+        margin-bottom: 1.5pt;
+        > .avatar {
+          width: 15pt;
+          height: 15pt;
+          margin-right: 5pt;
+        }
+        > .cursor {
+          height: 8pt !important;
+        }
+        > .arrow {
+          bottom: 3pt;
+          right: -1.5pt;
+          &.left {
+            right: unset;
+            left: -1.5pt;
+          }
+        }
+      }
+    }
+  }
+}

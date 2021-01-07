@@ -1,0 +1,214 @@
+entity-top-related {
+  > .entity-top-related {
+    position: relative;
+    width: 100%;
+    height: 248pt;
+    @include border-bottom;
+    > .wrapper-loading-entity {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $bgmaincolor;
+      z-index: 2;
+      @include border-top;
+      @include border-bottom;
+    }
+    .wrapper-swiper-pagination {
+      width: 47pt;
+      height: 47pt;
+      position: absolute;
+      top: -47pt;
+      right: 0;
+      &.hide {
+        display: none;
+        visibility: hidden;
+      }
+      .icon-arrow-right,
+      .icon-arrow-left {
+        width: 15.5pt;
+        height: 100%;
+        fill: $text-color1;
+        padding: 0 4pt;
+        cursor: pointer;
+        &:hover {
+          fill: $text-color3;
+        }
+      }
+      > .not-previous-swiper {
+        position: absolute;
+        width: 23.5pt;
+        height: 47pt;
+        top: 0;
+        right: 23.5pt;
+      }
+      > .not-next-swiper {
+        position: absolute;
+        width: 23.5pt;
+        height: 47pt;
+        top: 0;
+        right: 0;
+      }
+      > .icon-arrow-left {
+        transform: rotate(180deg);
+      }
+      .disable {
+        fill: $text-color2 !important;
+        cursor: unset;
+      }
+    }
+    > .wrapper-hedaer {
+      width: auto;
+      height: 47pt;
+      padding: 0 15pt;
+      position: relative;
+      @include border-bottom;
+      > .not-find-entity {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        color: $text-color2;
+      }
+      > .selecte-entity {
+        display: flex;
+        width: calc(100% - 47pt);
+        height: 100%;
+        .mat-form-field-wrapper {
+          padding: unset !important;
+          width: 100%;
+          .mat-form-field-flex {
+            height: 100%;
+            .mat-form-field-infix {
+              display: flex;
+              align-items: center;
+              width: 150pt;
+              height: 100%;
+              padding: unset !important;
+              border: unset !important;
+              .mat-select-value-text {
+                color: $text-color1 !important;
+                @include font-size-9-300;
+                font-weight: bold;
+              }
+              .mat-select-arrow {
+                color: $text-color1 !important;
+              }
+            }
+          }
+          .mat-form-field-underline {
+            display: none !important;
+          }
+          .mat-form-field-subscript-wrapper {
+            margin: unset !important;
+          }
+        }
+      }
+    }
+    > .wrapper-list-entity {
+      display: flex;
+      width: 100%;
+      height: calc(100% - 50pt);
+      position: relative;
+      .swiper-container {
+        width: 100%;
+      }
+      .wrapper-entity {
+        display: flex;
+        flex-direction: column;
+        width: 33.33%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+        @include border-right;
+        &:hover {
+          box-shadow: 6px 5px 14px 0px #252222;
+        }
+        > .wrapper-image-entity {
+          overflow: hidden;
+          width: 80pt;
+          height: 80pt;
+          border-radius: 50%;
+          margin-bottom: 20pt;
+          > .image-entity {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        > .label-entity {
+          display: flex;
+          @include font-size-8-300;
+          font-weight: bold;
+          padding: 0 10pt;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  entity-top-related {
+    > .entity-top-related {
+      height: 325pt !important;
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  entity-top-related {
+    > .entity-top-related {
+      height: 240pt !important;
+      > .wrapper-hedaer {
+        > .title-entity {
+          padding-left: 15pt !important;
+        }
+        > .selecte-entity {
+          padding-right: 15pt !important;
+          > .mat-form-field-wrapper
+            > .mat-form-field-flex
+            > .mat-form-field-infix {
+            width: 160pt !important;
+          }
+        }
+      }
+      .wrapper-image-entity {
+        width: 60pt !important;
+        height: 60pt !important;
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  entity-top-related {
+    > .entity-top-related {
+      height: 185pt !important;
+      > .wrapper-hedaer {
+        > .title-entity {
+          padding-left: 10pt !important;
+        }
+        > .selecte-entity {
+          padding-right: 10pt !important;
+          > .mat-form-field-wrapper
+            > .mat-form-field-flex
+            > .mat-form-field-infix {
+            width: 140pt !important;
+          }
+        }
+      }
+      .wrapper-image-entity {
+        width: 50pt !important;
+        height: 50pt !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.autocomp-search {
+  > .wrapper-autocomp {
+    display: flex;
+    align-items: center;
+    @include border;
+    border-radius: 5px;
+    height: 25pt;
+    width: 450pt;
+    padding: 0 15pt;
+    > .list-keyword {
+      display: flex;
+      max-width: 200pt;
+      overflow-y: hidden;
+      > .keyword {
+        display: flex;
+        align-items: center;
+        padding: 1pt 10pt;
+        border-radius: 25px;
+        margin-right: 5pt;
+        @include border;
+        @include font-size-10-100;
+        cursor: pointer;
+        white-space: nowrap;
+        &:hover {
+          border: unset;
+          background-color: $bg-color1;
+        }
+        &.active {
+          border: unset;
+          background-color: $bg-color1;
+        }
+      }
+    }
+    .mat-form-field {
+      min-width: 50%;
+      height: 20pt;
+      .mat-form-field-wrapper {
+        padding: unset !important;
+        height: 100%;
+        .mat-form-field-flex {
+          height: 100%;
+          .mat-form-field-infix {
+            padding: unset !important;
+            border: unset !important;
+            height: 100%;
+            .mat-form-field-label-wrapper {
+              top: -15px;
+              .mat-form-field-label {
+                color: $text-color1 !important;
+              }
+            }
+          }
+        }
+        .mat-form-field-underline {
+          display: none !important;
+        }
+        .mat-form-field-subscript-wrapper {
+          margin: unset !important;
+        }
+      }
+    }
+    > .btn-search {
+      cursor: pointer;
+      width: 15pt;
+      fill: $text-color1;
+    }
+  }
+  > .wrapper-loader {
+    width: 100%;
+  }
+}
+
+.wrapper-option-search {
+  background-color: $menucolor;
+  color: $text-color1;
+  @include border-bottom;
+  &:hover {
+    background-color: rgb(19, 20, 21) !important;
+  }
+  .mat-option-text {
+    > .wrapper-item {
+      display: flex;
+      align-items: center;
+      >.icon {
+        display: flex;
+          width: 35pt;
+          img {
+            height: 25pt;
+          }
+      }
+    }
+  }
+}

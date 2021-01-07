@@ -1,0 +1,57 @@
+<div class="entity-top-related">
+    <div class="wrapper-hedaer">
+        <ng-container *ngIf="entityTopRelated && entityTopRelated.length > 0; else elseEntity">
+            <mat-form-field class="selecte-entity">
+                <mat-select [(value)]="selectEntity" (selectionChange)="selectedEntity()">
+                    <mat-option *ngFor="let option of entityTopRelated" [value]="option._id">
+                        {{option.name}}ที่กำลังอยู่ในกระแสร่วมกัน
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </ng-container>
+        <ng-template #elseEntity>
+            <div class="not-find-entity">
+                ไม่มีข้อมูล
+            </div>
+        </ng-template>
+    </div>
+    <div class="wrapper-list-entity">
+        <div class="swiper-container" [swiper]="config" [(index)]="swiperIndex">
+            <div class="swiper-wrapper">
+                <div class="wrapper-entity swiper-slide" *ngFor="let entity of listEntity" (click)="clickAddEntityInUrl.emit(entity.name)">
+                    <div class="wrapper-image-entity">
+                        <img class="image-entity" src="{{entity.image}}" alt="">
+                    </div>
+                    <div class="label-entity">
+                        {{entity.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-swiper-pagination" [class.hide]="!entityTopRelated || entityTopRelated.length === 0">
+            <svg class="icon-arrow-left" [class.disable]="listEntity.length <= 3 || swiperIndex === 0" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.846px" height="451.847px" viewBox="0 0 451.846 451.847"
+                style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
+                <g>
+                    <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+            L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+            c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z" />
+                </g>
+            </svg>
+            <svg class="icon-arrow-right" [class.disable]="listEntity.length <= 3 || swiperIndex === listEntity.length-3" version="1.1"
+                id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.846px"
+                height="451.847px" viewBox="0 0 451.846 451.847" style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
+                <g>
+                    <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+            L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+            c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z" />
+                </g>
+            </svg>
+            <div class="not-previous-swiper" *ngIf="listEntity.length <= 3 || swiperIndex === 0"></div>
+            <div class="not-next-swiper" *ngIf="listEntity.length <= 3 || swiperIndex === listEntity.length-3"></div>
+        </div>
+    </div>
+    <div class="wrapper-loading-entity" *ngIf="isLoadingEntity">
+        <mat-spinner></mat-spinner>
+    </div>
+</div>

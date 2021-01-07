@@ -1,0 +1,125 @@
+<ng-container *ngIf="fieldTable.formatColor || fieldTable.formatArrary || fieldTable.formatImage; else elseColorImage">
+    <ng-container *ngIf="getData(); else elseColorImageNone">
+        <ng-container *ngIf="fieldTable.formatColor">
+            <div class="wrapper-col-color">
+                <span class="col-color" [ngStyle]="{'background-color': getData()}"></span>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="fieldTable.formatArrary">
+            <div class="wrapper-col-array">
+                <div class="col-array" *ngFor="let item of getDataArray()" [ngStyle]="{'color': fieldTable.formatArrary.color ? fieldTable.formatArrary.color : '#fff',
+                            'background-color': fieldTable.formatArrary.bgColor ? fieldTable.formatArrary.bgColor : '#d4692c'}">
+                    <ng-container *ngIf="fieldTable.formatArrary.dataKey; else elseDataKey">
+                        <ng-container *ngIf="fieldTable.link.length > 0; else elseDataKeyLink">
+                            <a href="{{getLinkArray(item[fieldTable.formatArrary.dataKey])}}" target="_blank"
+                            [ngStyle]="{'color': fieldTable.formatArrary.color ? fieldTable.formatArrary.color : '#fff'}">
+                                {{item[fieldTable.formatArrary.dataKey]}}
+                            </a>
+                        </ng-container>
+                        <ng-template #elseDataKeyLink>
+                            {{item[fieldTable.formatArrary.dataKey]}}
+                        </ng-template>
+                    </ng-container>
+                    <ng-template #elseDataKey>
+                        <ng-container *ngIf="fieldTable.link.length > 0; else elseNotDataKeyLink">
+                            <a href="{{getLinkArray(item)}}" target="_blank"
+                            [ngStyle]="{'color': fieldTable.formatArrary.color ? fieldTable.formatArrary.color : '#fff'}">
+                                {{item}}
+                            </a>
+                        </ng-container>
+                        <ng-template #elseNotDataKeyLink>
+                            {{item}}
+                        </ng-template>
+                    </ng-template>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="fieldTable.formatImage">
+            <ng-container *ngIf="fieldTable.link.length > 0; else elseImageLink">
+                <a href="{{getLink()}}" target="_blank">
+                    <img src="{{getData()}}" class="col-image" alt="">
+                </a>
+            </ng-container>
+            <ng-template #elseImageLink>
+                <img src="{{getData()}}" class="col-image" alt="">
+            </ng-template>
+        </ng-container>
+    </ng-container>
+    <ng-template #elseColorImageNone>
+        -
+    </ng-template>
+</ng-container>
+<ng-template #elseColorImage>
+    <ng-container *ngIf="fieldTable.link.length > 0; else elseTemplate">
+        <a href="{{getLink()}}" target="_blank">
+            <ng-container *ngIf="fieldTable.formatDate; else elseFormatId">
+                <ng-container *ngIf="fieldTable.formatId">
+                    <ng-container *ngIf="getData(); else elseFieldName">
+                        {{getData() | prefixNumber: 5}}
+                    </ng-container>
+                    <ng-template #elseFieldName>
+                        -
+                    </ng-template>
+                </ng-container>
+                <ng-container *ngIf="fieldTable.formatDate">
+                    <ng-container *ngIf="getData(); else elseFieldDate">
+                        {{getData() | date:defaultDateTimeFormat}}
+                    </ng-container>
+                    <ng-template #elseFieldDate>
+                        -
+                    </ng-template>
+                </ng-container>
+            </ng-container>
+            <ng-template #elseFormatId>
+                <ng-container *ngIf="getData(); else elseData">
+                    <ng-container *ngIf="(!isWordCountOver(getData()) || isSeeMore); else elseIsSeeMore">
+                        {{getData()}}
+                    </ng-container>
+                    <ng-template #elseIsSeeMore>
+                        {{getData() | slice:0:220}}...
+                    </ng-template>
+                    <span class="see-more" *ngIf="isWordCountOver()" (click)="clickOpenDropDown()" [class.see-less]="isSeeMore">{{
+                        isSeeMore ? 'แสดงน้อยลง' : 'ดูเพิ่มเติม'}}</span>
+                </ng-container>
+                <ng-template #elseData>
+                    -
+                </ng-template>
+            </ng-template>
+        </a>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <ng-container *ngIf="fieldTable.formatId || fieldTable.formatDate; else elseFormatId">
+            <ng-container *ngIf="fieldTable.formatId">
+                <ng-container *ngIf="getData(); else elseFieldName">
+                    {{getData() | prefixNumber: 5}}
+                </ng-container>
+                <ng-template #elseFieldName>
+                    -
+                </ng-template>
+            </ng-container>
+            <ng-container *ngIf="fieldTable.formatDate">
+                <ng-container *ngIf="getData(); else elseFieldDate">
+                    {{getData() | date:defaultDateTimeFormat}}
+                </ng-container>
+                <ng-template #elseFieldDate>
+                    -
+                </ng-template>
+            </ng-container>
+        </ng-container>
+        <ng-template #elseFormatId>
+            <ng-container *ngIf="getData(); else elseData">
+                <ng-container *ngIf="(!isWordCountOver(getData()) || isSeeMore); else elseIsSeeMore">
+                    {{getData()}}
+                </ng-container>
+                <ng-template #elseIsSeeMore>
+                    {{getData() | slice:0:220}}...
+                </ng-template>
+                <span class="see-more" *ngIf="isWordCountOver(getData())" (click)="clickOpenDropDown()" [class.see-less]="isSeeMore">{{
+                    isSeeMore ? 'แสดงน้อยลง' : 'ดูเพิ่มเติม'}}</span>
+            </ng-container>
+            <ng-template #elseData>
+                -
+            </ng-template>
+        </ng-template>
+    </ng-template>
+</ng-template>

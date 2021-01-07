@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  <ng-container *ngIf="data.isData; else elseTemplate">
+    <div class="wrapper-instance-data">
+      <div class="wrapper-data" *ngFor="let item of data.items; let index = index">
+        <h3 class="title">{{index+1}}: {{item.title}}</h3>
+        <label>{{item.date | date: 'dd/M/yyyy HH:mm น.'}}</label>
+        <img class="image" src="{{item.img}}" alt="">
+        <div class="content">{{item.content}}</div> 
+        <div class="tags">
+          <span class="tag" *ngFor="let tag of item.tags">
+            {{tag}}
+          </span>
+        </div> 
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <span class="wrapper-instance-link">
+      <a  *ngFor="let item of data.items; let index = index" href="{{item.link}}" target="_blank">{{index+1}}: {{item.link}}</a> 
+    </span>
+  </ng-template> 
+</div>  
+<div mat-dialog-actions>
+  <button style="background-color: #d6d6d6;" mat-button [mat-dialog-close]="true">ตกลง</button>
+</div>

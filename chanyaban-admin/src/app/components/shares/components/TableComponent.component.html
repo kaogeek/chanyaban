@@ -1,0 +1,94 @@
+<div class="card">
+    <div class="card-header">
+        <div style="display: flex;">
+            <button mat-raised-button *ngIf="actions.isBack" style="margin-right: 20px;" (click)="clickBack()">กลับ</button>
+            <h2 class="card-title"> {{title}}</h2>
+        </div>
+        <button class="btn-top-table" *ngIf="actions.isCreate" mat-raised-button (click)="clickCreateForm()">{{"เพิ่มข้อมูล"}}</button>
+    </div>
+    <div class="card-body">
+        <div class="wrapper-mat-spinner" *ngIf="isLoading">
+            <span class="back-drop"></span>
+            <mat-spinner></mat-spinner>
+        </div>
+        <div class="wrapper-search">
+            <mat-form-field class="select-search">
+                <mat-select placeholder="ตัวกรองข้อมูล" [(value)]="filter">
+                    <mat-option *ngFor="let field of fieldSearch" [value]="field">{{field}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="input-search">
+                <input matInput [(ngModel)]="search" (keyup.enter)="searchData()" placeholder="ค้นหาข้อมูล" disabled="{{!filter ? true : false}}">
+                <button mat-button *ngIf="search" matSuffix mat-icon-button aria-label="Clear" (click)="clearSerach()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div class="table-responsive">
+            <table mat-table [dataSource]="dataSource" matSort style="width: 100%;">
+
+                <ng-container *ngFor="let field of fieldTable">
+                    <ng-container matColumnDef="{{field.name}}">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{field.label}} </th>
+                        <td mat-cell *matCellDef="let element" [ngStyle]="{'width': field.width, 'min-width': field.width, 'max-width': field.width, 'text-align': field.align}"
+                            [ngClass]="field.class">
+                            <admin-col-table [fieldTable]="field" [data]="element"></admin-col-table>
+                        </td>
+                    </ng-container>
+                </ng-container>
+
+                <ng-container matColumnDef="createdDate">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> สร้างเมื่อ </th>
+                    <td mat-cell *matCellDef="let element" style="width: 70pt; min-width: 70pt; max-width: 70pt;">
+                        {{element.createdDate | date:defaultDateTimeFormat}}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="modifiedDate">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> แก้ไขเมื่อ </th>
+                    <td mat-cell *matCellDef="let element" style="width: 70pt; min-width: 70pt; max-width: 70pt;">
+                        {{element.modifiedDate | date:defaultDateTimeFormat}}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="action" *ngIf="actions" stickyEnd>
+                    <th mat-header-cell *matHeaderCellDef> </th>
+                    <td mat-cell *matCellDef="let element" [ngStyle]="{'min-width': widthAction}">
+                        <ng-container *ngIf="actions.isRunTest">
+                            <ng-container *ngIf="element.isScraping; else elseScraping">
+                                <button mat-raised-button class="wrapper-spinner">
+                                    <mat-spinner></mat-spinner>
+                                </button>
+                                <button mat-raised-button (click)="clickStopTest(element)">
+                                    STOP
+                                </button>
+                            </ng-container>
+                            <ng-template #elseScraping>
+                                <ng-container *ngIf="element.isUsable === false; else elseUsable">
+                                    <button mat-raised-button style="background-color: red">
+                                        not usable
+                                    </button>
+                                </ng-container>
+                                <ng-template #elseUsable>
+                                    <button mat-raised-button (click)="clickRunTest(element)">
+                                        RUN
+                                    </button>
+                                </ng-template>
+                            </ng-template>
+                        </ng-container>
+                        <button mat-raised-button *ngIf="actions.isEdit" (click)="clickEditForm(element)">
+                            <img src="../../../assets/img/document.png" alt="">
+                        </button>
+                        <button mat-raised-button *ngIf="actions.isDelete" (click)="clickDelete(element)">
+                            <img src="../../../assets/img/delete.png" alt="">
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <mat-paginator [pageSizeOptions]="[25, 50, 100]" [length]="data ? data.length : 0" showFirstLastButtons></mat-paginator>
+    </div>
+</div>
