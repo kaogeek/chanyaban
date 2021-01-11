@@ -1,15 +1,22 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { AuthenManager } from '../AuthenManager.service';
-import { AbstractFacade } from "./AbstractFacade"; 
+import { AbstractFacade } from "./AbstractFacade";
 import { ObservableManager } from '../ObservableManager.service';
 
 @Injectable()
-export class KeywordFacade extends AbstractFacade { 
+export class KeywordFacade extends AbstractFacade {
 
   constructor(http: HttpClient, authMgr: AuthenManager,
-  private observableManager: ObservableManager) {
-    super("keyword",http, authMgr); 
+    private observableManager: ObservableManager) {
+    super("keyword", http, authMgr);
   }
 
   public getKeyword(): Promise<any[]> {
@@ -21,7 +28,7 @@ export class KeywordFacade extends AbstractFacade {
         reject(error);
       });
     });
-  } 
+  }
 
   public addKeyword(data: any): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -39,7 +46,7 @@ export class KeywordFacade extends AbstractFacade {
 
   public updateKeyword(id: string, data: any): Promise<any> {
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/keyword/'+id;
+      let url: string = this.baseURL + '/keyword/' + id;
       if (!data) {
         reject("require is data.");
       }
@@ -53,7 +60,7 @@ export class KeywordFacade extends AbstractFacade {
 
   public deleteKeyword(id: string): Promise<any> {
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/keyword/'+id;
+      let url: string = this.baseURL + '/keyword/' + id;
       this.http.delete(url, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
@@ -71,7 +78,7 @@ export class KeywordFacade extends AbstractFacade {
         reject(error);
       });
     });
-  } 
+  }
 
   public findKeywords(body: any): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -93,12 +100,12 @@ export class KeywordFacade extends AbstractFacade {
         reject(error);
       });
     });
-  } 
+  }
 
   public getKeywordPage(keywords: any): Promise<any> {
     return new Promise((resolve, reject) => {
       let url: string = this.baseURL + '/keyword/page';
-      this.http.post(url,keywords,  this.getDefaultOptions()).toPromise().then((response: any) => {
+      this.http.post(url, keywords, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
         reject(error);
@@ -115,7 +122,7 @@ export class KeywordFacade extends AbstractFacade {
         reject(error);
       });
     });
-  } 
+  }
 
   public getInfoCount(body: any): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -214,7 +221,7 @@ export class KeywordFacade extends AbstractFacade {
         reject(error);
       });
     });
-  } 
+  }
 
   public getNewsAgencysRelate(body: any): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -227,9 +234,9 @@ export class KeywordFacade extends AbstractFacade {
     });
   }
 
-  public getNewsAgencysCompare(id: any,body: any): Promise<any> {
+  public getNewsAgencysCompare(id: any, body: any): Promise<any> {
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/keyword/page/newsagency/compare/'+id;
+      let url: string = this.baseURL + '/keyword/page/newsagency/compare/' + id;
       this.http.post(url, body, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {

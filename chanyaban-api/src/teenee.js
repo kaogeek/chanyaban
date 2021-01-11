@@ -1,8 +1,15 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 var osmosis = require('osmosis');
 
 const moment = require('moment/moment');
 
-let test= moment("วันเสาร์ ที่ 22 กุมภาพันธ์ 63 เวลา 02:10 น.","dddd ที่ DD MMMM YY เวลา HH:mm",'th').toDate();
+let test = moment("วันเสาร์ ที่ 22 กุมภาพันธ์ 63 เวลา 02:10 น.", "dddd ที่ DD MMMM YY เวลา HH:mm", 'th').toDate();
 console.log(test);
 console.log(moment(test).locale("th").format("dddd ที่ D MMMM YY เวลา HH:mm น."));
 console.log(moment(test).fromNow());

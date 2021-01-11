@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 autocomp-search {
   width: 100%;
   padding-right: 31pt;
@@ -97,7 +104,7 @@ autocomp-search {
       background-color: rgb(19, 20, 21) !important;
     }
     .mat-option-text {
-      >.not-match {
+      > .not-match {
         text-align: center;
         @include font-size-9-300;
       }
@@ -138,7 +145,7 @@ autocomp-search {
               white-space: nowrap;
               padding-right: 20pt;
               @include font-size-8-300;
-              >.icon-new-tab {
+              > .icon-new-tab {
                 cursor: pointer;
                 fill: $text-color1;
                 width: 13pt;
@@ -215,7 +222,7 @@ autocomp-search {
           width: 28pt !important;
           height: 28pt !important;
         }
-        .icon-new-tab { 
+        .icon-new-tab {
           width: 10pt !important;
           height: 10pt !important;
           margin-left: 4pt !important;
@@ -244,7 +251,7 @@ autocomp-search {
           width: 25pt !important;
           height: 25pt !important;
         }
-        .icon-new-tab { 
+        .icon-new-tab {
           width: 8pt !important;
           height: 8pt !important;
           margin-left: 3pt !important;

@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { AuthenManager } from '../AuthenManager.service';
@@ -21,7 +28,7 @@ export class PersonaTypeFacade extends AbstractFacade {
         reject(error);
       });
     });
-  } 
+  }
 
   public addPersonaType(data: PersonaType): Promise<PersonaType> {
     return new Promise((resolve, reject) => {

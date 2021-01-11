@@ -1,4 +1,11 @@
-app-entity-type {  
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
+app-entity-type {
   .card-main-entity-type {
     width: 100%;
     > .wrapper-main {
@@ -9,7 +16,7 @@ app-entity-type {
         @include border-bottom;
         > .wrapper-overview {
           width: calc(100% - 50pt);
-          padding: 20pt 20pt 20pt 30pt; 
+          padding: 20pt 20pt 20pt 30pt;
           > .wrapper-entity-type {
             display: flex;
             align-items: center;
@@ -60,10 +67,10 @@ app-entity-type {
       > .wrapper-right {
         width: 40%;
         @include border-bottom;
-        @include border-left; 
+        @include border-left;
       }
     }
-  } 
+  }
   > .footer {
     display: flex;
     justify-content: center;
@@ -74,10 +81,10 @@ app-entity-type {
     font-weight: bold;
     @include font-size-8-300;
   }
-} 
+}
 
 @media (max-width: $xlarge) {
-  app-entity-type { 
+  app-entity-type {
     .wrapper-main {
       display: block !important;
       > .wrapper-left {
@@ -91,12 +98,12 @@ app-entity-type {
         width: 100% !important;
         border-left: unset !important;
       }
-    } 
+    }
   }
-} 
+}
 
 @media (max-width: $medium) {
-  app-entity-type { 
+  app-entity-type {
     .wrapper-main {
       > .wrapper-left {
         > .wrapper-overview {
@@ -123,9 +130,9 @@ app-entity-type {
           }
         }
       }
-      > .wrapper-right { 
+      > .wrapper-right {
       }
-    } 
+    }
   }
 }
 
@@ -143,7 +150,7 @@ app-entity-type {
       .mat-form-field-wrapper {
         width: 70pt !important;
       }
-    } 
+    }
     .wrapper-main {
       > .wrapper-left {
         > .wrapper-overview {
@@ -173,8 +180,8 @@ app-entity-type {
           }
         }
       }
-      > .wrapper-right { 
+      > .wrapper-right {
       }
-    } 
+    }
   }
 }

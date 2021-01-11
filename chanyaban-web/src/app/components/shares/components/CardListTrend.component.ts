@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit, Input, EventEmitter, SimpleChanges, Output } from '@angular/core';
 import * as moment from 'moment';
 import { OPTION_CHART_SOURCE_TYPE } from '../Constants';
@@ -89,7 +96,7 @@ export class CardListTrend extends AbstractNewTab implements OnInit {
       this.isLoadedChart = true;
       this.drawSourceTypeTrendChart();
     });
-  } 
+  }
 
   private queryParamsDate(): any {
     return {

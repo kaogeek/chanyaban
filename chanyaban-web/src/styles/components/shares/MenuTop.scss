@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 menu-top {
   .wrapper-menu-top {
     display: flex;
@@ -157,7 +164,7 @@ menu-top {
         width: calc(100% - 280pt) !important;
         &.range {
           width: calc(100% - 290pt) !important;
-        } 
+        }
         &.full {
           width: calc(100% - 250pt) !important;
           margin-right: 110pt !important;
@@ -221,7 +228,7 @@ menu-top {
         &.range {
           width: calc(100% - 200pt) !important;
         }
-        &.full { 
+        &.full {
           width: calc(100% - 125pt) !important;
           margin-right: 50pt !important;
         }

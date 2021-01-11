@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 var osmosis = require('osmosis');
 osmosis
     // Do Google search
@@ -9,7 +16,7 @@ osmosis
     })
     .data(data => {
         if (data.link) {
-                    // console.log("data", data);
+            // console.log("data", data);
             osmosis
                 // Do Google search
                 .get(data.link)
@@ -29,7 +36,7 @@ osmosis
                 // })
                 .data(data => {
                     // Each iteration, push the data into our array
-                    console.log("data", data); 
+                    console.log("data", data);
 
                 })
                 .log(console.log)

@@ -1,12 +1,19 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SourceTypeFacade, KeywordFacade } from '../../../services/services';
 import * as moment from 'moment';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Title, Meta } from '@angular/platform-browser'; 
-import { AbstractNewsPage } from './AbstractNewsPage'; 
+import { Title, Meta } from '@angular/platform-browser';
+import { AbstractNewsPage } from './AbstractNewsPage';
 
-const PAGE_NAME: string = 'channel'; 
+const PAGE_NAME: string = 'channel';
 
 declare var google: any;
 declare var $: any;
@@ -21,15 +28,15 @@ export class SourceTypePage extends AbstractNewsPage implements OnInit {
 
   private route: ActivatedRoute;
 
-  public timeoutNewsAgency: any; 
-  public listSelectNewsAgency: any[] = []; 
+  public timeoutNewsAgency: any;
+  public listSelectNewsAgency: any[] = [];
   public search: string;
   public sourceType: any;
   public sourceTypeName: string;
-  public keywordRelates: string[] = []; 
+  public keywordRelates: string[] = [];
   public searchKeywordAllWithSourceType: any[] = [];
 
-  private trendChartMap: any; 
+  private trendChartMap: any;
 
   public selectNewsAgencyCompare: any = "เปรียบเทียบกับ";
   public dataNewsAgencyCompare: any;
@@ -53,13 +60,13 @@ export class SourceTypePage extends AbstractNewsPage implements OnInit {
     private sourceTypeFacade: SourceTypeFacade, private _snackBar: MatSnackBar,
     private titleService: Title, private meta: Meta, private keywordFacade: KeywordFacade) {
     super(PAGE_NAME, router);
-    this.route = route; 
+    this.route = route;
 
-    $(window).resize(() => { 
-        if (this.listChartAgenJouran.newsAgencys && this.listChartAgenJouran.newsAgencys.length > 0) {
-          this.drawNewsAgencyChart();
-          this.drawMapChart(); 
-        } 
+    $(window).resize(() => {
+      if (this.listChartAgenJouran.newsAgencys && this.listChartAgenJouran.newsAgencys.length > 0) {
+        this.drawNewsAgencyChart();
+        this.drawMapChart();
+      }
     });
 
     this.route.params.subscribe(async (params) => {
@@ -178,7 +185,7 @@ export class SourceTypePage extends AbstractNewsPage implements OnInit {
       packages: ['corechart', 'geochart'],
       'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     });
-    google.charts.setOnLoadCallback(() => { 
+    google.charts.setOnLoadCallback(() => {
       this.trendChartMap = new google.visualization.GeoChart(
         document.getElementById('regions_div'));
       this.drawMapChart();
@@ -193,7 +200,7 @@ export class SourceTypePage extends AbstractNewsPage implements OnInit {
       } else if (this.sourceTypeName === "facebook") {
         urlTitle += "ช่องทางเว็บไซต์ (facebook)";
       } else if (this.sourceTypeName === "twitter") {
-        urlTitle += "ช่องทางเว็บไซต์ (twitter)";        
+        urlTitle += "ช่องทางเว็บไซต์ (twitter)";
       }
       if (this.searchKeywordAll && this.searchKeywordAll.length > 0) {
         let lastKeyword = this.searchKeywordAll[this.searchKeywordAll.length - 1];
@@ -256,7 +263,7 @@ export class SourceTypePage extends AbstractNewsPage implements OnInit {
     }).catch((err) => {
       console.log(err);
     });
-  } 
+  }
 
   private loadDataPageTrendingMapChart(): void {
     this.sourceTypeFacade.getTrendingMapChart(this.find).then((res) => {
@@ -314,20 +321,20 @@ export class SourceTypePage extends AbstractNewsPage implements OnInit {
     });
   }
 
-  private loadDataPageNewsAgencys(): void { 
-      this.sourceTypeFacade.getNewsAgencyRelate(this.find).then((newsAgecnys: any) => {
-        this.listSelectNewsAgency = [];
-        this.data.listNewsAgencysWithNews = newsAgecnys;
-        for (const newsAgency of newsAgecnys) {
-          if (newsAgency.isActive) {
-            this.listSelectNewsAgency.push(newsAgency._id);
-          }
+  private loadDataPageNewsAgencys(): void {
+    this.sourceTypeFacade.getNewsAgencyRelate(this.find).then((newsAgecnys: any) => {
+      this.listSelectNewsAgency = [];
+      this.data.listNewsAgencysWithNews = newsAgecnys;
+      for (const newsAgency of newsAgecnys) {
+        if (newsAgency.isActive) {
+          this.listSelectNewsAgency.push(newsAgency._id);
         }
-        this.clearNews();
-        this.searchRelateNews(); 
-      }).catch((err) => {
-        console.log(err); 
-      }); 
+      }
+      this.clearNews();
+      this.searchRelateNews();
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 
   private loadDataPageEntityTop(): void {
@@ -347,7 +354,7 @@ export class SourceTypePage extends AbstractNewsPage implements OnInit {
     this.find.lastDay.setMinutes(59);
     this.find.lastDay.setSeconds(59);
     this.isloadNews = true;
-    this.loadDataPageCount(); 
+    this.loadDataPageCount();
     this.loadDataPageNewsAgencys();
     this.loadDataPageNewsAgencyCompare();
     this.loadDataPageKeywordTop();
@@ -440,7 +447,7 @@ export class SourceTypePage extends AbstractNewsPage implements OnInit {
     } else {
       this.router.navigateByUrl(url[0] + "/" + this.encodeURL(name));
     }
-  } 
+  }
 
   public selectedNewsAgencyChart(): void {
     if (this.selectNewsAgencyChart === "ถูกพูดถึงมากสุดโดย") {
@@ -516,9 +523,9 @@ export class SourceTypePage extends AbstractNewsPage implements OnInit {
     var find = {
       sourceTypeId: this.find.sourceTypeId,
       firstDay: this.find.firstDay,
-      lastDay: this.find.lastDay, 
-      keywords: this.find.keywords, 
-      entityKeywords: this.find.entityKeywords, 
+      lastDay: this.find.lastDay,
+      keywords: this.find.keywords,
+      entityKeywords: this.find.entityKeywords,
       newsAgencys: this.listSelectNewsAgency,
       start: this.countNews,
       amount: 36
@@ -531,7 +538,7 @@ export class SourceTypePage extends AbstractNewsPage implements OnInit {
     }).catch((err) => {
       console.log(err);
     });
-  } 
+  }
 
   public drawNewsAgencyCompareChart() {
     var trending: any = [['', 'กล่าวถึง']];

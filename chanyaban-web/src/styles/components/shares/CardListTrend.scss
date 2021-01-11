@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 .card-header-list-trend {
   display: flex;
   flex-direction: column;
@@ -63,7 +70,7 @@ card-list-trend {
           height: 40pt;
           padding-left: 20pt;
         }
-      } 
+      }
     }
     > .wrapper-item-trend {
       width: calc(50% - 0.35px);

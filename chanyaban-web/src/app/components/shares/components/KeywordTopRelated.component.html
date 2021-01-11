@@ -1,3 +1,10 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div class="wrapper-keyword-top-related">
     <div class="header-keyword-top-related">
         {{allRelated && allRelated.length > 1 ? "ที่กำลังอยู่ในกระแสของ" : "ที่กำลังอยู่ในกระแสกับ" }}
@@ -13,17 +20,23 @@
     </div>
     <div class="body-keyword-top-related" *ngIf="keywordTopRelated && keywordTopRelated.length > 0">
         <div class="body-left">
-            <div class="flex-end wrapper-top-related-1">{{keywordTopRelated[0] ? keywordTopRelated[0].count : "-" | shortNumber}}
+            <div class="flex-end wrapper-top-related-1">{{keywordTopRelated[0] ? keywordTopRelated[0].count : "-" |
+                shortNumber}}
             </div>
-            <div class="flex-end wrapper-top-related-2">{{keywordTopRelated[1] ? keywordTopRelated[1].count : "-" | shortNumber}}
+            <div class="flex-end wrapper-top-related-2">{{keywordTopRelated[1] ? keywordTopRelated[1].count : "-" |
+                shortNumber}}
             </div>
-            <div class="flex-end wrapper-top-related-3">{{keywordTopRelated[2] ? keywordTopRelated[2].count : "-" | shortNumber}}
+            <div class="flex-end wrapper-top-related-3">{{keywordTopRelated[2] ? keywordTopRelated[2].count : "-" |
+                shortNumber}}
             </div>
-            <div class="flex-end wrapper-top-related-4">{{keywordTopRelated[3] ? keywordTopRelated[3].count : "-" | shortNumber}}
+            <div class="flex-end wrapper-top-related-4">{{keywordTopRelated[3] ? keywordTopRelated[3].count : "-" |
+                shortNumber}}
             </div>
-            <div class="flex-end wrapper-top-related-5">{{keywordTopRelated[4] ? keywordTopRelated[4].count : "-" | shortNumber}}
+            <div class="flex-end wrapper-top-related-5">{{keywordTopRelated[4] ? keywordTopRelated[4].count : "-" |
+                shortNumber}}
             </div>
-            <div class="flex-end wrapper-top-related-6">{{keywordTopRelated[5] ? keywordTopRelated[5].count : "-" | shortNumber}}
+            <div class="flex-end wrapper-top-related-6">{{keywordTopRelated[5] ? keywordTopRelated[5].count : "-" |
+                shortNumber}}
             </div>
             <div class="label-count-top-related">
                 จำนวนครั้ง<br> ที่ถูกกล่าวถึง
@@ -35,33 +48,39 @@
         <div class="body-right">
             <div class="wrapper-top-related-1">
                 <span class="link-top-related" (click)="clickAddKeywordInUrl.emit(keywordTopRelated[0].name)">
-                    {{keywordTopRelated[0] ? keywordTopRelated[0].isTag ? "# "+keywordTopRelated[0].name : keywordTopRelated[0].name : "-"}}
+                    {{keywordTopRelated[0] ? keywordTopRelated[0].isTag ? "# "+keywordTopRelated[0].name :
+                    keywordTopRelated[0].name : "-"}}
                 </span>
             </div>
             <div class="wrapper-top-related-2">
                 <span class="link-top-related" (click)="clickAddKeywordInUrl.emit(keywordTopRelated[1].name)">
-                    {{keywordTopRelated[1] ? keywordTopRelated[1].isTag ? "# "+keywordTopRelated[1].name : keywordTopRelated[1].name : "-"}}
+                    {{keywordTopRelated[1] ? keywordTopRelated[1].isTag ? "# "+keywordTopRelated[1].name :
+                    keywordTopRelated[1].name : "-"}}
                 </span>
 
             </div>
             <div class="wrapper-top-related-3">
                 <span class="link-top-related" (click)="clickAddKeywordInUrl.emit(keywordTopRelated[2].name)">
-                    {{keywordTopRelated[2] ? keywordTopRelated[2].isTag ? "# "+keywordTopRelated[2].name : keywordTopRelated[2].name : "-"}}
+                    {{keywordTopRelated[2] ? keywordTopRelated[2].isTag ? "# "+keywordTopRelated[2].name :
+                    keywordTopRelated[2].name : "-"}}
                 </span>
             </div>
             <div class="wrapper-top-related-4">
                 <span class="link-top-related" (click)="clickAddKeywordInUrl.emit(keywordTopRelated[3].name)">
-                    {{keywordTopRelated[3] ? keywordTopRelated[3].isTag ? "# "+keywordTopRelated[3].name : keywordTopRelated[3].name : "-"}}
+                    {{keywordTopRelated[3] ? keywordTopRelated[3].isTag ? "# "+keywordTopRelated[3].name :
+                    keywordTopRelated[3].name : "-"}}
                 </span>
             </div>
             <div class="wrapper-top-related-5">
                 <span class="link-top-related" (click)="clickAddKeywordInUrl.emit(keywordTopRelated[4].name)">
-                    {{keywordTopRelated[4] ? keywordTopRelated[4].isTag ? "# "+keywordTopRelated[4].name : keywordTopRelated[4].name : "-"}}
+                    {{keywordTopRelated[4] ? keywordTopRelated[4].isTag ? "# "+keywordTopRelated[4].name :
+                    keywordTopRelated[4].name : "-"}}
                 </span>
             </div>
             <div class="wrapper-top-related-6">
                 <span class="link-top-related" (click)="clickAddKeywordInUrl.emit(keywordTopRelated[5].name)">
-                    {{keywordTopRelated[5] ? keywordTopRelated[5].isTag ? "# "+keywordTopRelated[5].name : keywordTopRelated[5].name : "-"}}
+                    {{keywordTopRelated[5] ? keywordTopRelated[5].isTag ? "# "+keywordTopRelated[5].name :
+                    keywordTopRelated[5].name : "-"}}
                 </span>
             </div>
         </div>

@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 @mixin border {
     border: 0.7px solid $border-color;
 }
@@ -34,14 +41,14 @@
     color: $text-color2;
     font-weight: bold;
     padding: 15pt 0;
-    width: 100%; 
-    height: 17pt; 
+    width: 100%;
+    height: 17pt;
 }
 
 // 1.font
 @mixin font-size-1-100 {
     font-size: $font-size-1;
-    font-family: 'sukhumvitset100' , 'prompt100' , sans-serif;
+    font-family: "sukhumvitset100", "prompt100", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-1 - 4px;
@@ -66,7 +73,7 @@
 
 @mixin font-size-2-100 {
     font-size: $font-size-2;
-    font-family: 'sukhumvitset100' , 'prompt100' , sans-serif;
+    font-family: "sukhumvitset100", "prompt100", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-2 - 4px;
@@ -91,7 +98,7 @@
 
 @mixin font-size-3-100 {
     font-size: $font-size-3;
-    font-family: 'sukhumvitset100' , 'prompt100' , sans-serif;
+    font-family: "sukhumvitset100", "prompt100", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-3 - 4px;
@@ -116,7 +123,7 @@
 
 @mixin font-size-4-100 {
     font-size: $font-size-4;
-    font-family: 'sukhumvitset100' , 'prompt100' , sans-serif;
+    font-family: "sukhumvitset100", "prompt100", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-4 - 4px;
@@ -141,7 +148,7 @@
 
 @mixin font-size-5-100 {
     font-size: $font-size-5;
-    font-family: 'sukhumvitset100' , 'prompt100' , sans-serif;
+    font-family: "sukhumvitset100", "prompt100", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-5 - 4px;
@@ -166,7 +173,7 @@
 
 @mixin font-size-6-100 {
     font-size: $font-size-6;
-    font-family: 'sukhumvitset100' , 'prompt100' , sans-serif;
+    font-family: "sukhumvitset100", "prompt100", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-6 - 5px;
@@ -191,7 +198,7 @@
 
 @mixin font-size-7-100 {
     font-size: $font-size-7;
-    font-family: 'sukhumvitset100' , 'prompt100' , sans-serif;
+    font-family: "sukhumvitset100", "prompt100", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-7 - 2px;
@@ -216,7 +223,7 @@
 
 @mixin font-size-8-100 {
     font-size: $font-size-8;
-    font-family: 'sukhumvitset100' , 'prompt100' , sans-serif;
+    font-family: "sukhumvitset100", "prompt100", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-8 - 2px;
@@ -241,7 +248,7 @@
 
 @mixin font-size-9-100 {
     font-size: $font-size-9;
-    font-family: 'sukhumvitset100' , 'prompt100' , sans-serif;
+    font-family: "sukhumvitset100", "prompt100", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-9 - 1px;
@@ -266,7 +273,7 @@
 
 @mixin font-size-10-100 {
     font-size: $font-size-10;
-    font-family: 'sukhumvitset100' , 'prompt100' , sans-serif;
+    font-family: "sukhumvitset100", "prompt100", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-10 - 1px;
@@ -293,7 +300,7 @@
 
 @mixin font-size-1-200 {
     font-size: $font-size-1;
-    font-family: 'sukhumvitset200' , 'prompt200' , sans-serif;
+    font-family: "sukhumvitset200", "prompt200", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-1 - 6px;
@@ -318,7 +325,7 @@
 
 @mixin font-size-2-200 {
     font-size: $font-size-2;
-    font-family: 'sukhumvitset200' , 'prompt200' , sans-serif;
+    font-family: "sukhumvitset200", "prompt200", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-2 - 2px;
@@ -343,7 +350,7 @@
 
 @mixin font-size-3-200 {
     font-size: $font-size-3;
-    font-family: 'sukhumvitset200' , 'prompt200' , sans-serif;
+    font-family: "sukhumvitset200", "prompt200", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-3 - 2px;
@@ -368,7 +375,7 @@
 
 @mixin font-size-4-200 {
     font-size: $font-size-4;
-    font-family: 'sukhumvitset200' , 'prompt200' , sans-serif;
+    font-family: "sukhumvitset200", "prompt200", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-4 - 2px;
@@ -393,7 +400,7 @@
 
 @mixin font-size-5-200 {
     font-size: $font-size-5;
-    font-family: 'sukhumvitset200' , 'prompt200' , sans-serif;
+    font-family: "sukhumvitset200", "prompt200", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-5 - 2px;
@@ -418,7 +425,7 @@
 
 @mixin font-size-6-200 {
     font-size: $font-size-6;
-    font-family: 'sukhumvitset200' , 'prompt200' , sans-serif;
+    font-family: "sukhumvitset200", "prompt200", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-6 - 2px;
@@ -443,7 +450,7 @@
 
 @mixin font-size-7-200 {
     font-size: $font-size-7;
-    font-family: 'sukhumvitset200' , 'prompt200' , sans-serif;
+    font-family: "sukhumvitset200", "prompt200", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-7 - 2px;
@@ -468,7 +475,7 @@
 
 @mixin font-size-8-200 {
     font-size: $font-size-8;
-    font-family: 'sukhumvitset200' , 'prompt200' , sans-serif;
+    font-family: "sukhumvitset200", "prompt200", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-8 - 2px;
@@ -493,7 +500,7 @@
 
 @mixin font-size-9-200 {
     font-size: $font-size-9;
-    font-family: 'sukhumvitset200' , 'prompt200' , sans-serif;
+    font-family: "sukhumvitset200", "prompt200", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-9 - 1px;
@@ -518,7 +525,7 @@
 
 @mixin font-size-10-200 {
     font-size: $font-size-10;
-    font-family: 'sukhumvitset200' , 'prompt200' , sans-serif;
+    font-family: "sukhumvitset200", "prompt200", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-10 - 1px;
@@ -545,7 +552,7 @@
 
 @mixin font-size-1-300 {
     font-size: $font-size-1;
-    font-family: 'sukhumvitset300' , 'prompt300' , sans-serif;
+    font-family: "sukhumvitset300", "prompt300", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-1 - 4px;
@@ -570,7 +577,7 @@
 
 @mixin font-size-2-300 {
     font-size: $font-size-2;
-    font-family: 'sukhumvitset300' , 'prompt300' , sans-serif;
+    font-family: "sukhumvitset300", "prompt300", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-2 - 2px;
@@ -595,7 +602,7 @@
 
 @mixin font-size-3-300 {
     font-size: $font-size-3;
-    font-family: 'sukhumvitset300' , 'prompt300' , sans-serif;
+    font-family: "sukhumvitset300", "prompt300", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-3 - 2px;
@@ -620,7 +627,7 @@
 
 @mixin font-size-4-300 {
     font-size: $font-size-4;
-    font-family: 'sukhumvitset300' , 'prompt300' , sans-serif;
+    font-family: "sukhumvitset300", "prompt300", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-4 - 2px;
@@ -645,7 +652,7 @@
 
 @mixin font-size-5-300 {
     font-size: $font-size-5;
-    font-family: 'sukhumvitset300' , 'prompt300' , sans-serif;
+    font-family: "sukhumvitset300", "prompt300", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-5 - 2px;
@@ -670,7 +677,7 @@
 
 @mixin font-size-6-300 {
     font-size: $font-size-6;
-    font-family: 'sukhumvitset300' , 'prompt300' , sans-serif;
+    font-family: "sukhumvitset300", "prompt300", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-6 - 2px;
@@ -695,7 +702,7 @@
 
 @mixin font-size-7-300 {
     font-size: $font-size-7;
-    font-family: 'sukhumvitset300' , 'prompt300' , sans-serif;
+    font-family: "sukhumvitset300", "prompt300", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-7 - 2px;
@@ -720,7 +727,7 @@
 
 @mixin font-size-8-300 {
     font-size: $font-size-8;
-    font-family: 'sukhumvitset300' , 'prompt300' , sans-serif;
+    font-family: "sukhumvitset300", "prompt300", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-8 - 2px;
@@ -745,7 +752,7 @@
 
 @mixin font-size-9-300 {
     font-size: $font-size-9;
-    font-family: 'sukhumvitset300' , 'prompt300' , sans-serif;
+    font-family: "sukhumvitset300", "prompt300", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-9 - 1px;
@@ -770,7 +777,7 @@
 
 @mixin font-size-10-300 {
     font-size: $font-size-10;
-    font-family: 'sukhumvitset300' , 'prompt300' , sans-serif;
+    font-family: "sukhumvitset300", "prompt300", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-10 - 1px;
@@ -797,7 +804,7 @@
 
 @mixin font-size-1-400 {
     font-size: $font-size-1;
-    font-family: 'sukhumvitset400' , 'prompt400' , sans-serif;
+    font-family: "sukhumvitset400", "prompt400", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-1 - 4px;
@@ -822,7 +829,7 @@
 
 @mixin font-size-2-400 {
     font-size: $font-size-2;
-    font-family: 'sukhumvitset400' , 'prompt400' , sans-serif;
+    font-family: "sukhumvitset400", "prompt400", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-2 - 2px;
@@ -847,7 +854,7 @@
 
 @mixin font-size-3-400 {
     font-size: $font-size-3;
-    font-family: 'sukhumvitset400' , 'prompt400' , sans-serif;
+    font-family: "sukhumvitset400", "prompt400", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-3 - 2px;
@@ -872,7 +879,7 @@
 
 @mixin font-size-4-400 {
     font-size: $font-size-4;
-    font-family: 'sukhumvitset400' , 'prompt400' , sans-serif;
+    font-family: "sukhumvitset400", "prompt400", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-4 - 2px;
@@ -897,7 +904,7 @@
 
 @mixin font-size-5-400 {
     font-size: $font-size-5;
-    font-family: 'sukhumvitset400' , 'prompt400' , sans-serif;
+    font-family: "sukhumvitset400", "prompt400", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-5 - 2px;
@@ -922,7 +929,7 @@
 
 @mixin font-size-6-400 {
     font-size: $font-size-6;
-    font-family: 'sukhumvitset400' , 'prompt400' , sans-serif;
+    font-family: "sukhumvitset400", "prompt400", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-6 - 2px;
@@ -947,7 +954,7 @@
 
 @mixin font-size-7-400 {
     font-size: $font-size-7;
-    font-family: 'sukhumvitset400' , 'prompt400' , sans-serif;
+    font-family: "sukhumvitset400", "prompt400", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-7 - 2px;
@@ -972,7 +979,7 @@
 
 @mixin font-size-8-400 {
     font-size: $font-size-8;
-    font-family: 'sukhumvitset400' , 'prompt400' , sans-serif;
+    font-family: "sukhumvitset400", "prompt400", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-8 - 2px;
@@ -997,7 +1004,7 @@
 
 @mixin font-size-9-400 {
     font-size: $font-size-9;
-    font-family: 'sukhumvitset400' , 'prompt400' , sans-serif;
+    font-family: "sukhumvitset400", "prompt400", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-9 - 1px;
@@ -1022,7 +1029,7 @@
 
 @mixin font-size-10-400 {
     font-size: $font-size-10;
-    font-family: 'sukhumvitset400' , 'prompt400' , sans-serif;
+    font-family: "sukhumvitset400", "prompt400", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-10 - 1px;
@@ -1049,7 +1056,7 @@
 
 @mixin font-size-1-500 {
     font-size: $font-size-1;
-    font-family: 'sukhumvitset500' , 'prompt500' , sans-serif;
+    font-family: "sukhumvitset500", "prompt500", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-1 - 4px;
@@ -1074,7 +1081,7 @@
 
 @mixin font-size-2-500 {
     font-size: $font-size-2;
-    font-family: 'sukhumvitset500' , 'prompt500' , sans-serif;
+    font-family: "sukhumvitset500", "prompt500", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-2 - 2px;
@@ -1099,7 +1106,7 @@
 
 @mixin font-size-3-500 {
     font-size: $font-size-3;
-    font-family: 'sukhumvitset500' , 'prompt500' , sans-serif;
+    font-family: "sukhumvitset500", "prompt500", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-3 - 2px;
@@ -1124,7 +1131,7 @@
 
 @mixin font-size-4-500 {
     font-size: $font-size-4;
-    font-family: 'sukhumvitset500' , 'prompt500' , sans-serif;
+    font-family: "sukhumvitset500", "prompt500", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-4 - 2px;
@@ -1149,7 +1156,7 @@
 
 @mixin font-size-5-500 {
     font-size: $font-size-5;
-    font-family: 'sukhumvitset500' , 'prompt500' , sans-serif;
+    font-family: "sukhumvitset500", "prompt500", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-5 - 2px;
@@ -1174,7 +1181,7 @@
 
 @mixin font-size-6-500 {
     font-size: $font-size-6;
-    font-family: 'sukhumvitset500' , 'prompt500' , sans-serif;
+    font-family: "sukhumvitset500", "prompt500", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-6 - 2px;
@@ -1199,7 +1206,7 @@
 
 @mixin font-size-7-500 {
     font-size: $font-size-7;
-    font-family: 'sukhumvitset500' , 'prompt500' , sans-serif;
+    font-family: "sukhumvitset500", "prompt500", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-7 - 2px;
@@ -1224,7 +1231,7 @@
 
 @mixin font-size-8-500 {
     font-size: $font-size-8;
-    font-family: 'sukhumvitset500' , 'prompt500' , sans-serif;
+    font-family: "sukhumvitset500", "prompt500", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-8 - 2px;
@@ -1249,7 +1256,7 @@
 
 @mixin font-size-9-500 {
     font-size: $font-size-9;
-    font-family: 'sukhumvitset500' , 'prompt500' , sans-serif;
+    font-family: "sukhumvitset500", "prompt500", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-9 - 1px;
@@ -1274,7 +1281,7 @@
 
 @mixin font-size-10-500 {
     font-size: $font-size-10;
-    font-family: 'sukhumvitset500' , 'prompt500' , sans-serif;
+    font-family: "sukhumvitset500", "prompt500", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-10 - 1px;
@@ -1301,7 +1308,7 @@
 
 @mixin font-size-1-600 {
     font-size: $font-size-1;
-    font-family: 'sukhumvitset600' , 'prompt600' , sans-serif;
+    font-family: "sukhumvitset600", "prompt600", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-1 - 4px;
@@ -1326,7 +1333,7 @@
 
 @mixin font-size-2-600 {
     font-size: $font-size-2;
-    font-family: 'sukhumvitset600' , 'prompt600' , sans-serif;
+    font-family: "sukhumvitset600", "prompt600", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-2 - 2px;
@@ -1351,7 +1358,7 @@
 
 @mixin font-size-3-600 {
     font-size: $font-size-3;
-    font-family: 'sukhumvitset600' , 'prompt600' , sans-serif;
+    font-family: "sukhumvitset600", "prompt600", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-3 - 2px;
@@ -1376,7 +1383,7 @@
 
 @mixin font-size-4-600 {
     font-size: $font-size-4;
-    font-family: 'sukhumvitset600' , 'prompt600' , sans-serif;
+    font-family: "sukhumvitset600", "prompt600", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-4 - 2px;
@@ -1401,7 +1408,7 @@
 
 @mixin font-size-5-600 {
     font-size: $font-size-5;
-    font-family: 'sukhumvitset600' , 'prompt600' , sans-serif;
+    font-family: "sukhumvitset600", "prompt600", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-5 - 2px;
@@ -1426,7 +1433,7 @@
 
 @mixin font-size-6-600 {
     font-size: $font-size-6;
-    font-family: 'sukhumvitset600' , 'prompt600' , sans-serif;
+    font-family: "sukhumvitset600", "prompt600", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-6 - 2px;
@@ -1451,7 +1458,7 @@
 
 @mixin font-size-7-600 {
     font-size: $font-size-7;
-    font-family: 'sukhumvitset600' , 'prompt600' , sans-serif;
+    font-family: "sukhumvitset600", "prompt600", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-7 - 2px;
@@ -1476,7 +1483,7 @@
 
 @mixin font-size-8-600 {
     font-size: $font-size-8;
-    font-family: 'sukhumvitset600' , 'prompt600' , sans-serif;
+    font-family: "sukhumvitset600", "prompt600", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-8 - 2px;
@@ -1501,7 +1508,7 @@
 
 @mixin font-size-9-600 {
     font-size: $font-size-9;
-    font-family: 'sukhumvitset600' , 'prompt600' , sans-serif;
+    font-family: "sukhumvitset600", "prompt600", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-9 - 1px;
@@ -1526,7 +1533,7 @@
 
 @mixin font-size-10-600 {
     font-size: $font-size-10;
-    font-family: 'sukhumvitset600' , 'prompt600' , sans-serif;
+    font-family: "sukhumvitset600", "prompt600", sans-serif;
 
     @media (max-width: $xxlarge) {
         font-size: $font-size-10 - 1px;
@@ -1551,25 +1558,31 @@
 
 @mixin breakpoint($point) {
     @if $point == xxlarge {
-        @media (max-width: $xxlarge) { @content; }
-    }
-    @else if $point == xlarge {
-        @media (max-width: $xlarge) { @content; }
-    }
-    @else if $point == large {
-        @media (max-width: $large)  { @content; }
-    }
-    @else if $point == medium {
-        @media (max-width: $medium)  { @content; }
-    }
-    @else if $point == small {
-        @media (max-width: $small)  { @content; }
+        @media (max-width: $xxlarge) {
+            @content;
+        }
+    } @else if $point == xlarge {
+        @media (max-width: $xlarge) {
+            @content;
+        }
+    } @else if $point == large {
+        @media (max-width: $large) {
+            @content;
+        }
+    } @else if $point == medium {
+        @media (max-width: $medium) {
+            @content;
+        }
+    } @else if $point == small {
+        @media (max-width: $small) {
+            @content;
+        }
     }
 }
 
 @mixin newcon-container($newcon-container-height: 500pt, $newcon-container-bg-color: $bg-color1) {
     background-color: $newcon-container-bg-color;
-    width: calc(100% - #{$newcon-container-padding}*2);
+    width: calc(100% - #{$newcon-container-padding}* 2);
     height: $newcon-container-height;
     padding: $newcon-container-padding;
 }

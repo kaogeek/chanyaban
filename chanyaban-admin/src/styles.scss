@@ -1,12 +1,19 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~@angular/material/theming";
-@import '~saturn-datepicker/bundle.css';
+@import "~saturn-datepicker/bundle.css";
 @import "styles/styles";
 
 :host {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   color: #333;
   box-sizing: border-box;
@@ -56,11 +63,11 @@
       .wrapper-search {
         padding: 0 20pt;
         width: calc(100% - 40pt);
-        .input-search { 
+        .input-search {
           padding-left: 10pt;
           margin-right: 10pt;
         }
-        >.wrapper-btn-search {
+        > .wrapper-btn-search {
           padding: 5pt 15pt;
           cursor: pointer;
           background-color: $menucolor;
@@ -113,7 +120,7 @@
             padding: 15pt 10pt;
             background-color: $menucolor;
             border-bottom: 0.7px solid $border-color;
-            >.icon-move-to-trend {
+            > .icon-move-to-trend {
               display: flex;
               width: 25pt;
               height: 16pt;
@@ -124,7 +131,7 @@
               }
             }
           }
-          >.load-more {
+          > .load-more {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -214,8 +221,9 @@
   }
 }
 
-.mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after, .mat-input-element:disabled {
-  color: #a3a3a3 !important;  
+.mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after,
+.mat-input-element:disabled {
+  color: #a3a3a3 !important;
 }
 
 .mat-icon-button[disabled][disabled] {
@@ -234,7 +242,10 @@
   }
 }
 
-.mat-form-field-label, .mat-select-value-text, .mat-select-arrow, .mat-input-element {
+.mat-form-field-label,
+.mat-select-value-text,
+.mat-select-arrow,
+.mat-input-element {
   color: #fff !important;
 }
 
@@ -259,7 +270,7 @@
 }
 
 .mat-icon-button {
- background-color: #1c1e21 !important;
+  background-color: #1c1e21 !important;
 }
 
 .mat-icon-no-color {
@@ -329,7 +340,7 @@ td.mat-cell {
   overflow: hidden;
   flex-wrap: nowrap;
   color: #fff;
-    background-color: $bgmaincolor;
+  background-color: $bgmaincolor;
   .mat-raised-button {
     margin-left: 5pt;
     min-width: 0 !important;
@@ -381,7 +392,7 @@ p {
   display: flex;
   align-items: center;
   background-color: $menucolor;
-  color: white; 
+  color: white;
   @include font-size-7-100;
   font-weight: bold;
 }
@@ -553,8 +564,8 @@ footer a {
   background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
   margin-left: 4px;
   font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
-    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol;
 }
 
 .github-star-badge:hover {

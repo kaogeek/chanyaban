@@ -1,3 +1,10 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div class="app-list-source">
     <mat-drawer-container class="example-container" [hasBackdrop]="true">
         <mat-drawer #drawer [mode]="'over'" [position]="'end'" [disableClose]="true">
@@ -11,36 +18,45 @@
 
                         <mat-form-field class="example-form-field">
                             <input matInput type="text" placeholder="รูป *" [(ngModel)]="dataForm.image">
-                            <button mat-button *ngIf="dataForm.image" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.image=''">
+                            <button mat-button *ngIf="dataForm.image" matSuffix mat-icon-button aria-label="Clear"
+                                (click)="dataForm.image=''">
                                 <mat-icon>close</mat-icon>
                             </button>
                         </mat-form-field>
 
                         <mat-form-field class="example-form-field">
                             <input matInput type="text" placeholder="ชื่อแหล่งที่มา *" [(ngModel)]="dataForm.name">
-                            <button mat-button *ngIf="dataForm.name" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.name=''">
+                            <button mat-button *ngIf="dataForm.name" matSuffix mat-icon-button aria-label="Clear"
+                                (click)="dataForm.name=''">
                                 <mat-icon>close</mat-icon>
                             </button>
                         </mat-form-field>
 
-                        <admin-autocomp [facade]="newsAgencyFacade" [title]="'สือ *'" [data]="dataForm" [field]="'newsAgency'"></admin-autocomp>
+                        <admin-autocomp [facade]="newsAgencyFacade" [title]="'สือ *'" [data]="dataForm"
+                            [field]="'newsAgency'"></admin-autocomp>
 
-                        <admin-autocomp [facade]="sourceTypeFacade" [title]="'ประเภทแหล่งที่มา *'" [data]="dataForm" [field]="'sourceType'" (select)="selectedSourceType($event)"
-                            [isDisabled]="isSourceType"></admin-autocomp>
+                        <admin-autocomp [facade]="sourceTypeFacade" [title]="'ประเภทแหล่งที่มา *'" [data]="dataForm"
+                            [field]="'sourceType'" (select)="selectedSourceType($event)" [isDisabled]="isSourceType">
+                        </admin-autocomp>
 
-                        <admin-autocomp [facade]="newsCategoryFacade" [title]="'หมวดหมู่ข่าว *'" [data]="dataForm" [field]="'newsCategory'"></admin-autocomp>
+                        <admin-autocomp [facade]="newsCategoryFacade" [title]="'หมวดหมู่ข่าว *'" [data]="dataForm"
+                            [field]="'newsCategory'"></admin-autocomp>
 
-                        <admin-autocomp [facade]="countryFacade" [title]="'ประเทศ *'" [data]="dataForm" [field]="'country'"></admin-autocomp>
+                        <admin-autocomp [facade]="countryFacade" [title]="'ประเทศ *'" [data]="dataForm"
+                            [field]="'country'"></admin-autocomp>
 
-                        <ng-container *ngIf="selectSourceType && (selectSourceType.name === 'facebook' || selectSourceType.name === 'twitter')">
+                        <ng-container
+                            *ngIf="selectSourceType && (selectSourceType.name === 'facebook' || selectSourceType.name === 'twitter')">
                             <mat-form-field class="example-form-field">
                                 <input matInput type="text" placeholder="ลิงค์ *" [(ngModel)]="dataForm.link">
-                                <button mat-button *ngIf="dataForm.link" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.link=''">
+                                <button mat-button *ngIf="dataForm.link" matSuffix mat-icon-button aria-label="Clear"
+                                    (click)="dataForm.link=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
-                            <button *ngIf="selectSourceType && selectSourceType.name" mat-raised-button class="btn-test-source" (click)="clickTestSocial()">
+                            <button *ngIf="selectSourceType && selectSourceType.name" mat-raised-button
+                                class="btn-test-source" (click)="clickTestSocial()">
                                 <div>
                                     test {{selectSourceType.name}}
                                 </div>
@@ -58,49 +74,62 @@
                             <h3>หัวข่าว</h3>
                             <mat-form-field class="example-form-field">
                                 <input matInput type="text" placeholder="ลิงค์ *" [(ngModel)]="dataForm.link">
-                                <button mat-button *ngIf="dataForm.link" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.link=''">
+                                <button mat-button *ngIf="dataForm.link" matSuffix mat-icon-button aria-label="Clear"
+                                    (click)="dataForm.link=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="selector หัวข่าว *" [(ngModel)]="dataForm.selectorUpdate.find">
-                                <button mat-button *ngIf="dataForm.selectorUpdate.find" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorUpdate.find=''">
+                                <input matInput type="text" placeholder="selector หัวข่าว *"
+                                    [(ngModel)]="dataForm.selectorUpdate.find">
+                                <button mat-button *ngIf="dataForm.selectorUpdate.find" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorUpdate.find=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="selector ลิงค์่ข่าว *" [(ngModel)]="dataForm.selectorUpdate.setLink">
-                                <button mat-button *ngIf="dataForm.selectorUpdate.setLink" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorUpdate.setLink=''">
+                                <input matInput type="text" placeholder="selector ลิงค์่ข่าว *"
+                                    [(ngModel)]="dataForm.selectorUpdate.setLink">
+                                <button mat-button *ngIf="dataForm.selectorUpdate.setLink" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorUpdate.setLink=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="paginate" [(ngModel)]="dataForm.selectorUpdate.paginate">
-                                <button mat-button *ngIf="dataForm.selectorUpdate.paginate" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorUpdate.paginate=''">
+                                <input matInput type="text" placeholder="paginate"
+                                    [(ngModel)]="dataForm.selectorUpdate.paginate">
+                                <button mat-button *ngIf="dataForm.selectorUpdate.paginate" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorUpdate.paginate=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="number" placeholder="จำนวนหน้า" [(ngModel)]="dataForm.selectorUpdate.pageLimit">
-                                <button mat-button *ngIf="dataForm.selectorUpdate.pageLimit" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorUpdate.pageLimit=''">
+                                <input matInput type="number" placeholder="จำนวนหน้า"
+                                    [(ngModel)]="dataForm.selectorUpdate.pageLimit">
+                                <button mat-button *ngIf="dataForm.selectorUpdate.pageLimit" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorUpdate.pageLimit=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="Pre Append Link" [(ngModel)]="dataForm.selectorUpdate.preAddLink">
-                                <button mat-button *ngIf="dataForm.selectorUpdate.preAddLink" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorUpdate.preAddLink=''">
+                                <input matInput type="text" placeholder="Pre Append Link"
+                                    [(ngModel)]="dataForm.selectorUpdate.preAddLink">
+                                <button mat-button *ngIf="dataForm.selectorUpdate.preAddLink" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorUpdate.preAddLink=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="Append Link" [(ngModel)]="dataForm.selectorUpdate.addLink">
-                                <button mat-button *ngIf="dataForm.selectorUpdate.addLink" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorUpdate.addLink=''">
+                                <input matInput type="text" placeholder="Append Link"
+                                    [(ngModel)]="dataForm.selectorUpdate.addLink">
+                                <button mat-button *ngIf="dataForm.selectorUpdate.addLink" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorUpdate.addLink=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
@@ -119,85 +148,114 @@
                                 </ng-container>
                             </button>
 
-                            <br><br><h3>เนื้อข่าว</h3>
+                            <br><br>
+                            <h3>เนื้อข่าว</h3>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="selector เนื้อข่าว *" [(ngModel)]="dataForm.selectorData.find">
-                                <button mat-button *ngIf="dataForm.selectorData.find" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorData.find=''">
+                                <input matInput type="text" placeholder="selector เนื้อข่าว *"
+                                    [(ngModel)]="dataForm.selectorData.find">
+                                <button mat-button *ngIf="dataForm.selectorData.find" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorData.find=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="title *" [(ngModel)]="dataForm.selectorData.setData.title">
-                                <button mat-button *ngIf="dataForm.selectorData.setData.title" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorData.setData.title=''">
+                                <input matInput type="text" placeholder="title *"
+                                    [(ngModel)]="dataForm.selectorData.setData.title">
+                                <button mat-button *ngIf="dataForm.selectorData.setData.title" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorData.setData.title=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="img *" [(ngModel)]="dataForm.selectorData.setData.img">
-                                <button mat-button *ngIf="dataForm.selectorData.setData.img" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorData.setData.img=''">
+                                <input matInput type="text" placeholder="img *"
+                                    [(ngModel)]="dataForm.selectorData.setData.img">
+                                <button mat-button *ngIf="dataForm.selectorData.setData.img" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorData.setData.img=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="preAddLinkImg" [(ngModel)]="dataForm.selectorData.preAddLinkImg">
-                                <button mat-button *ngIf="dataForm.selectorData.preAddLinkImg" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorData.preAddLinkImg=''">
+                                <input matInput type="text" placeholder="preAddLinkImg"
+                                    [(ngModel)]="dataForm.selectorData.preAddLinkImg">
+                                <button mat-button *ngIf="dataForm.selectorData.preAddLinkImg" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorData.preAddLinkImg=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="content *" [(ngModel)]="dataForm.selectorData.setData.content">
-                                <button mat-button *ngIf="dataForm.selectorData.setData.content" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorData.setData.content=''">
+                                <input matInput type="text" placeholder="content *"
+                                    [(ngModel)]="dataForm.selectorData.setData.content">
+                                <button mat-button *ngIf="dataForm.selectorData.setData.content" matSuffix
+                                    mat-icon-button aria-label="Clear"
+                                    (click)="dataForm.selectorData.setData.content=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="date *" [(ngModel)]="dataForm.selectorData.setData.date">
-                                <button mat-button *ngIf="dataForm.selectorData.setData.date" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorData.setData.date=''">
+                                <input matInput type="text" placeholder="date *"
+                                    [(ngModel)]="dataForm.selectorData.setData.date">
+                                <button mat-button *ngIf="dataForm.selectorData.setData.date" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorData.setData.date=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
-                            <mat-slide-toggle class="convert-year" [(ngModel)]="dataForm.selectorData.configDate.isConvert">
+                            <mat-slide-toggle class="convert-year"
+                                [(ngModel)]="dataForm.selectorData.configDate.isConvert">
                                 เปลี่ยน ค.ศ. เป็น พ.ศ.
                             </mat-slide-toggle><br>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="format date" [(ngModel)]="dataForm.selectorData.configDate.format">
-                                <button mat-button *ngIf="dataForm.selectorData.configDate.format" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorData.configDate.format=''">
+                                <input matInput type="text" placeholder="format date"
+                                    [(ngModel)]="dataForm.selectorData.configDate.format">
+                                <button mat-button *ngIf="dataForm.selectorData.configDate.format" matSuffix
+                                    mat-icon-button aria-label="Clear"
+                                    (click)="dataForm.selectorData.configDate.format=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="locale" [(ngModel)]="dataForm.selectorData.configDate.locale">
-                                <button mat-button *ngIf="dataForm.selectorData.configDate.locale" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorData.configDate.locale=''">
+                                <input matInput type="text" placeholder="locale"
+                                    [(ngModel)]="dataForm.selectorData.configDate.locale">
+                                <button mat-button *ngIf="dataForm.selectorData.configDate.locale" matSuffix
+                                    mat-icon-button aria-label="Clear"
+                                    (click)="dataForm.selectorData.configDate.locale=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="tag" [(ngModel)]="dataForm.selectorData.setData.tags">
-                                <button mat-button *ngIf="dataForm.selectorData.setData.tags" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorData.setData.tags=''">
+                                <input matInput type="text" placeholder="tag"
+                                    [(ngModel)]="dataForm.selectorData.setData.tags">
+                                <button mat-button *ngIf="dataForm.selectorData.setData.tags" matSuffix mat-icon-button
+                                    aria-label="Clear" (click)="dataForm.selectorData.setData.tags=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="รูปนักข่าว" [(ngModel)]="dataForm.selectorData.setData.journalistImage">
-                                <button mat-button *ngIf="dataForm.selectorData.setData.journalistImage" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorData.setData.journalistImage=''">
+                                <input matInput type="text" placeholder="รูปนักข่าว"
+                                    [(ngModel)]="dataForm.selectorData.setData.journalistImage">
+                                <button mat-button *ngIf="dataForm.selectorData.setData.journalistImage" matSuffix
+                                    mat-icon-button aria-label="Clear"
+                                    (click)="dataForm.selectorData.setData.journalistImage=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
 
                             <mat-form-field class="example-form-field">
-                                <input matInput type="text" placeholder="ชื่อนักข่าว" [(ngModel)]="dataForm.selectorData.setData.journalistName">
-                                <button mat-button *ngIf="dataForm.selectorData.setData.journalistName" matSuffix mat-icon-button aria-label="Clear" (click)="dataForm.selectorData.setData.journalistName=''">
+                                <input matInput type="text" placeholder="ชื่อนักข่าว"
+                                    [(ngModel)]="dataForm.selectorData.setData.journalistName">
+                                <button mat-button *ngIf="dataForm.selectorData.setData.journalistName" matSuffix
+                                    mat-icon-button aria-label="Clear"
+                                    (click)="dataForm.selectorData.setData.journalistName=''">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </mat-form-field>
@@ -218,7 +276,8 @@
                         </ng-container>
 
 
-                        <br><br><h3>ความถี่</h3>
+                        <br><br>
+                        <h3>ความถี่</h3>
 
                         <mat-form-field>
                             <!-- <mat-label> *</mat-label> -->
@@ -239,8 +298,9 @@
         </mat-drawer>
         <mat-drawer-content>
             <div class="main-content">
-                <admin-table-component #table [facade]="sourceFacade" [title]="'แหล่งที่มา'" [fieldTable]="fieldTable" [actions]="actions"
-                    [fieldSearch]="fieldSearch" (runTest)="clickRunTest($event)" (stopTest)="clickStopTest($event)" (create)="clickCreateForm($event)" (edit)="clickEditForm($event)"
+                <admin-table-component #table [facade]="sourceFacade" [title]="'แหล่งที่มา'" [fieldTable]="fieldTable"
+                    [actions]="actions" [fieldSearch]="fieldSearch" (runTest)="clickRunTest($event)"
+                    (stopTest)="clickStopTest($event)" (create)="clickCreateForm($event)" (edit)="clickEditForm($event)"
                     (delete)="clickDelete($event)"></admin-table-component>
             </div>
         </mat-drawer-content>

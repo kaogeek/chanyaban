@@ -1,18 +1,27 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div id="home" class="app-home">
-    <autocomp-search id="searchKeyword" class="wrapper-search-keyword" [isBackDorpMobile]="false" [isAddSearch]="false" [searchKeywordAll]="[]"></autocomp-search>
+    <autocomp-search id="searchKeyword" class="wrapper-search-keyword" [isBackDorpMobile]="false" [isAddSearch]="false"
+        [searchKeywordAll]="[]"></autocomp-search>
     <div class="wrapper-brand">
-        <img src="../../../../assets/img/logo.svg" alt=""> 
-         <span class="title-brand">
-             จรรยาบรรณ
-         </span> 
+        <img src="../../../../assets/img/logo.svg" alt="">
+        <span class="title-brand">
+            จรรยาบรรณ
+        </span>
         <span class="trend-date">
             <span class="btn-refresh">
                 <ng-container *ngIf="isRefresh; else elseIsRefresh">
                     <mat-spinner></mat-spinner>
                 </ng-container>
                 <ng-template #elseIsRefresh>
-                    <svg (click)="refreshTrending()" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        x="0px" y="0px" width="438.542px" height="438.542px" viewBox="0 0 438.542 438.542" style="enable-background:new 0 0 438.542 438.542;"
+                    <svg (click)="refreshTrending()" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="438.542px" height="438.542px"
+                        viewBox="0 0 438.542 438.542" style="enable-background:new 0 0 438.542 438.542;"
                         xml:space="preserve">
                         <g>
                             <path d="M427.408,19.697c-7.803-3.23-14.463-1.902-19.986,3.999l-37.116,36.834C349.94,41.305,326.672,26.412,300.5,15.848
@@ -35,11 +44,13 @@
         </span>
     </div>
     <ng-container *ngFor="let trending of trendings">
-        <div class="trending" [ngStyle]="{'animation-duration': trending.style.animation,'flexDirection': trending.style.flexDirection, 'left': trending.style.left+'px', 'top': trending.style.top+'px' }">
+        <div class="trending"
+            [ngStyle]="{'animation-duration': trending.style.animation,'flexDirection': trending.style.flexDirection, 'left': trending.style.left+'px', 'top': trending.style.top+'px' }">
             <img class="image" src="{{trending.image}}" (click)="clickNewsAgency(trending.name)">
             <div class="keyword-entity" (click)="clickTrending(trending.param)">
                 <span class="arrow" [class.left]="trending.arrow"></span>
-                <img class="avatar" *ngIf="trending.avatar" src="{{trending.avatar}}" alt=""> {{trending.data | slice:0:genText(trending)}}
+                <img class="avatar" *ngIf="trending.avatar" src="{{trending.avatar}}" alt=""> {{trending.data |
+                slice:0:genText(trending)}}
                 <!-- {{trending.data}} -->
                 <span class="cursor" *ngIf="trending.data.length > trending.genText"></span>
             </div>

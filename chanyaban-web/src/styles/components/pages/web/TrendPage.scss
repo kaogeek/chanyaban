@@ -1,4 +1,11 @@
-app-trend { 
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
+app-trend {
   > .footer {
     display: flex;
     justify-content: center;
@@ -9,4 +16,4 @@ app-trend {
     font-weight: bold;
     @include font-size-8-300;
   }
-}  
+}

@@ -1,8 +1,15 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListSource, ListConfig, ListKeyword, ListNewsAgency, ListNewsCategory, ListJournalist, ListNews, ListPersona, ListPersonaType, ListSourceType, AdminMainPage, LoginPage, ListManageKeyword } from './components/components';
 
-const routes: Routes = [ 
+const routes: Routes = [
   {
     path: LoginPage.PAGE_NAME,
     component: LoginPage
@@ -42,15 +49,15 @@ const routes: Routes = [
       {
         path: "",
         component: ListNews,
-      }, 
+      },
       {
         path: ListNews.PAGE_NAME,
         component: ListNews,
-      }, 
+      },
       {
         path: ListKeyword.PAGE_NAME,
         component: ListKeyword,
-      }, 
+      },
       {
         path: ListJournalist.PAGE_NAME,
         component: ListJournalist,

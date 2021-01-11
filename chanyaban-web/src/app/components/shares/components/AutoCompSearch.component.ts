@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { fromEvent } from 'rxjs';
@@ -123,7 +130,7 @@ export class AutoCompSearch implements OnInit {
         error: true
       }
     });
-  } 
+  }
 
   public setLastDate(data: any): void {
     for (const d of data) {
@@ -131,7 +138,7 @@ export class AutoCompSearch implements OnInit {
         d.lastDate = moment(d.lastDate).locale("th").fromNow();
       } else {
         d.lastDate = moment(new Date()).locale("th").fromNow();
-      } 
+      }
     }
   }
 
@@ -157,7 +164,7 @@ export class AutoCompSearch implements OnInit {
   }
 
   public closed(): void {
-    this.isFocus = false; 
+    this.isFocus = false;
   }
 
   public isHas(data: any): boolean {

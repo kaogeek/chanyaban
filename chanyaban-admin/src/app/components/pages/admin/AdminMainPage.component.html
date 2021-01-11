@@ -1,3 +1,10 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div class="toolbar" role="banner">
   <img width="40" alt="Angular Logo" src="../assets/img/logo.svg" />
   <span>จรรยาบรรณ</span>
@@ -8,8 +15,8 @@
 <div class="wrapper-body">
   <mat-sidenav-container class="example-container" style="overflow: hidden;">
     <mat-sidenav class="admin-sidenav" #sidenav mode="side" [opened]="true">
-      <div class="wrapper-side-menu"> 
-          <admin-menu-item *ngFor="let menu of menuItems" [menu]="menu" [isOpen]="false"></admin-menu-item> 
+      <div class="wrapper-side-menu">
+        <admin-menu-item *ngFor="let menu of menuItems" [menu]="menu" [isOpen]="false"></admin-menu-item>
       </div>
     </mat-sidenav>
     <mat-sidenav-content>

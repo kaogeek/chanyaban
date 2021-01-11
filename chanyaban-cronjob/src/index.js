@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 const Moment = require('moment/moment');
 const MomentRange = require('moment-range');
 const moment = MomentRange.extendMoment(Moment);
@@ -1213,51 +1220,51 @@ async function runScrapingFacebook(source) {
         //         resolve(listNews);
         //     });
 
-            axios.get(source.link).then(async (response) => {
-                if (response.status === 200) {
-                    const html = response.data;
-                    const $ = cheerio.load(html);
-                    $('#pagelet_timeline_main_column div._1dwg._1w_m._q7o').each(function (i, elem) {
-                        var tags = [];
-                        $(this).find('.text_exposed_show ._58cm').each(function (i, elem) {
-                            if ($(this).text().trim() !== "") {
-                                tags.push($(this).text().trim());
-                            }
-                        });
-                        var post = $(this).find('.userContent').text().trim();
-                        var title = post.substring(0, 50);
-                        news = {
-                            keywords: {},
-                            source: source._id,
-                            title: title,
-                            img: "",
-                            content: $(this).find('.userContent').text().trim(),
-                            date: new Date(Number($(this).find('div._5pcp._5lel._2jyu._232_ abbr').attr('data-utime') * 1000)),
-                            link: "https://facebook.com/" + $(this).find("a._5pcq").attr('href'),
-                            tags: tags,
-                            createdDate: new Date(),
-                            modifiedDate: new Date()
-                        }; 
-                        if (news.date.toString() === "Invalid Date") {
-                            news.date = new Date();
-                        }
-                        if (news.title) {
-                            listNews.push(news);
+        axios.get(source.link).then(async (response) => {
+            if (response.status === 200) {
+                const html = response.data;
+                const $ = cheerio.load(html);
+                $('#pagelet_timeline_main_column div._1dwg._1w_m._q7o').each(function (i, elem) {
+                    var tags = [];
+                    $(this).find('.text_exposed_show ._58cm').each(function (i, elem) {
+                        if ($(this).text().trim() !== "") {
+                            tags.push($(this).text().trim());
                         }
                     });
-        if (listNews.length === 0) {
-        return      reject({error: "not usable", message: "not usable"});
-        }
-                    await Source.findByIdAndUpdate(source._id, { isScraping: false,  isUsable: true });
-                    for (const news of listNews) { 
-                        if (news.link) {
-                            await AddNews(news);
-                        }
+                    var post = $(this).find('.userContent').text().trim();
+                    var title = post.substring(0, 50);
+                    news = {
+                        keywords: {},
+                        source: source._id,
+                        title: title,
+                        img: "",
+                        content: $(this).find('.userContent').text().trim(),
+                        date: new Date(Number($(this).find('div._5pcp._5lel._2jyu._232_ abbr').attr('data-utime') * 1000)),
+                        link: "https://facebook.com/" + $(this).find("a._5pcq").attr('href'),
+                        tags: tags,
+                        createdDate: new Date(),
+                        modifiedDate: new Date()
+                    };
+                    if (news.date.toString() === "Invalid Date") {
+                        news.date = new Date();
                     }
-                    console.log("final done.");
-                    resolve(listNews);
+                    if (news.title) {
+                        listNews.push(news);
+                    }
+                });
+                if (listNews.length === 0) {
+                    return reject({ error: "not usable", message: "not usable" });
                 }
-            }, (error) => Source.findByIdAndUpdate(source._id, { isScraping: false, isUsable: false }));
+                await Source.findByIdAndUpdate(source._id, { isScraping: false, isUsable: true });
+                for (const news of listNews) {
+                    if (news.link) {
+                        await AddNews(news);
+                    }
+                }
+                console.log("final done.");
+                resolve(listNews);
+            }
+        }, (error) => Source.findByIdAndUpdate(source._id, { isScraping: false, isUsable: false }));
     });
 }
 
@@ -1315,7 +1322,7 @@ async function runScrapingTwitter(source) {
                 resolve(listNews);
             });
     });
-} 
+}
 
 async function AddNews(news) {
     const qNews = await News.findOne({ link: news.link });

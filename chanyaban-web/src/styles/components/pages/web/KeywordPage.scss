@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 app-keyword {
   .icon-new-tab {
     cursor: pointer;
@@ -147,7 +154,7 @@ app-keyword {
     100% {
       top: 50pt;
     }
-  } 
+  }
   .wrapper-path-keyword-top {
     display: none;
     visibility: hidden;
@@ -284,12 +291,12 @@ app-keyword {
                 }
               }
             }
-          } 
-        } 
+          }
+        }
       }
       > .wrapper-right {
         width: 40%;
-        @include border-left; 
+        @include border-left;
       }
     }
   }
@@ -404,7 +411,7 @@ app-keyword {
         }
       }
     }
-  } 
+  }
 
   > .footer {
     display: flex;
@@ -467,19 +474,19 @@ app-keyword {
       > .wrapper-overview {
         width: calc(100% - 40pt) !important;
         padding: 20pt !important;
-      }  
+      }
     }
     > .wrapper-right {
       width: 100% !important;
-      border-left: unset !important; 
+      border-left: unset !important;
     }
-  }  
+  }
 }
 
 @media (max-width: $large) {
   .wrapper-chart > .chart {
     min-height: 300pt;
-  } 
+  }
 }
 
 @media (max-width: $medium) {
@@ -545,7 +552,7 @@ app-keyword {
   .show-wrapper-path {
     top: 0;
     animation: unset !important;
-    padding: 15pt 0 15pt 15pt !important; 
+    padding: 15pt 0 15pt 15pt !important;
   }
   .wrapper-main {
     > .wrapper-left {
@@ -574,10 +581,10 @@ app-keyword {
             width: 15pt !important;
             height: 15pt !important;
           }
-        } 
-      } 
+        }
+      }
     }
-    > .wrapper-right {  
+    > .wrapper-right {
     }
   }
   .wrapper-filter-news {
@@ -601,7 +608,7 @@ app-keyword {
         max-width: 85% !important;
       }
     }
-  } 
+  }
 }
 
 @media (max-width: $small) {
@@ -663,9 +670,9 @@ app-keyword {
             }
           }
         }
-      } 
+      }
     }
-    > .wrapper-right { 
+    > .wrapper-right {
     }
   }
   .wrapper-filter-news {
@@ -678,5 +685,5 @@ app-keyword {
     > .wrapper-wrapper-news-agency-select {
       padding: 10pt 0 !important;
     }
-  } 
+  }
 }

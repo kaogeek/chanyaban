@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';  
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import * as moment from 'moment';
 import { Router } from '@angular/router';
 import { AbstractNewTab } from '../../pages/web/AbstractNewTab';
@@ -36,7 +43,7 @@ export class TrendNewsAgencyChartAndCompare extends AbstractNewTab implements On
   @Input()
   public isLoadingCompare: boolean = false;
   @Output()
-  public selectedNewsAgencyCompare: EventEmitter<any> = new EventEmitter(); 
+  public selectedNewsAgencyCompare: EventEmitter<any> = new EventEmitter();
 
   public listChartAgenJouran: any = {
     newsAgencys: [],
@@ -47,8 +54,8 @@ export class TrendNewsAgencyChartAndCompare extends AbstractNewTab implements On
     super(router);
   }
 
-  public ngOnInit() { 
-  } 
+  public ngOnInit() {
+  }
 
   public selectedNewsAgencyChart(): void {
     if (this.selectNewsAgencyChart === "ถูกพูดถึงมากสุดโดย") {

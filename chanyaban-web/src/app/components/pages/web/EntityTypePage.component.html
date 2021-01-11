@@ -1,4 +1,12 @@
-<menu-top [isAddSearch]="false" [selectedDate]="selectedDate" [keepDate]="data.keepDate" [searchKeywordAll]="[]" (changeSelectdate)="changeSelectdate($event)"></menu-top>
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
+<menu-top [isAddSearch]="false" [selectedDate]="selectedDate" [keepDate]="data.keepDate" [searchKeywordAll]="[]"
+    (changeSelectdate)="changeSelectdate($event)"></menu-top>
 <ng-container *ngIf="!entityType && isInitial; else elseNotFind">
     <div class="wrapper-not-find">
         <div class="not-find">
@@ -31,7 +39,8 @@
                             </div>
                         </span>
                     </div>
-                    <card-counter-source-type [trendingSourceType]="data.trendingSourceType" [totalNews]="data.totalNews"></card-counter-source-type>
+                    <card-counter-source-type [trendingSourceType]="data.trendingSourceType"
+                        [totalNews]="data.totalNews"></card-counter-source-type>
                 </div>
             </div>
             <div class="wrapper-right">
@@ -45,10 +54,11 @@
         <span class="subline">ทั้งหมดที่กำลังอยู่ในกระแส</span>
     </div>
 
-    <card-list-trend [listTrending]="data.entitys" [keywordTop]="data.keywordTop" [newsAgencys]="data.newsAgencys" [listEntityRelate]="data.listEntityRelate"
-        [selectedDate]="selectedDate" [isLoadTrend]="isLoadEntitys" [isLoadNewsAgency]="isLoadNewsAgency" [isLoadKeywordTop]="isLoadKeywordTop"
-        [isLoadMoreTrend]="isLoadMoreEntitys" [showLoadMoreTrend]="showLoadMoreEntitys" (clickLoadMoreTrend)="loadDataPageEntitys()"
-        (clickTrendDetail)="clickTrendDetail($event)"></card-list-trend>
+    <card-list-trend [listTrending]="data.entitys" [keywordTop]="data.keywordTop" [newsAgencys]="data.newsAgencys"
+        [listEntityRelate]="data.listEntityRelate" [selectedDate]="selectedDate" [isLoadTrend]="isLoadEntitys"
+        [isLoadNewsAgency]="isLoadNewsAgency" [isLoadKeywordTop]="isLoadKeywordTop"
+        [isLoadMoreTrend]="isLoadMoreEntitys" [showLoadMoreTrend]="showLoadMoreEntitys"
+        (clickLoadMoreTrend)="loadDataPageEntitys()" (clickTrendDetail)="clickTrendDetail($event)"></card-list-trend>
 </ng-template>
 
 <div class="footer">

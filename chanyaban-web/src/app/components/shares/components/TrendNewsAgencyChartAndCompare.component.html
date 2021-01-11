@@ -1,3 +1,10 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div class="trend-news-agency-chart-compare">
     <div class="wrapper-newsagency-left">
         <div class="header">
@@ -9,7 +16,8 @@
                 </mat-select>
             </mat-form-field>
         </div>
-        <div class="wrapper-list" *ngIf="listChartAgenJouran.newsAgencys && listChartAgenJouran.newsAgencys.length > 0" [class.full-list]="!listChartAgenJouran.jouranlist || listChartAgenJouran.jouranlist.length === 0">
+        <div class="wrapper-list" *ngIf="listChartAgenJouran.newsAgencys && listChartAgenJouran.newsAgencys.length > 0"
+            [class.full-list]="!listChartAgenJouran.jouranlist || listChartAgenJouran.jouranlist.length === 0">
             <div class="item" *ngFor="let newsAgency of listChartAgenJouran.newsAgencys; let i=index">
                 <div class="chart" id="newsagency_chart{{i+1}}"></div>
                 <div class="newsagency-detail" (click)="newTabNewsAgency(newsAgency.name)">
@@ -25,7 +33,8 @@
                 </div>
             </div>
         </div>
-        <div class="wrapper-list" *ngIf="listChartAgenJouran.jouranlist && listChartAgenJouran.jouranlist.length > 0" [class.full-list]="!listChartAgenJouran.newsAgencys || listChartAgenJouran.newsAgencys.length === 0">
+        <div class="wrapper-list" *ngIf="listChartAgenJouran.jouranlist && listChartAgenJouran.jouranlist.length > 0"
+            [class.full-list]="!listChartAgenJouran.newsAgencys || listChartAgenJouran.newsAgencys.length === 0">
             <div class="item" *ngFor="let jouranlist of listChartAgenJouran.jouranlist">
                 <div class="wrapper-journalist">
                     <div class="journalist-detail">

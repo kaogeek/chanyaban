@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import * as moment from 'moment';
 
@@ -28,24 +35,24 @@ export class MenuTop implements OnInit {
   @Input()
   public keepDate: Date;
   @Input()
-  public selectedDate: any; 
+  public selectedDate: any;
   @Output()
   public addSearch: EventEmitter<any> = new EventEmitter;
   @Output()
   public changeSelectdate: EventEmitter<any> = new EventEmitter;
   public rangesDate: any = {
-      'วันนี้': [moment().set({ hour: 0, minute: 0, second: 0, millisecond: 0 }), moment()],
-      'เมื่อวาน': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-      '7 วันที่แล้ว': [moment().subtract(6, 'days'), moment()],
-      '30 วันที่แล้ว': [moment().subtract(29, 'days'), moment()],
-      'เดือนนี้': [moment().startOf('month'), moment().endOf('month')],
-      'เดือนที่แล้ว': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+    'วันนี้': [moment().set({ hour: 0, minute: 0, second: 0, millisecond: 0 }), moment()],
+    'เมื่อวาน': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+    '7 วันที่แล้ว': [moment().subtract(6, 'days'), moment()],
+    '30 วันที่แล้ว': [moment().subtract(29, 'days'), moment()],
+    'เดือนนี้': [moment().startOf('month'), moment().endOf('month')],
+    'เดือนที่แล้ว': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
   };
   public localeDate: any = {
-      applyLabel: 'ตกลง',
-      format: 'DD-MM-YY',
-      separator: ' ถึง ',
-      cancelLabel: 'ยกเลิก'
+    applyLabel: 'ตกลง',
+    format: 'DD-MM-YY',
+    separator: ' ถึง ',
+    cancelLabel: 'ยกเลิก'
   };
 
 

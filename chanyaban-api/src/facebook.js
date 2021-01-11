@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 const Moment = require('moment/moment');
 const MomentRange = require('moment-range');
 const moment = MomentRange.extendMoment(Moment);
@@ -30,7 +37,7 @@ axios.get('https://www.facebook.com/pg/MoveForwardPartyThailand/posts/?ref=page_
                 var post = $(this).find('.userContent').text().trim();
                 // var postSplit = post.split("\n");
                 var postSplit = post.split("]");
-                var title = postSplit[0]+"]";
+                var title = postSplit[0] + "]";
                 // if (title.length > 100) {
                 //     postSplit = post.split(" ");
                 //     title = postSplit[0];

@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 const fs = require('fs')
 const youtubedl = require('youtube-dl')
 const { YoutubeDataAPI } = require("youtube-v3-api")
@@ -84,9 +91,9 @@ async function downloadYoutube(channelId, videoId) {
 
   // Will be called when the download starts.
   video.on('info', function (info) {
-    console.log('Download started: '); 
+    console.log('Download started: ');
     console.log('filename: ' + info._filename);
-    console.log('size: ' + info.size); 
+    console.log('size: ' + info.size);
     if (fs.existsSync("./src/resources/" + channelId)) {
       // Do something
       video.pipe(fs.createWriteStream("./src/resources/" + channelId + "/" + info._filename));
@@ -101,7 +108,7 @@ async function downloadYoutube(channelId, videoId) {
       });
     }
   });
-} 
+}
 
 // main().catch(console.error);
 
@@ -123,7 +130,7 @@ async function main() {
   const audio = {
     content: fs.readFileSync(fileName).toString('base64'),
   };
-  const config = { 
+  const config = {
     // encoding: 'FLAC',
     // sampleRateHertz: 48000,
     encoding: 'LINEAR16',
@@ -132,11 +139,11 @@ async function main() {
     // model: 'audio'
     languageCode: 'en-US',
     // languageCode: 'th-TH',
-  };  
+  };
   const request = {
     audio: audio,
     config: config,
-  }; 
+  };
 
   // Detects speech in the audio file. This creates a recognition job that you
   // can wait for now, or get its result later.
@@ -166,7 +173,7 @@ function infiniteStream(
   const streamingLimit = 10000; // ms - set to low number for demo purposes
 
   const chalk = require('chalk');
-  const {Writable} = require('stream');
+  const { Writable } = require('stream');
 
   // Node-Record-lpcm16
   const recorder = require('node-record-lpcm16');
@@ -181,7 +188,7 @@ function infiniteStream(
     encoding: encoding,
     sampleRateHertz: sampleRateHertz,
     languageCode: languageCode,
-  }; 
+  };
 
   const request = {
     config,

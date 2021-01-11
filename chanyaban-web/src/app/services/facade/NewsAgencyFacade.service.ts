@@ -1,17 +1,23 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { AuthenManager } from '../AuthenManager.service';
-import { AbstractFacade } from "./AbstractFacade"; 
+import { AbstractFacade } from "./AbstractFacade";
 import { ObservableManager } from '../ObservableManager.service';
 
 @Injectable()
-export class NewsAgencyFacade extends AbstractFacade { 
-
+export class NewsAgencyFacade extends AbstractFacade {
 
   constructor(http: HttpClient, authMgr: AuthenManager,
-  private observableManager: ObservableManager) {
-    super("newsagency",http, authMgr); 
-  } 
+    private observableManager: ObservableManager) {
+    super("newsagency", http, authMgr);
+  }
 
   public findNewsAgencys(body: any): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -22,7 +28,7 @@ export class NewsAgencyFacade extends AbstractFacade {
         reject(error);
       });
     });
-  }  
+  }
 
   public getInfoCount(body: any): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -66,7 +72,7 @@ export class NewsAgencyFacade extends AbstractFacade {
         reject(error);
       });
     });
-  } 
+  }
 
   public getKeywordTop(body: any): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -110,7 +116,7 @@ export class NewsAgencyFacade extends AbstractFacade {
         reject(error);
       });
     });
-  } 
+  }
 
   public getSourcesRelate(body: any): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -121,5 +127,5 @@ export class NewsAgencyFacade extends AbstractFacade {
         reject(error);
       });
     });
-  } 
+  }
 }

@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 card-news-related {
   > .wrapper-list-news {
     display: flex;
@@ -26,8 +33,7 @@ card-news-related {
       top: 20pt;
       text-align: right;
       width: calc(100% - #{$padding-side-date-time * 2});
-      padding: $padding-top-date-time $padding-side-date-time
-        $padding-bottom-date-time;
+      padding: $padding-top-date-time $padding-side-date-time $padding-bottom-date-time;
       z-index: 100;
       @include font-size-8-300;
       font-weight: bold;
@@ -50,9 +56,7 @@ card-news-related {
       padding: 0 $padding-side-list-news;
       width: calc(100% - #{$padding-side-list-news * 2});
       > .wrapper-news {
-        width: calc(
-          50% - #{$padding-side-wrapper-news * 2 + $margin-side-wrapper-news}
-        );
+        width: calc(50% - #{$padding-side-wrapper-news * 2 + $margin-side-wrapper-news});
         padding: $padding-side-wrapper-news $padding-side-wrapper-news 15pt;
         &:hover {
           background-color: #3b3c40;

@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { ViewChild, Output, EventEmitter } from '@angular/core';
 import { Field, FieldTable, ActionTable, TableComponent, DialogWarningComponent } from '../shares/shares';
 import { MatDrawer, MatDialog } from '@angular/material';

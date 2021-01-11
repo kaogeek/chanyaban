@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 app-news-agency {
   .icon-new-tab {
     cursor: pointer;
@@ -314,19 +321,19 @@ app-news-agency {
               }
             }
           }
-        } 
+        }
         keyword-top-related {
-          > .wrapper-keyword-top-related { 
+          > .wrapper-keyword-top-related {
             > .header-keyword-top-related {
               height: 56pt;
               padding: unset;
             }
           }
-        } 
+        }
       }
       > .wrapper-right {
         width: 40%;
-        @include border-left; 
+        @include border-left;
         entity-top-related {
           > .entity-top-related {
             border-bottom: unset;
@@ -334,15 +341,15 @@ app-news-agency {
             > .wrapper-hedaer {
               height: 57pt;
             }
-            >.wrapper-list-entity { 
+            > .wrapper-list-entity {
               height: calc(100% - 57pt);
-              >.wrapper-swiper-pagination {
+              > .wrapper-swiper-pagination {
                 height: 57pt;
                 top: -57pt;
               }
             }
           }
-        } 
+        }
       }
     }
   }
@@ -457,7 +464,7 @@ app-news-agency {
         }
       }
     }
-  } 
+  }
 
   > .footer {
     display: flex;
@@ -520,7 +527,7 @@ app-news-agency {
       > .wrapper-overview {
         width: calc(100% - 40pt) !important;
         padding: 20pt !important;
-      } 
+      }
     }
     > .wrapper-right {
       width: 100% !important;
@@ -529,15 +536,15 @@ app-news-agency {
         > .entity-top-related {
           @include border-top;
         }
-      } 
+      }
     }
-  }  
+  }
 }
 
 @media (max-width: $large) {
   .wrapper-chart > .chart {
     min-height: 300pt;
-  } 
+  }
 }
 
 @media (max-width: $medium) {
@@ -633,9 +640,9 @@ app-news-agency {
             height: 15pt !important;
           }
         }
-      } 
+      }
     }
-    > .wrapper-right {  
+    > .wrapper-right {
     }
   }
   .wrapper-filter-news {
@@ -659,7 +666,7 @@ app-news-agency {
         max-width: 85% !important;
       }
     }
-  } 
+  }
 }
 
 @media (max-width: $small) {
@@ -721,9 +728,9 @@ app-news-agency {
             }
           }
         }
-      } 
+      }
     }
-    > .wrapper-right { 
+    > .wrapper-right {
     }
   }
   .wrapper-filter-news {
@@ -736,5 +743,5 @@ app-news-agency {
     > .wrapper-wrapper-news-agency-select {
       padding: 10pt 0 !important;
     }
-  } 
+  }
 }

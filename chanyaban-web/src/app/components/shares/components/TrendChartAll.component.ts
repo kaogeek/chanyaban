@@ -1,6 +1,13 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import * as moment from 'moment';
-import { OPTION_CHART_BAR, FORMAT_DATE } from '../Constants'; 
+import { OPTION_CHART_BAR, FORMAT_DATE } from '../Constants';
 
 declare var google: any;
 declare var $: any;

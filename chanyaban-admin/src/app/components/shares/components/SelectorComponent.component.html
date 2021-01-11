@@ -1,10 +1,17 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div style="display: flex;">
     <mat-form-field>
         <mat-label>{{title}}</mat-label>
         <mat-select [(value)]="data[field]">
             <mat-option *ngFor="let option of options" [value]="option.id">
                 {{option.name}}
-            </mat-option> 
+            </mat-option>
         </mat-select>
     </mat-form-field>
 </div>

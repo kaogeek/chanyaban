@@ -1,6 +1,13 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment'; 
+import { environment } from '../../environments/environment';
 import { ObservableManager } from './ObservableManager.service';
 
 const PAGE_USER: string = 'pageUser';
@@ -91,8 +98,8 @@ export class AuthenManager {
         reject(error);
       });
     });
-  } 
-  
+  }
+
   public getDefaultOptions(): any {
     let header = this.getDefaultHeader();
 

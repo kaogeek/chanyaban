@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 .autocomp-search {
   > .wrapper-autocomp {
     display: flex;
@@ -81,12 +88,12 @@
     > .wrapper-item {
       display: flex;
       align-items: center;
-      >.icon {
+      > .icon {
         display: flex;
-          width: 35pt;
-          img {
-            height: 25pt;
-          }
+        width: 35pt;
+        img {
+          height: 25pt;
+        }
       }
     }
   }

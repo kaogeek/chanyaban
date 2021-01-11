@@ -1,15 +1,22 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module'; 
+import { AppRoutingModule } from './app-routing.module';
 import { ColorChromeModule } from 'ngx-color/chrome';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular'; 
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { AppComponent } from './app.component'; 
+import { AppComponent } from './app.component';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import { SatDatepickerModule, SatNativeDateModule } from 'saturn-datepicker';
-import { 
+import {
   AdminMainPage,
   LoginPage,
   ListSource,
@@ -17,12 +24,12 @@ import {
   ListNewsCategory,
   ListNewsAgency,
   ListJournalist,
-  ListKeyword, 
+  ListKeyword,
   ListManageKeyword,
   ListPersona,
-  ListPersonaType, 
+  ListPersonaType,
   ListNews,
-  ListConfig, 
+  ListConfig,
   // shares
   MenuItem,
   TableComponent,
@@ -33,7 +40,7 @@ import {
   DialogInstanceComponent,
   DialogDeleteComponent,
   SelectorComponent,
-  AutoComp, 
+  AutoComp,
   AutoCompSelector,
   FormMap,
   SafePipe,
@@ -48,14 +55,14 @@ import {
   PersonaFacade,
   CountryFacade,
   PersonaTypeFacade,
-  NewsCategoryFacade, 
+  NewsCategoryFacade,
   NewsAgencyFacade,
   KeywordFacade,
   KeywordManagementFacade,
   JournalistFacade
 } from './services/services';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatCheckboxModule, MatButtonModule, MatInputModule, MatAutocompleteModule, MatDatepickerModule,
   MatFormFieldModule, MatRadioModule, MatSelectModule, MatSliderModule, MatGridListModule,
@@ -70,7 +77,7 @@ import { environment } from '../environments/environment';
 export const BOOSTRAP_CLASSES: any[] = [AppComponent];
 
 const COMPONENTS: any[] = [
-  AppComponent, 
+  AppComponent,
   AdminMainPage,
   LoginPage,
   ListSource,
@@ -78,12 +85,12 @@ const COMPONENTS: any[] = [
   ListNewsCategory,
   ListNewsAgency,
   ListJournalist,
-  ListKeyword, 
+  ListKeyword,
   ListManageKeyword,
   ListPersona,
-  ListPersonaType, 
+  ListPersonaType,
   ListNews,
-  ListConfig, 
+  ListConfig,
   // shares
   MenuItem,
   TableComponent,
@@ -94,7 +101,7 @@ const COMPONENTS: any[] = [
   DialogInstanceComponent,
   DialogDeleteComponent,
   SelectorComponent,
-  AutoComp, 
+  AutoComp,
   AutoCompSelector,
   FormMap,
 ];
@@ -134,9 +141,9 @@ const DIRECTIVE_CLASSES: any[] = [
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule,   
+    AppRoutingModule,
     ColorChromeModule,
-    CKEditorModule, 
+    CKEditorModule,
     DragDropModule,
     SatDatepickerModule, SatNativeDateModule,
     NgxDaterangepickerMd.forRoot(),

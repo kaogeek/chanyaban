@@ -1,3 +1,10 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <!-- <div id="navbar" class="menu-top">
     <div class="wrapper-brand" [routerLink]="'/home'">
         <img src="../../../../assets/img/logo.svg" alt="">
@@ -21,9 +28,8 @@
 </div> -->
 
 <menu-top [firstDay]="find.firstDay" [lastDay]="find.lastDay" [keywords]="find.keywords" [entitys]="find.entitys"
-[entityKeywords]="find.entityKeywords"
-[searchKeywordAll]="searchKeywordAll" 
-(addSearch)="clickAddSearch()" [selectedDate]="selectedDate" [keepDate]="data.keepDate" (changeSelectdate)="changeSelectdate($event)"></menu-top>
+    [entityKeywords]="find.entityKeywords" [searchKeywordAll]="searchKeywordAll" (addSearch)="clickAddSearch()"
+    [selectedDate]="selectedDate" [keepDate]="data.keepDate" (changeSelectdate)="changeSelectdate($event)"></menu-top>
 <ng-container *ngIf="notFind && notFind.length > 0 && isInitial; else elseNotFind">
     <div class="wrapper-not-find">
         <div class="not-find">
@@ -44,21 +50,24 @@
     </div>
 </ng-container>
 <ng-template #elseNotFind>
-    <div id="pathKeywordTop" class="wrapper-path-keyword-top" [ngStyle]="{'display': searchKeywordAll && searchKeywordAll.length > 0 ? flex : none}">
+    <div id="pathKeywordTop" class="wrapper-path-keyword-top"
+        [ngStyle]="{'display': searchKeywordAll && searchKeywordAll.length > 0 ? flex : none}">
         <div class="wrapper-path-keyword">
             <ng-container *ngFor="let keyEntity of searchKeywordAll; let i = index">
                 <span class="wrapper-path">
                     /
                     <span class="link" (click)="clickSearchAll(i)">
-                        <img *ngIf="keyEntity.image" class="icon" src="{{keyEntity.image}}" alt=""> {{keyEntity.isTag ? "#
+                        <img *ngIf="keyEntity.image" class="icon" src="{{keyEntity.image}}" alt=""> {{keyEntity.isTag ?
+                        "#
                         " : ""}}{{keyEntity.name}}
                     </span>
-                    <svg (click)="newTab(keyEntity.image ? ':'+keyEntity.name : keyEntity.name)" class="icon-new-tab new-tab" height="512pt"
-                        viewBox="0 0 512 512.00578" width="512pt" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m507.523438 148.890625-138.667969-144c-4.523438-4.691406-11.457031-6.164063-17.492188-3.734375-6.058593 2.453125-10.027343 8.320312-10.027343 14.847656v69.335938h-5.332032c-114.6875 0-208 93.3125-208 208v32c0 7.421875 5.226563 13.609375 12.457032 15.296875 1.175781.296875 2.347656.425781 3.519531.425781 6.039062 0 11.820312-3.542969 14.613281-9.109375 29.996094-60.011719 90.304688-97.28125 157.398438-97.28125h25.34375v69.332031c0 6.53125 3.96875 12.398438 10.027343 14.828125 5.996094 2.453125 12.96875.960938 17.492188-3.734375l138.667969-144c5.972656-6.207031 5.972656-15.976562 0-22.207031zm0 0"
-                        />
-                        <path d="m448.003906 512.003906h-384c-35.285156 0-63.99999975-28.710937-63.99999975-64v-298.664062c0-35.285156 28.71484375-64 63.99999975-64h64c11.796875 0 21.332032 9.535156 21.332032 21.332031s-9.535157 21.332031-21.332032 21.332031h-64c-11.777344 0-21.335937 9.558594-21.335937 21.335938v298.664062c0 11.777344 9.558593 21.335938 21.335937 21.335938h384c11.773438 0 21.332032-9.558594 21.332032-21.335938v-170.664062c0-11.796875 9.535156-21.335938 21.332031-21.335938 11.800781 0 21.335937 9.539063 21.335937 21.335938v170.664062c0 35.289063-28.714844 64-64 64zm0 0"
-                        />
+                    <svg (click)="newTab(keyEntity.image ? ':'+keyEntity.name : keyEntity.name)"
+                        class="icon-new-tab new-tab" height="512pt" viewBox="0 0 512 512.00578" width="512pt"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m507.523438 148.890625-138.667969-144c-4.523438-4.691406-11.457031-6.164063-17.492188-3.734375-6.058593 2.453125-10.027343 8.320312-10.027343 14.847656v69.335938h-5.332032c-114.6875 0-208 93.3125-208 208v32c0 7.421875 5.226563 13.609375 12.457032 15.296875 1.175781.296875 2.347656.425781 3.519531.425781 6.039062 0 11.820312-3.542969 14.613281-9.109375 29.996094-60.011719 90.304688-97.28125 157.398438-97.28125h25.34375v69.332031c0 6.53125 3.96875 12.398438 10.027343 14.828125 5.996094 2.453125 12.96875.960938 17.492188-3.734375l138.667969-144c5.972656-6.207031 5.972656-15.976562 0-22.207031zm0 0" />
+                        <path
+                            d="m448.003906 512.003906h-384c-35.285156 0-63.99999975-28.710937-63.99999975-64v-298.664062c0-35.285156 28.71484375-64 63.99999975-64h64c11.796875 0 21.332032 9.535156 21.332032 21.332031s-9.535157 21.332031-21.332032 21.332031h-64c-11.777344 0-21.335937 9.558594-21.335937 21.335938v298.664062c0 11.777344 9.558593 21.335938 21.335937 21.335938h384c11.773438 0 21.332032-9.558594 21.332032-21.335938v-170.664062c0-11.796875 9.535156-21.335938 21.332031-21.335938 11.800781 0 21.335937 9.539063 21.335937 21.335938v170.664062c0 35.289063-28.714844 64-64 64zm0 0" />
                     </svg>
                 </span>
             </ng-container>
@@ -75,7 +84,8 @@
                         <div class="list-group-keyword">
                             <ng-container *ngFor="let entityKeyword of listEntityKeyword; let ekIndex=index">
                                 <ng-container *ngFor="let keyword of entityKeyword; let kIndex=index">
-                                    <div class="group-keyword" [class.active]="keyword.isActive" (click)="clickSelectEntityKeyword(ekIndex, kIndex)">
+                                    <div class="group-keyword" [class.active]="keyword.isActive"
+                                        (click)="clickSelectEntityKeyword(ekIndex, kIndex)">
                                         {{keyword.name}}
                                     </div>
                                 </ng-container>
@@ -94,12 +104,13 @@
                                                 {{keyEntity.isTag ? "# " : ""}}{{keyEntity.name}}
                                             </span>
                                         </span>
-                                        <svg (click)="newTab(keyEntity.image ? ':'+keyEntity.name : keyEntity.name)" class="icon-new-tab new-tab" height="512pt"
-                                            viewBox="0 0 512 512.00578" width="512pt" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="m507.523438 148.890625-138.667969-144c-4.523438-4.691406-11.457031-6.164063-17.492188-3.734375-6.058593 2.453125-10.027343 8.320312-10.027343 14.847656v69.335938h-5.332032c-114.6875 0-208 93.3125-208 208v32c0 7.421875 5.226563 13.609375 12.457032 15.296875 1.175781.296875 2.347656.425781 3.519531.425781 6.039062 0 11.820312-3.542969 14.613281-9.109375 29.996094-60.011719 90.304688-97.28125 157.398438-97.28125h25.34375v69.332031c0 6.53125 3.96875 12.398438 10.027343 14.828125 5.996094 2.453125 12.96875.960938 17.492188-3.734375l138.667969-144c5.972656-6.207031 5.972656-15.976562 0-22.207031zm0 0"
-                                            />
-                                            <path d="m448.003906 512.003906h-384c-35.285156 0-63.99999975-28.710937-63.99999975-64v-298.664062c0-35.285156 28.71484375-64 63.99999975-64h64c11.796875 0 21.332032 9.535156 21.332032 21.332031s-9.535157 21.332031-21.332032 21.332031h-64c-11.777344 0-21.335937 9.558594-21.335937 21.335938v298.664062c0 11.777344 9.558593 21.335938 21.335937 21.335938h384c11.773438 0 21.332032-9.558594 21.332032-21.335938v-170.664062c0-11.796875 9.535156-21.335938 21.332031-21.335938 11.800781 0 21.335937 9.539063 21.335937 21.335938v170.664062c0 35.289063-28.714844 64-64 64zm0 0"
-                                            />
+                                        <svg (click)="newTab(keyEntity.image ? ':'+keyEntity.name : keyEntity.name)"
+                                            class="icon-new-tab new-tab" height="512pt" viewBox="0 0 512 512.00578"
+                                            width="512pt" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="m507.523438 148.890625-138.667969-144c-4.523438-4.691406-11.457031-6.164063-17.492188-3.734375-6.058593 2.453125-10.027343 8.320312-10.027343 14.847656v69.335938h-5.332032c-114.6875 0-208 93.3125-208 208v32c0 7.421875 5.226563 13.609375 12.457032 15.296875 1.175781.296875 2.347656.425781 3.519531.425781 6.039062 0 11.820312-3.542969 14.613281-9.109375 29.996094-60.011719 90.304688-97.28125 157.398438-97.28125h25.34375v69.332031c0 6.53125 3.96875 12.398438 10.027343 14.828125 5.996094 2.453125 12.96875.960938 17.492188-3.734375l138.667969-144c5.972656-6.207031 5.972656-15.976562 0-22.207031zm0 0" />
+                                            <path
+                                                d="m448.003906 512.003906h-384c-35.285156 0-63.99999975-28.710937-63.99999975-64v-298.664062c0-35.285156 28.71484375-64 63.99999975-64h64c11.796875 0 21.332032 9.535156 21.332032 21.332031s-9.535157 21.332031-21.332032 21.332031h-64c-11.777344 0-21.335937 9.558594-21.335937 21.335938v298.664062c0 11.777344 9.558593 21.335938 21.335937 21.335938h384c11.773438 0 21.332032-9.558594 21.332032-21.335938v-170.664062c0-11.796875 9.535156-21.335938 21.332031-21.335938 11.800781 0 21.335937 9.539063 21.335937 21.335938v170.664062c0 35.289063-28.714844 64-64 64zm0 0" />
                                         </svg>
                                     </span>
                                 </ng-container>
@@ -110,31 +121,39 @@
                         </div>
                         <div class="wrapper-keyword">
                             <span (click)="loadDataPage()" *ngIf="searchKeywordAll.length > 0">
-                                <ng-container *ngIf="searchKeywordAll[searchKeywordAll.length - 1].personaType; else elseIsEntity">
-                                    <img class="icon-entity-type" src="{{searchKeywordAll[searchKeywordAll.length - 1].image}}" alt="">                                    
+                                <ng-container
+                                    *ngIf="searchKeywordAll[searchKeywordAll.length - 1].personaType; else elseIsEntity">
+                                    <img class="icon-entity-type"
+                                        src="{{searchKeywordAll[searchKeywordAll.length - 1].image}}" alt="">
                                     {{searchKeywordAll[searchKeywordAll.length - 1].name}}
                                 </ng-container>
                                 <ng-template #elseIsEntity>
-                                    {{searchKeywordAll[searchKeywordAll.length - 1].isTag ? "# " : ""}}{{ searchKeywordAll[searchKeywordAll.length - 1].name}}
+                                    {{searchKeywordAll[searchKeywordAll.length - 1].isTag ? "# " : ""}}{{
+                                    searchKeywordAll[searchKeywordAll.length - 1].name}}
                                 </ng-template>
                             </span>
-                            <svg *ngIf="searchKeywordAll.length > 1" (click)="newTab(searchKeywordAll[searchKeywordAll.length - 1].image ? ':'+searchKeywordAll[searchKeywordAll.length - 1].name : searchKeywordAll[searchKeywordAll.length - 1].name)"
-                                class="icon-new-tab new-tab" height="512pt" viewBox="0 0 512 512.00578" width="512pt" xmlns="http://www.w3.org/2000/svg">
-                                <path d="m507.523438 148.890625-138.667969-144c-4.523438-4.691406-11.457031-6.164063-17.492188-3.734375-6.058593 2.453125-10.027343 8.320312-10.027343 14.847656v69.335938h-5.332032c-114.6875 0-208 93.3125-208 208v32c0 7.421875 5.226563 13.609375 12.457032 15.296875 1.175781.296875 2.347656.425781 3.519531.425781 6.039062 0 11.820312-3.542969 14.613281-9.109375 29.996094-60.011719 90.304688-97.28125 157.398438-97.28125h25.34375v69.332031c0 6.53125 3.96875 12.398438 10.027343 14.828125 5.996094 2.453125 12.96875.960938 17.492188-3.734375l138.667969-144c5.972656-6.207031 5.972656-15.976562 0-22.207031zm0 0"
-                                />
-                                <path d="m448.003906 512.003906h-384c-35.285156 0-63.99999975-28.710937-63.99999975-64v-298.664062c0-35.285156 28.71484375-64 63.99999975-64h64c11.796875 0 21.332032 9.535156 21.332032 21.332031s-9.535157 21.332031-21.332032 21.332031h-64c-11.777344 0-21.335937 9.558594-21.335937 21.335938v298.664062c0 11.777344 9.558593 21.335938 21.335937 21.335938h384c11.773438 0 21.332032-9.558594 21.332032-21.335938v-170.664062c0-11.796875 9.535156-21.335938 21.332031-21.335938 11.800781 0 21.335937 9.539063 21.335937 21.335938v170.664062c0 35.289063-28.714844 64-64 64zm0 0"
-                                /></svg>
+                            <svg *ngIf="searchKeywordAll.length > 1"
+                                (click)="newTab(searchKeywordAll[searchKeywordAll.length - 1].image ? ':'+searchKeywordAll[searchKeywordAll.length - 1].name : searchKeywordAll[searchKeywordAll.length - 1].name)"
+                                class="icon-new-tab new-tab" height="512pt" viewBox="0 0 512 512.00578" width="512pt"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m507.523438 148.890625-138.667969-144c-4.523438-4.691406-11.457031-6.164063-17.492188-3.734375-6.058593 2.453125-10.027343 8.320312-10.027343 14.847656v69.335938h-5.332032c-114.6875 0-208 93.3125-208 208v32c0 7.421875 5.226563 13.609375 12.457032 15.296875 1.175781.296875 2.347656.425781 3.519531.425781 6.039062 0 11.820312-3.542969 14.613281-9.109375 29.996094-60.011719 90.304688-97.28125 157.398438-97.28125h25.34375v69.332031c0 6.53125 3.96875 12.398438 10.027343 14.828125 5.996094 2.453125 12.96875.960938 17.492188-3.734375l138.667969-144c5.972656-6.207031 5.972656-15.976562 0-22.207031zm0 0" />
+                                <path
+                                    d="m448.003906 512.003906h-384c-35.285156 0-63.99999975-28.710937-63.99999975-64v-298.664062c0-35.285156 28.71484375-64 63.99999975-64h64c11.796875 0 21.332032 9.535156 21.332032 21.332031s-9.535157 21.332031-21.332032 21.332031h-64c-11.777344 0-21.335937 9.558594-21.335937 21.335938v298.664062c0 11.777344 9.558593 21.335938 21.335937 21.335938h384c11.773438 0 21.332032-9.558594 21.332032-21.335938v-170.664062c0-11.796875 9.535156-21.335938 21.332031-21.335938 11.800781 0 21.335937 9.539063 21.335937 21.335938v170.664062c0 35.289063-28.714844 64-64 64zm0 0" />
+                            </svg>
                         </div>
                         <div class="wrapper-subline-keyword">
                             <span class="subline">
                                 <div class="label">ประเภท: </div>
-                                <ng-container *ngIf="searchKeywordAll.length > 0 &&  searchKeywordAll[searchKeywordAll.length - 1].personaType; else elseTemplate">
-                                    <div class="value entity-type" (click)="clickEntityType(searchKeywordAll[searchKeywordAll.length - 1].personaType.name)">
+                                <ng-container
+                                    *ngIf="searchKeywordAll.length > 0 &&  searchKeywordAll[searchKeywordAll.length - 1].personaType; else elseTemplate">
+                                    <div class="value entity-type"
+                                        (click)="clickEntityType(searchKeywordAll[searchKeywordAll.length - 1].personaType.name)">
                                         {{searchKeywordAll[searchKeywordAll.length - 1].personaType.name }}
                                     </div>
                                 </ng-container>
                                 <ng-template #elseTemplate>
-                                    <div class="value entity-type"  (click)="clickNewTabTrend()">
+                                    <div class="value entity-type" (click)="clickNewTabTrend()">
                                         คีย์เวิร์ด
                                     </div>
                                 </ng-template>
@@ -153,11 +172,12 @@
                                 </div>
                             </span>
                         </div>
-                    </ng-container> 
-                    <card-counter-source-type [trendingSourceType]="data.trendingSourceType" [totalNews]="data.totalNews"></card-counter-source-type>
+                    </ng-container>
+                    <card-counter-source-type [trendingSourceType]="data.trendingSourceType"
+                        [totalNews]="data.totalNews"></card-counter-source-type>
                 </div>
             </div>
-            <div class="wrapper-right"> 
+            <div class="wrapper-right">
                 <trend-chart-all [trendingKeyword]="data.trendingKeyword"></trend-chart-all>
             </div>
         </div>
@@ -243,13 +263,16 @@
                 </div> -->
                 <trend-news-agency-chart-compare></trend-news-agency-chart-compare>
             </div>
-            <div class="wrapper-right"> 
-                <entity-top-related [entityTopRelated]="data.entityTopRelated" [isLoadingEntity]="isLoadingEntity" (clickAddEntityInUrl)="addEntityInUrl($event)"></entity-top-related>
+            <div class="wrapper-right">
+                <entity-top-related [entityTopRelated]="data.entityTopRelated" [isLoadingEntity]="isLoadingEntity"
+                    (clickAddEntityInUrl)="addEntityInUrl($event)"></entity-top-related>
             </div>
         </div>
         <div class="wrapper-main">
             <div class="wrapper-left">
-                <keyword-top-related [allRelated]="searchKeywordAll" [keywordTopRelated]="data.keywordTop" [isLoadingKeywordTop]="isLoadingKeywordTop" (clickAddKeywordInUrl)="addKeywordInUrl($event)"></keyword-top-related> 
+                <keyword-top-related [allRelated]="searchKeywordAll" [keywordTopRelated]="data.keywordTop"
+                    [isLoadingKeywordTop]="isLoadingKeywordTop" (clickAddKeywordInUrl)="addKeywordInUrl($event)">
+                </keyword-top-related>
             </div>
             <div class="wrapper-right">
                 <div class="wrapper-world-map">
@@ -282,19 +305,25 @@
                 บนช่องทาง:
             </span>
             <ng-container *ngFor="let sourceType of data.trendingSourceType; let index = index">
-                <svg *ngIf="sourceType._id === 'facebook'" (click)="selectSourceType(index)" [class.active]="sourceType._id === 'facebook' && sourceType.isActive "
-                    class="icon-source-type" xmlns="http://www.w3.org/2000/svg" width="12.001" height="24" viewBox="0 0 12.001 24">
-                    <path id="social-media_1_" data-name="social-media (1)" d="M16,3.985h2.191V.169A28.292,28.292,0,0,0,15,0C8.064,0,9.95,7.85,9.674,9H6.187v4.266H9.673V24h4.274V13.267h3.345L17.823,9H13.946c.188-2.824-.761-5.016,2.051-5.016Z"
+                <svg *ngIf="sourceType._id === 'facebook'" (click)="selectSourceType(index)"
+                    [class.active]="sourceType._id === 'facebook' && sourceType.isActive " class="icon-source-type"
+                    xmlns="http://www.w3.org/2000/svg" width="12.001" height="24" viewBox="0 0 12.001 24">
+                    <path id="social-media_1_" data-name="social-media (1)"
+                        d="M16,3.985h2.191V.169A28.292,28.292,0,0,0,15,0C8.064,0,9.95,7.85,9.674,9H6.187v4.266H9.673V24h4.274V13.267h3.345L17.823,9H13.946c.188-2.824-.761-5.016,2.051-5.016Z"
                         transform="translate(-6.187)" fill="#fff" />
                 </svg>
-                <svg *ngIf="sourceType._id === 'twitter'" (click)="selectSourceType(index)" [class.active]="sourceType._id === 'twitter' && sourceType.isActive "
-                    class="icon-source-type" xmlns="http://www.w3.org/2000/svg" width="23.297" height="18.929" viewBox="0 0 23.297 18.929">
-                    <path id="brands-and-logotypes_1_" data-name="brands-and-logotypes (1)" d="M23.3,50.241A9.958,9.958,0,0,1,20.545,51a4.749,4.749,0,0,0,2.1-2.64,9.545,9.545,0,0,1-3.029,1.156,4.776,4.776,0,0,0-8.262,3.266,4.918,4.918,0,0,0,.111,1.089,13.519,13.519,0,0,1-9.845-5A4.777,4.777,0,0,0,3.09,55.254a4.717,4.717,0,0,1-2.158-.588v.052a4.8,4.8,0,0,0,3.827,4.693,4.767,4.767,0,0,1-1.252.157,4.223,4.223,0,0,1-.9-.082,4.822,4.822,0,0,0,4.463,3.327,9.6,9.6,0,0,1-5.922,2.037A8.946,8.946,0,0,1,0,64.786a13.446,13.446,0,0,0,7.327,2.143A13.5,13.5,0,0,0,20.921,53.338c0-.211-.007-.415-.017-.617A9.528,9.528,0,0,0,23.3,50.241Z"
+                <svg *ngIf="sourceType._id === 'twitter'" (click)="selectSourceType(index)"
+                    [class.active]="sourceType._id === 'twitter' && sourceType.isActive " class="icon-source-type"
+                    xmlns="http://www.w3.org/2000/svg" width="23.297" height="18.929" viewBox="0 0 23.297 18.929">
+                    <path id="brands-and-logotypes_1_" data-name="brands-and-logotypes (1)"
+                        d="M23.3,50.241A9.958,9.958,0,0,1,20.545,51a4.749,4.749,0,0,0,2.1-2.64,9.545,9.545,0,0,1-3.029,1.156,4.776,4.776,0,0,0-8.262,3.266,4.918,4.918,0,0,0,.111,1.089,13.519,13.519,0,0,1-9.845-5A4.777,4.777,0,0,0,3.09,55.254a4.717,4.717,0,0,1-2.158-.588v.052a4.8,4.8,0,0,0,3.827,4.693,4.767,4.767,0,0,1-1.252.157,4.223,4.223,0,0,1-.9-.082,4.822,4.822,0,0,0,4.463,3.327,9.6,9.6,0,0,1-5.922,2.037A8.946,8.946,0,0,1,0,64.786a13.446,13.446,0,0,0,7.327,2.143A13.5,13.5,0,0,0,20.921,53.338c0-.211-.007-.415-.017-.617A9.528,9.528,0,0,0,23.3,50.241Z"
                         transform="translate(0 -48)" fill="#fff" />
                 </svg>
-                <svg *ngIf="sourceType._id === 'web'" (click)="selectSourceType(index)" [class.active]="sourceType._id === 'web' && sourceType.isActive "
-                    class="icon-source-type" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
-                    <path id="seo-and-web" d="M18.777,3.223a11,11,0,1,0,0,15.553A10.992,10.992,0,0,0,18.777,3.223Zm-.46,13.985a11.023,11.023,0,0,0-1.643-1.217,17.786,17.786,0,0,0,.663-4.291h3.233A9.509,9.509,0,0,1,18.317,17.208ZM1.429,11.7H4.663a17.786,17.786,0,0,0,.663,4.291,11.024,11.024,0,0,0-1.643,1.217A9.509,9.509,0,0,1,1.429,11.7Zm2.254-6.91A11.024,11.024,0,0,0,5.326,6.007,17.786,17.786,0,0,0,4.663,10.3H1.429A9.509,9.509,0,0,1,3.683,4.791ZM10.3,6.152a9.521,9.521,0,0,1-3.267-.828c.594-1.53,1.69-3.365,3.267-3.82Zm0,1.4V10.3H6.065A16.512,16.512,0,0,1,6.6,6.665,10.924,10.924,0,0,0,10.3,7.556Zm0,4.144v2.742a10.924,10.924,0,0,0-3.7.891A16.512,16.512,0,0,1,6.065,11.7Zm0,4.147v4.648c-1.577-.455-2.672-2.29-3.267-3.82A9.521,9.521,0,0,1,10.3,15.847Zm1.4,0a9.521,9.521,0,0,1,3.267.828c-.594,1.53-1.69,3.365-3.267,3.82Zm0-1.4V11.7h4.234a16.512,16.512,0,0,1-.531,3.634,10.924,10.924,0,0,0-3.7-.891Zm0-4.144V7.556a10.924,10.924,0,0,0,3.7-.891,16.512,16.512,0,0,1,.531,3.634Zm0-4.147V1.5c1.577.455,2.673,2.29,3.267,3.82A9.522,9.522,0,0,1,11.7,6.152ZM14.849,2.2a9.554,9.554,0,0,1,2.484,1.586,9.633,9.633,0,0,1-1.127.856A10.552,10.552,0,0,0,14.849,2.2ZM5.794,4.646a9.636,9.636,0,0,1-1.127-.856A9.554,9.554,0,0,1,7.151,2.2,10.555,10.555,0,0,0,5.794,4.646Zm0,12.707A10.552,10.552,0,0,0,7.151,19.8a9.554,9.554,0,0,1-2.484-1.586A9.633,9.633,0,0,1,5.795,17.353Zm10.411,0a9.637,9.637,0,0,1,1.127.856,9.554,9.554,0,0,1-2.484,1.586,10.551,10.551,0,0,0,1.357-2.442ZM17.338,10.3a17.786,17.786,0,0,0-.663-4.291,11.026,11.026,0,0,0,1.643-1.217A9.509,9.509,0,0,1,20.571,10.3Z"
+                <svg *ngIf="sourceType._id === 'web'" (click)="selectSourceType(index)"
+                    [class.active]="sourceType._id === 'web' && sourceType.isActive " class="icon-source-type"
+                    xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+                    <path id="seo-and-web"
+                        d="M18.777,3.223a11,11,0,1,0,0,15.553A10.992,10.992,0,0,0,18.777,3.223Zm-.46,13.985a11.023,11.023,0,0,0-1.643-1.217,17.786,17.786,0,0,0,.663-4.291h3.233A9.509,9.509,0,0,1,18.317,17.208ZM1.429,11.7H4.663a17.786,17.786,0,0,0,.663,4.291,11.024,11.024,0,0,0-1.643,1.217A9.509,9.509,0,0,1,1.429,11.7Zm2.254-6.91A11.024,11.024,0,0,0,5.326,6.007,17.786,17.786,0,0,0,4.663,10.3H1.429A9.509,9.509,0,0,1,3.683,4.791ZM10.3,6.152a9.521,9.521,0,0,1-3.267-.828c.594-1.53,1.69-3.365,3.267-3.82Zm0,1.4V10.3H6.065A16.512,16.512,0,0,1,6.6,6.665,10.924,10.924,0,0,0,10.3,7.556Zm0,4.144v2.742a10.924,10.924,0,0,0-3.7.891A16.512,16.512,0,0,1,6.065,11.7Zm0,4.147v4.648c-1.577-.455-2.672-2.29-3.267-3.82A9.521,9.521,0,0,1,10.3,15.847Zm1.4,0a9.521,9.521,0,0,1,3.267.828c-.594,1.53-1.69,3.365-3.267,3.82Zm0-1.4V11.7h4.234a16.512,16.512,0,0,1-.531,3.634,10.924,10.924,0,0,0-3.7-.891Zm0-4.144V7.556a10.924,10.924,0,0,0,3.7-.891,16.512,16.512,0,0,1,.531,3.634Zm0-4.147V1.5c1.577.455,2.673,2.29,3.267,3.82A9.522,9.522,0,0,1,11.7,6.152ZM14.849,2.2a9.554,9.554,0,0,1,2.484,1.586,9.633,9.633,0,0,1-1.127.856A10.552,10.552,0,0,0,14.849,2.2ZM5.794,4.646a9.636,9.636,0,0,1-1.127-.856A9.554,9.554,0,0,1,7.151,2.2,10.555,10.555,0,0,0,5.794,4.646Zm0,12.707A10.552,10.552,0,0,0,7.151,19.8a9.554,9.554,0,0,1-2.484-1.586A9.633,9.633,0,0,1,5.795,17.353Zm10.411,0a9.637,9.637,0,0,1,1.127.856,9.554,9.554,0,0,1-2.484,1.586,10.551,10.551,0,0,0,1.357-2.442ZM17.338,10.3a17.786,17.786,0,0,0-.663-4.291,11.026,11.026,0,0,0,1.643-1.217A9.509,9.509,0,0,1,20.571,10.3Z"
                         transform="translate(0 0)" fill="#fff" />
                 </svg>
             </ng-container>
@@ -304,8 +333,9 @@
                 ค้นหาร่วมกับ
                 <div class="list-keyword">
                     <ng-container *ngFor="let keyEntity of searchKeywordAll; let i = index">
-                        <span> 
-                            {{keyEntity.isTag ? "# " : ""}} {{ keyEntity.name}}{{searchKeywordAll.length-1 !== i ? ', ' : ' '}}
+                        <span>
+                            {{keyEntity.isTag ? "# " : ""}} {{ keyEntity.name}}{{searchKeywordAll.length-1 !== i ? ', '
+                            : ' '}}
                         </span>
                     </ng-container>
                 </div>
@@ -319,9 +349,11 @@
                 </ng-container>
             </div>
         </div>
-    </div> 
-    <card-news-related [newsRelated]="data.news" [isloadNews]="isloadNews" (searchRelateNews)="searchRelateNews()"></card-news-related>
-    <card-keyword-related [keywordRelated]="data.keywordRelates" (clickAddKeywordInUrl)="addKeywordInUrl($event)"></card-keyword-related> 
+    </div>
+    <card-news-related [newsRelated]="data.news" [isloadNews]="isloadNews" (searchRelateNews)="searchRelateNews()">
+    </card-news-related>
+    <card-keyword-related [keywordRelated]="data.keywordRelates" (clickAddKeywordInUrl)="addKeywordInUrl($event)">
+    </card-keyword-related>
 </ng-template>
 
 <div class="footer">

@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 var osmosis = require('osmosis');
 var counter = 0;
 osmosis
@@ -12,7 +19,7 @@ osmosis
     .data(data => {
         if (data.link) {
             counter++;
-                    // console.log(counter+" data", data);
+            // console.log(counter+" data", data);
             osmosis
                 .get(data.link)
                 // .get('https://www.nationtv.tv/main/content/378764289/') 
@@ -22,7 +29,7 @@ osmosis
                     'img': '.article-feature-image img@src',
                     'content': ".article-body",
                     'date': '.article-date'
-                    ,'tags': ['.article-tags li']
+                    , 'tags': ['.article-tags li']
                 })
                 .data(data => {
                     // Each iteration, push the data into our array

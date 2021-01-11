@@ -1,13 +1,20 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EntityTypeFacade } from '../../../services/services';
 import * as moment from 'moment';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-import { Title, Meta } from '@angular/platform-browser'; 
+import { Title, Meta } from '@angular/platform-browser';
 import { AbstractPage } from './AbstractPage';
 
-const PAGE_NAME: string = 'type'; 
+const PAGE_NAME: string = 'type';
 
 declare var google: any;
 declare var $: any;
@@ -27,7 +34,7 @@ export class EntityTypePage extends AbstractPage implements OnInit {
 
   public entityType: any;
   public entityTypeName: string;
- 
+
   public isMoreEntityType: boolean = false;
   public isLoadEntitys: boolean = false;
   public showLoadMoreEntitys: boolean = false;
@@ -49,12 +56,12 @@ export class EntityTypePage extends AbstractPage implements OnInit {
     this.route = route;
 
     // $(window).resize(() => {
-      // if (this.isLoadedChart) {
-      //   this.drawSourceTypeEntityChart(); 
-      //   if (this.data.newsAgencys && this.data.newsAgencys.length > 0) {
-      //     this.drawNewsAgencyChart();
-      //   }
-      // }
+    // if (this.isLoadedChart) {
+    //   this.drawSourceTypeEntityChart(); 
+    //   if (this.data.newsAgencys && this.data.newsAgencys.length > 0) {
+    //     this.drawNewsAgencyChart();
+    //   }
+    // }
     // });
 
     this.route.params.subscribe(async (params) => {
@@ -200,7 +207,7 @@ export class EntityTypePage extends AbstractPage implements OnInit {
         if (sourceType.isActive) {
           this.listSelectSourceType.push(sourceType._id);
         }
-      } 
+      }
     }).catch((err) => {
       console.log(err);
     });
@@ -298,15 +305,15 @@ export class EntityTypePage extends AbstractPage implements OnInit {
   }
 
   public changeSelectdate(selectedDate: any): void {
-    if (!this.isInitial && this.find !== {}) { 
+    if (!this.isInitial && this.find !== {}) {
       return;
     }
     this.selectedDate = selectedDate;
     this.router.navigateByUrl("/type/" + this.addParamsDate(this.encodeURL(this.entityType.name)));
-  } 
+  }
 
   public clickTrendDetail(dataTrend: any): void {
     this.loadDataPageKeywordTopByEntityKeywords(dataTrend.keywords);
     this.loadDataPageNewsAgencyByEntityKeywords(dataTrend._id, dataTrend.keywords);
-  } 
+  }
 }

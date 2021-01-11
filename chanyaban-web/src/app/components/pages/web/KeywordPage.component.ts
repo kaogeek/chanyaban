@@ -1,9 +1,16 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { KeywordFacade } from '../../../services/services';
 import * as moment from 'moment';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Title, Meta } from '@angular/platform-browser'; 
+import { Title, Meta } from '@angular/platform-browser';
 import { AbstractNewsPage } from './AbstractNewsPage';
 
 const PAGE_NAME: string = 'keyword';
@@ -54,7 +61,7 @@ export class KeywordPage extends AbstractNewsPage implements OnInit {
 
     $(window).resize(() => {
       if (this.isLoadedChart) {
-        this.drawMapChart(); 
+        this.drawMapChart();
         if (this.listChartAgenJouran.newsAgencys && this.listChartAgenJouran.newsAgencys.length > 0) {
           this.drawNewsAgencyChart();
         }
@@ -259,7 +266,7 @@ export class KeywordPage extends AbstractNewsPage implements OnInit {
           this.listSelectSourceType.push(sourceType._id);
         }
       }
-      this.searchRelateNewsAgencys(); 
+      this.searchRelateNewsAgencys();
     }).catch((err) => {
       console.log(err);
     });
@@ -545,7 +552,7 @@ export class KeywordPage extends AbstractNewsPage implements OnInit {
     }).catch((err) => {
       console.log(err);
     });
-  } 
+  }
 
   public drawNewsAgencyCompareChart() {
     var trending: any = [['', 'กล่าวถึง']];

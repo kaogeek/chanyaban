@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 .wrapper-instance-data {
   width: 450pt;
   height: 600pt;
@@ -25,7 +32,7 @@
     .wrapper-journalist {
       display: flex;
       align-items: center;
-      >.avatar {
+      > .avatar {
         display: flex;
         margin-right: 15pt;
         width: 35pt;
@@ -45,7 +52,7 @@
         margin-right: 15pt;
         margin-top: 8pt;
       }
-    } 
+    }
   }
 }
 .wrapper-instance-link {

@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 app-source-type {
   .icon-new-tab {
     cursor: pointer;
@@ -341,13 +348,13 @@ app-source-type {
               }
             }
           }
-        } 
+        }
       }
       > .wrapper-right {
         width: 40%;
-        @include border-left;  
-        .wrapper-chart-all  {
-          >.chart {
+        @include border-left;
+        .wrapper-chart-all {
+          > .chart {
             min-height: 110pt;
           }
         }
@@ -465,7 +472,7 @@ app-source-type {
         }
       }
     }
-  } 
+  }
 
   > .footer {
     display: flex;
@@ -532,15 +539,15 @@ app-source-type {
     }
     > .wrapper-right {
       width: 100% !important;
-      border-left: unset !important; 
+      border-left: unset !important;
     }
-  }  
+  }
 }
 
 @media (max-width: $large) {
   .wrapper-chart > .chart {
     min-height: 300pt;
-  } 
+  }
 }
 
 @media (max-width: $medium) {
@@ -638,7 +645,7 @@ app-source-type {
         }
       }
     }
-    > .wrapper-right {  
+    > .wrapper-right {
     }
   }
   .wrapper-filter-news {
@@ -659,7 +666,7 @@ app-source-type {
         max-width: 85% !important;
       }
     }
-  } 
+  }
 }
 
 @media (max-width: $small) {
@@ -721,9 +728,9 @@ app-source-type {
             }
           }
         }
-      } 
+      }
     }
-    > .wrapper-right { 
+    > .wrapper-right {
     }
   }
   .wrapper-filter-news {
@@ -736,5 +743,5 @@ app-source-type {
     > .wrapper-wrapper-news-agency-select {
       padding: 10pt 0 !important;
     }
-  } 
+  }
 }

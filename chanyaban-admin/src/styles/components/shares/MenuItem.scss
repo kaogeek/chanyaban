@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 .wrapper-menu-item {
   width: 100%;
   background-color: #292d34;
@@ -19,7 +26,7 @@
     border-bottom: 0.7px solid $border-color;
     outline: 0;
     cursor: pointer;
-    &:hover { 
+    &:hover {
       background-color: $color-active;
       .count-keyword {
         background-color: $menucolor;
@@ -80,7 +87,7 @@
         .count-keyword {
           background-color: $menucolor;
         }
-      } 
+      }
     }
   }
 }

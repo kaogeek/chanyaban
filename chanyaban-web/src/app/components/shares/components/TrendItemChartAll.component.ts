@@ -1,6 +1,13 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit, Input } from '@angular/core';
 import * as moment from 'moment';
-import { OPTION_CHART_SOURCE_TYPE, FORMAT_DATE } from '../Constants'; 
+import { OPTION_CHART_SOURCE_TYPE, FORMAT_DATE } from '../Constants';
 
 declare var google: any;
 declare var $: any;
@@ -46,7 +53,7 @@ export class TrendItemChartAll implements OnInit {
       this.isLoadedChart = true;
       this.setView();
     });
-  } 
+  }
 
   private setView(): void {
     if (!this.trends || this.trends.length === 0) {

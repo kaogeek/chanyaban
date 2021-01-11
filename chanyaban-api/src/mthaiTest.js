@@ -1,4 +1,11 @@
-var osmosis = require('osmosis'); 
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
+var osmosis = require('osmosis');
 const moment = require('moment/moment');
 
 osmosis
@@ -14,15 +21,15 @@ osmosis
         osmosis
             .get(data.link)
             .find('#main > .main-article')
-            .set({ 
+            .set({
                 'title': '.entry-title',
                 // 'img': '.post-thumbnail-wrap img@src',
                 // 'content': ".entry-content-inner",
                 // 'tags': [".tags-links .label"],
                 'date': "time.entry-date@datetime"
-            }) 
-            .data(data => { 
-                data.date = data.date ? moment(data.date,'','').toDate() : new Date();
+            })
+            .data(data => {
+                data.date = data.date ? moment(data.date, '', '').toDate() : new Date();
                 console.log(data);
             })
             .error(console.log)

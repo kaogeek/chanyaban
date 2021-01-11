@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 export const OPTION_CHART_SOURCE_TYPE: any = {
     top: 0,
     left: 0,
@@ -73,5 +80,5 @@ export const OPTION_CHART_BAR: any = {
             fontSize: 12
         }
     }
-}; 
+};
 export const FORMAT_DATE: string = 'DD/MM/YY';

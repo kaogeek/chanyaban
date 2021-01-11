@@ -1,26 +1,33 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 
-import { AppRoutingModule } from './app-routing.module'; 
+import { AppRoutingModule } from './app-routing.module';
 import { ColorChromeModule } from 'ngx-color/chrome';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { AppComponent } from './app.component'; 
+import { AppComponent } from './app.component';
 import {
   WebMainPage,
-  HomePage,  
+  HomePage,
   KeywordPage,
   NewsAgencyPage,
   EntityTypePage,
   SourceTypePage,
   NewsCategoryPage,
-  TrendPage, 
+  TrendPage,
   // shares  
   DialogAlert,
   DialogWarningComponent,
   DialogInstanceComponent,
-  DialogDeleteComponent, 
+  DialogDeleteComponent,
   MenuTop,
   AutoCompSearch,
   CardKeywordRelated,
@@ -37,7 +44,7 @@ import {
   PrefixNumberPipe,
 } from './components/components';
 import {
-  AuthenManager, ObservableManager, 
+  AuthenManager, ObservableManager,
   KeywordFacade,
   NewsAgencyFacade,
   SourceTypeFacade,
@@ -46,7 +53,7 @@ import {
   EntityTypeFacade
 } from './services/services';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatCheckboxModule, MatButtonModule, MatInputModule, MatAutocompleteModule, MatDatepickerModule,
   MatFormFieldModule, MatRadioModule, MatSelectModule, MatSliderModule, MatGridListModule,
@@ -67,14 +74,14 @@ const COMPONENTS: any[] = [
   EntityTypePage,
   SourceTypePage,
   NewsCategoryPage,
-  TrendPage, 
+  TrendPage,
   WebMainPage,
-  HomePage, 
+  HomePage,
   // shares  
   DialogAlert,
   DialogWarningComponent,
   DialogInstanceComponent,
-  DialogDeleteComponent, 
+  DialogDeleteComponent,
   MenuTop,
   AutoCompSearch,
   CardKeywordRelated,
@@ -117,9 +124,9 @@ const DIRECTIVE_CLASSES: any[] = [
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule,   
+    AppRoutingModule,
     ColorChromeModule,
-    CKEditorModule, 
+    CKEditorModule,
     SwiperModule,
     NgxDaterangepickerMd.forRoot(),
     MatCheckboxModule, MatButtonModule, MatInputModule, MatAutocompleteModule, MatDatepickerModule,

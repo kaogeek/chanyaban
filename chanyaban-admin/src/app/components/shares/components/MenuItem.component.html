@@ -1,11 +1,21 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div class="wrapper-menu-item">
     <ng-container *ngIf="menu.subRoutes.length > 0; else elseTemplate">
-        <span class="menu-title" [class.activeRoute]="isActive()" [class.active]="isActive() || isOpen" (click)="openItems()">
+        <span class="menu-title" [class.activeRoute]="isActive()" [class.active]="isActive() || isOpen"
+            (click)="openItems()">
             <div class="wrapper-url">
-                {{menu.title}} <div class="count-keyword" *ngIf="menu.title === 'คีย์เวิร์ด'">{{countKeywordManage}}</div>
+                {{menu.title}} <div class="count-keyword" *ngIf="menu.title === 'คีย์เวิร์ด'">{{countKeywordManage}}
+                </div>
             </div>
-            <svg class="now-ui-icons icon-arrow" [class.up]="isShowItem()" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.846px" height="451.847px" viewBox="0 0 451.846 451.847"
+            <svg class="now-ui-icons icon-arrow" [class.up]="isShowItem()" version="1.1" id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="451.846px" height="451.847px" viewBox="0 0 451.846 451.847"
                 style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
                 <g>
                     <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
@@ -17,7 +27,8 @@
         <div class="wrapper-iems" [ngStyle]="{'display': !isShowItem() ? 'none' : 'block'}">
             <span *ngFor="let route of menu.subRoutes" [routerLink]="route.path" [class.active]="routeLink.isActive"
                 routerLinkActive #routeLink="routerLinkActive">
-                {{route.title}} <div class="count-keyword" *ngIf="route.path === '/keywordmanagement'">{{countKeywordManage}}</div>
+                {{route.title}} <div class="count-keyword" *ngIf="route.path === '/keywordmanagement'">
+                    {{countKeywordManage}}</div>
             </span>
         </div>
     </ng-container>

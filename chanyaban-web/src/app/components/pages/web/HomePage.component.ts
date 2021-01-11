@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { KeywordFacade, ObservableManager } from '../../../services/services';
@@ -13,7 +20,7 @@ const PAGE_NAME: string = 'home';
   templateUrl: './HomePage.component.html'
 })
 export class HomePage extends AbstractPage implements OnInit, OnDestroy {
-  
+
   public static readonly PAGE_NAME: string = PAGE_NAME;
 
   public loadTrendingTimeout: any;
@@ -28,8 +35,8 @@ export class HomePage extends AbstractPage implements OnInit, OnDestroy {
 
   constructor(private keywordFacade: KeywordFacade, router: Router,
     private titleService: Title, private meta: Meta, private observManager: ObservableManager) {
-      super(PAGE_NAME, router);
-    this.titleService.setTitle("จรรยาบรรณ"); 
+    super(PAGE_NAME, router);
+    this.titleService.setTitle("จรรยาบรรณ");
     this.meta.updateTag(
       {
         property: 'title',
@@ -240,7 +247,7 @@ export class HomePage extends AbstractPage implements OnInit, OnDestroy {
     window.open(url, '_blank');
   }
 
-  public clickTrending(param: string): void { 
+  public clickTrending(param: string): void {
     const url = this.router.serializeUrl(this.router.createUrlTree(["/keyword/" + this.encodeURL(param)]));
     window.open(url, '_blank');
   }

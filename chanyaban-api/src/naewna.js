@@ -1,14 +1,21 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 var osmosis = require('osmosis');
-osmosis 
-    .get('https://www.naewna.com/politics') 
+osmosis
+    .get('https://www.naewna.com/politics')
     // .find('#showNewsList .hotnews .col-sm-6') 
-    .find('.contents:nth-of-type(1)') 
-    .set({ 
+    .find('.contents:nth-of-type(1)')
+    .set({
         test: "#showNewsList"
         // 'link': 'a@href',
         // title: "h3"
     })
-    .data(data => { 
+    .data(data => {
         // if (data.link) {            
         console.log("data", data);
         // osmosis 
@@ -24,7 +31,7 @@ osmosis
         // .data(data => {
         //     // Each iteration, push the data into our array
         //     console.log("data", data);
-    
+
         // })
         // .log(console.log)
         // .error(console.log)

@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import * as moment from 'moment';
 
@@ -12,7 +19,7 @@ export class CardNewsRelated implements OnInit {
   @Input()
   public isloadNews: boolean = false;
   @Output()
-  public searchRelateNews: EventEmitter<any> = new EventEmitter();  
+  public searchRelateNews: EventEmitter<any> = new EventEmitter();
   public countNews: number = 0;
   public totalNews: number = 0;
 
@@ -20,5 +27,5 @@ export class CardNewsRelated implements OnInit {
   }
 
   public ngOnInit() {
-  }  
+  }
 }

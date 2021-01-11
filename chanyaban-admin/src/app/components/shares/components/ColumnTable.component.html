@@ -1,3 +1,10 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <ng-container *ngIf="fieldTable.formatColor || fieldTable.formatArrary || fieldTable.formatImage; else elseColorImage">
     <ng-container *ngIf="getData(); else elseColorImageNone">
         <ng-container *ngIf="fieldTable.formatColor">
@@ -7,12 +14,13 @@
         </ng-container>
         <ng-container *ngIf="fieldTable.formatArrary">
             <div class="wrapper-col-array">
-                <div class="col-array" *ngFor="let item of getDataArray()" [ngStyle]="{'color': fieldTable.formatArrary.color ? fieldTable.formatArrary.color : '#fff',
+                <div class="col-array" *ngFor="let item of getDataArray()"
+                    [ngStyle]="{'color': fieldTable.formatArrary.color ? fieldTable.formatArrary.color : '#fff',
                             'background-color': fieldTable.formatArrary.bgColor ? fieldTable.formatArrary.bgColor : '#d4692c'}">
                     <ng-container *ngIf="fieldTable.formatArrary.dataKey; else elseDataKey">
                         <ng-container *ngIf="fieldTable.link.length > 0; else elseDataKeyLink">
                             <a href="{{getLinkArray(item[fieldTable.formatArrary.dataKey])}}" target="_blank"
-                            [ngStyle]="{'color': fieldTable.formatArrary.color ? fieldTable.formatArrary.color : '#fff'}">
+                                [ngStyle]="{'color': fieldTable.formatArrary.color ? fieldTable.formatArrary.color : '#fff'}">
                                 {{item[fieldTable.formatArrary.dataKey]}}
                             </a>
                         </ng-container>
@@ -23,7 +31,7 @@
                     <ng-template #elseDataKey>
                         <ng-container *ngIf="fieldTable.link.length > 0; else elseNotDataKeyLink">
                             <a href="{{getLinkArray(item)}}" target="_blank"
-                            [ngStyle]="{'color': fieldTable.formatArrary.color ? fieldTable.formatArrary.color : '#fff'}">
+                                [ngStyle]="{'color': fieldTable.formatArrary.color ? fieldTable.formatArrary.color : '#fff'}">
                                 {{item}}
                             </a>
                         </ng-container>
@@ -78,7 +86,8 @@
                     <ng-template #elseIsSeeMore>
                         {{getData() | slice:0:220}}...
                     </ng-template>
-                    <span class="see-more" *ngIf="isWordCountOver()" (click)="clickOpenDropDown()" [class.see-less]="isSeeMore">{{
+                    <span class="see-more" *ngIf="isWordCountOver()" (click)="clickOpenDropDown()"
+                        [class.see-less]="isSeeMore">{{
                         isSeeMore ? 'แสดงน้อยลง' : 'ดูเพิ่มเติม'}}</span>
                 </ng-container>
                 <ng-template #elseData>
@@ -114,7 +123,8 @@
                 <ng-template #elseIsSeeMore>
                     {{getData() | slice:0:220}}...
                 </ng-template>
-                <span class="see-more" *ngIf="isWordCountOver(getData())" (click)="clickOpenDropDown()" [class.see-less]="isSeeMore">{{
+                <span class="see-more" *ngIf="isWordCountOver(getData())" (click)="clickOpenDropDown()"
+                    [class.see-less]="isSeeMore">{{
                     isSeeMore ? 'แสดงน้อยลง' : 'ดูเพิ่มเติม'}}</span>
             </ng-container>
             <ng-template #elseData>

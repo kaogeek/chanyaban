@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'; 
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'keyword-top-related',
@@ -13,11 +20,11 @@ export class KeywordTopRelated implements OnInit {
   @Input()
   public isLoadingKeywordTop: boolean = false;
   @Output()
-  public clickAddKeywordInUrl: EventEmitter<any> = new EventEmitter(); 
+  public clickAddKeywordInUrl: EventEmitter<any> = new EventEmitter();
 
   constructor() {
   }
 
-  public ngOnInit() { 
+  public ngOnInit() {
   }
 }

@@ -1,24 +1,31 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { WebMainPage,HomePage, KeywordPage, NewsAgencyPage, EntityTypePage, TrendPage, SourceTypePage, NewsCategoryPage } from './components/components';
+import { WebMainPage, HomePage, KeywordPage, NewsAgencyPage, EntityTypePage, TrendPage, SourceTypePage, NewsCategoryPage } from './components/components';
 
 const routes: Routes = [
   {
     path: WebMainPage.PAGE_NAME,
     component: WebMainPage,
     children: [
-    {
-      path: "",
+      {
+        path: "",
         component: HomePage,
       },
       {
         path: HomePage.PAGE_NAME,
         component: HomePage,
       },
-          {
-            path: TrendPage.PAGE_NAME,
-            component: TrendPage,
-          },
+      {
+        path: TrendPage.PAGE_NAME,
+        component: TrendPage,
+      },
       {
         path: KeywordPage.PAGE_NAME + "/:keyword",
         component: KeywordPage,

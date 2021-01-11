@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { AuthenManager } from '../AuthenManager.service';
@@ -7,7 +14,7 @@ import { AbstractFacade } from "./AbstractFacade";
 export class SourceFacade extends AbstractFacade {
 
   constructor(http: HttpClient, authMgr: AuthenManager) {
-    super("source", http, authMgr); 
+    super("source", http, authMgr);
   }
 
   public getSource(): Promise<any[]> {
@@ -19,7 +26,7 @@ export class SourceFacade extends AbstractFacade {
         reject(error);
       });
     });
-  } 
+  }
 
   public addSource(data: any): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -37,7 +44,7 @@ export class SourceFacade extends AbstractFacade {
 
   public updateSource(id: string, data: any): Promise<any> {
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/source/'+id;
+      let url: string = this.baseURL + '/source/' + id;
       if (!data) {
         reject("require is data.");
       }
@@ -51,7 +58,7 @@ export class SourceFacade extends AbstractFacade {
 
   public deleteSource(id: string): Promise<any> {
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/source/'+id;
+      let url: string = this.baseURL + '/source/' + id;
       this.http.delete(url, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
@@ -68,11 +75,11 @@ export class SourceFacade extends AbstractFacade {
     return new Promise((resolve, reject) => {
       let url: string = this.baseURL + '/admin/source';
       let body: any = {
-        
+
       };
       if (data !== null && data !== undefined) {
         body = Object.assign(data)
-      } 
+      }
       this.http.post(url, body, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
@@ -87,7 +94,7 @@ export class SourceFacade extends AbstractFacade {
     }
 
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/admin/source/'+id+'/run'; 
+      let url: string = this.baseURL + '/admin/source/' + id + '/run';
       this.http.post(url, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
@@ -102,7 +109,7 @@ export class SourceFacade extends AbstractFacade {
     }
 
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/admin/source/'+id+'/stop'; 
+      let url: string = this.baseURL + '/admin/source/' + id + '/stop';
       this.http.post(url, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
@@ -119,11 +126,11 @@ export class SourceFacade extends AbstractFacade {
     return new Promise((resolve, reject) => {
       let url: string = this.baseURL + '/admin/selector/social';
       let body: any = {
-        
+
       };
       if (data !== null && data !== undefined) {
         body = Object.assign(data)
-      } 
+      }
       this.http.post(url, body, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
@@ -140,11 +147,11 @@ export class SourceFacade extends AbstractFacade {
     return new Promise((resolve, reject) => {
       let url: string = this.baseURL + '/admin/selector/link';
       let body: any = {
-        
+
       };
       if (data !== null && data !== undefined) {
         body = Object.assign(data)
-      } 
+      }
       this.http.post(url, body, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
@@ -161,11 +168,11 @@ export class SourceFacade extends AbstractFacade {
     return new Promise((resolve, reject) => {
       let url: string = this.baseURL + '/admin/selector/data';
       let body: any = {
-        
+
       };
       if (data !== null && data !== undefined) {
         body = Object.assign(data)
-      } 
+      }
       this.http.post(url, body, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
@@ -180,22 +187,22 @@ export class SourceFacade extends AbstractFacade {
     }
 
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/source/'+id;
+      let url: string = this.baseURL + '/source/' + id;
       this.http.get(url, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
         reject(error);
       });
     });
-  } 
+  }
 
   public getSourceNews(id: string): Promise<any> {
     if (id === undefined || id === null || id === '') {
       new Error("Id is required.");
     }
-    
+
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/source/'+id+"/news";
+      let url: string = this.baseURL + '/source/' + id + "/news";
       this.http.get(url, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {

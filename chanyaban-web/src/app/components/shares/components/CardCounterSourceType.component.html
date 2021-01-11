@@ -1,3 +1,10 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div class="card-counter-source-type">
     <div class="wrapper-list-counter-source-type" *ngIf="trendingSourceType">
         <div class="wrapper-counter-source-type" *ngFor="let sourceType of trendingSourceType; let index = index">
@@ -6,9 +13,12 @@
                 {{sourceType.count | shortNumber}}
             </div>
             <div class="wrapper-source-type-detail" (click)="newTabSourceType(sourceType._id)">
-                <img class="icon-source-type" *ngIf="sourceType._id === 'facebook'" src="../../../../assets/img/facebook.svg" alt="">
-                <img class="icon-source-type" *ngIf="sourceType._id === 'twitter'" src="../../../../assets/img/twitter.svg" alt="">
-                <img class="icon-source-type" *ngIf="sourceType._id === 'web'" src="../../../../assets/img/web.svg" alt="">                {{sourceType._id}}
+                <img class="icon-source-type" *ngIf="sourceType._id === 'facebook'"
+                    src="../../../../assets/img/facebook.svg" alt="">
+                <img class="icon-source-type" *ngIf="sourceType._id === 'twitter'"
+                    src="../../../../assets/img/twitter.svg" alt="">
+                <img class="icon-source-type" *ngIf="sourceType._id === 'web'" src="../../../../assets/img/web.svg"
+                    alt=""> {{sourceType._id}}
             </div>
         </div>
         <div class="wrapper-counter-total">

@@ -1,22 +1,29 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div id="navbar" class="wrapper-menu-top">
     <div class="wrapper-brand" [routerLink]="'/home'">
         <img src="../../../../assets/img/logo.svg" alt="">
         <div class="title-brand">จรรยาบรรณ</div>
     </div>
     <div class="wrapper-search-keyword" [class.range]="dateRange.value.includes('ถึง')" [class.full]="isHideDateRange">
-        <autocomp-search class="input-search" 
-        [firstDay]="firstDay" [lastDay]="lastDay"
-            [isAddSearch]="isAddSearch" [keywords]="keywords" [entitys]="entitys"
-            [entityKeywords]="entityKeywords" 
+        <autocomp-search class="input-search" [firstDay]="firstDay" [lastDay]="lastDay" [isAddSearch]="isAddSearch"
+            [keywords]="keywords" [entitys]="entitys" [entityKeywords]="entityKeywords"
             [searchKeywordAll]="searchKeywordAll" (addSearch)="addSearch.emit()"></autocomp-search>
     </div>
     <div class="select-date" [class.hide]="isHideDateRange">
         <img src="../../../../assets/img/calendar.svg" alt="">
         <mat-form-field class="wrapper-select-date" [class.range]="dateRange.value.includes('ถึง')">
-            <input id='dateRange' #dateRange class="fx-date-range" type="text" matInput ngxDaterangepickerMd [locale]="localeDate" [drops]="'down'"
-                [opens]="'right'" [ranges]="rangesDate" [showCustomRangeLabel]="false" [alwaysShowCalendars]="true" [keepCalendarOpeningWithRange]="true"
-                [showCancel]="true" autocomplete="off" [(ngModel)]="selectedDate" [minDate]="getMinDate()" [maxDate]="getMaxDate()"
-                [showRangeLabelOnInput]="true" (change)="onChangeSelectdate()" name="daterange" />
+            <input id='dateRange' #dateRange class="fx-date-range" type="text" matInput ngxDaterangepickerMd
+                [locale]="localeDate" [drops]="'down'" [opens]="'right'" [ranges]="rangesDate"
+                [showCustomRangeLabel]="false" [alwaysShowCalendars]="true" [keepCalendarOpeningWithRange]="true"
+                [showCancel]="true" autocomplete="off" [(ngModel)]="selectedDate" [minDate]="getMinDate()"
+                [maxDate]="getMaxDate()" [showRangeLabelOnInput]="true" (change)="onChangeSelectdate()"
+                name="daterange" />
             <mat-icon class="icon-date-range" matSuffix>keyboard_arrow_down</mat-icon>
         </mat-form-field>
     </div>

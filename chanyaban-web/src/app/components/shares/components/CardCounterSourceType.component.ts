@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import * as moment from 'moment';
 import { OPTION_CHART_SOURCE_TYPE } from '../Constants';
@@ -50,7 +57,7 @@ export class CardCounterSourceType extends AbstractNewTab implements OnInit {
   }
 
   public newTabSourceType(sourceType: string): void {
-    const url = this.router.serializeUrl(this.router.createUrlTree(["/channel/"+sourceType]));
+    const url = this.router.serializeUrl(this.router.createUrlTree(["/channel/" + sourceType]));
     window.open(url, '_blank');
   }
 
@@ -61,7 +68,7 @@ export class CardCounterSourceType extends AbstractNewTab implements OnInit {
       }, 300);
       return;
     }
-    clearTimeout(this.timeoutSourceType); 
+    clearTimeout(this.timeoutSourceType);
     var trending: any = [];
     var options = OPTION_CHART_SOURCE_TYPE;
     let index = 0;

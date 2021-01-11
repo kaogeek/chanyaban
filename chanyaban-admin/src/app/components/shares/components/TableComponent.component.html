@@ -1,10 +1,19 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div class="card">
     <div class="card-header">
         <div style="display: flex;">
-            <button mat-raised-button *ngIf="actions.isBack" style="margin-right: 20px;" (click)="clickBack()">กลับ</button>
+            <button mat-raised-button *ngIf="actions.isBack" style="margin-right: 20px;"
+                (click)="clickBack()">กลับ</button>
             <h2 class="card-title"> {{title}}</h2>
         </div>
-        <button class="btn-top-table" *ngIf="actions.isCreate" mat-raised-button (click)="clickCreateForm()">{{"เพิ่มข้อมูล"}}</button>
+        <button class="btn-top-table" *ngIf="actions.isCreate" mat-raised-button
+            (click)="clickCreateForm()">{{"เพิ่มข้อมูล"}}</button>
     </div>
     <div class="card-body">
         <div class="wrapper-mat-spinner" *ngIf="isLoading">
@@ -18,7 +27,8 @@
                 </mat-select>
             </mat-form-field>
             <mat-form-field class="input-search">
-                <input matInput [(ngModel)]="search" (keyup.enter)="searchData()" placeholder="ค้นหาข้อมูล" disabled="{{!filter ? true : false}}">
+                <input matInput [(ngModel)]="search" (keyup.enter)="searchData()" placeholder="ค้นหาข้อมูล"
+                    disabled="{{!filter ? true : false}}">
                 <button mat-button *ngIf="search" matSuffix mat-icon-button aria-label="Clear" (click)="clearSerach()">
                     <mat-icon>close</mat-icon>
                 </button>
@@ -30,7 +40,8 @@
                 <ng-container *ngFor="let field of fieldTable">
                     <ng-container matColumnDef="{{field.name}}">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> {{field.label}} </th>
-                        <td mat-cell *matCellDef="let element" [ngStyle]="{'width': field.width, 'min-width': field.width, 'max-width': field.width, 'text-align': field.align}"
+                        <td mat-cell *matCellDef="let element"
+                            [ngStyle]="{'width': field.width, 'min-width': field.width, 'max-width': field.width, 'text-align': field.align}"
                             [ngClass]="field.class">
                             <admin-col-table [fieldTable]="field" [data]="element"></admin-col-table>
                         </td>
@@ -89,6 +100,7 @@
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
         </div>
-        <mat-paginator [pageSizeOptions]="[25, 50, 100]" [length]="data ? data.length : 0" showFirstLastButtons></mat-paginator>
+        <mat-paginator [pageSizeOptions]="[25, 50, 100]" [length]="data ? data.length : 0" showFirstLastButtons>
+        </mat-paginator>
     </div>
 </div>

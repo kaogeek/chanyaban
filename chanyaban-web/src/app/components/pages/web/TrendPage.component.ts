@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TrendFacade } from '../../../services/services';
@@ -108,7 +115,7 @@ export class TrendPage extends AbstractPage implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.clearData(); 
+    this.clearData();
     this.trendFacade.Trend(0).then((res) => {
       setTimeout(() => {
         this.isInitial = true;

@@ -1,18 +1,26 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div class="wrapper-autocomp-selector">
-        <div class="wrapper-selector">
-            <div class="selected" *ngFor="let selected of data[this.field]">
-                <div>
-                    {{selected.name ? selected.name : selected.title}}
-                </div>
-                <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="changeSelect(selected, true)">
-                    <mat-icon>close</mat-icon>
-                </button>
+    <div class="wrapper-selector">
+        <div class="selected" *ngFor="let selected of data[this.field]">
+            <div>
+                {{selected.name ? selected.name : selected.title}}
             </div>
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="changeSelect(selected, true)">
+                <mat-icon>close</mat-icon>
+            </button>
         </div>
+    </div>
     <div class="wrapper-autocomp">
         <mat-form-field class="autocomp">
             <input #inPut [(ngModel)]="search" type="text" placeholder="{{title}}" matInput>
-            <button mat-button *ngIf="inPut.value !== ''" matSuffix mat-icon-button aria-label="Clear" (click)="clearAutoComp()">
+            <button mat-button *ngIf="inPut.value !== ''" matSuffix mat-icon-button aria-label="Clear"
+                (click)="clearAutoComp()">
                 <mat-icon>close</mat-icon>
             </button>
         </mat-form-field>
@@ -24,4 +32,4 @@
             </ng-container>
         </div>
     </div>
-</div> 
+</div>

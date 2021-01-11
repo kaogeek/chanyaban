@@ -1,12 +1,21 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div class="app-list-news-agency">
     <mat-drawer-container class="example-container" [hasBackdrop]="true">
         <mat-drawer #drawer [mode]="'over'" [position]="'end'" [disableClose]="true">
-            <admin-form-component [data]="dataForm" [fields]="fields" [title]="'สื่อ'" (close)="clickCloseDrawer()" (save)="clickSave(dataForm)"></admin-form-component>
+            <admin-form-component [data]="dataForm" [fields]="fields" [title]="'สื่อ'" (close)="clickCloseDrawer()"
+                (save)="clickSave(dataForm)"></admin-form-component>
         </mat-drawer>
         <mat-drawer-content>
             <div class="main-content">
-                <admin-table-component #table [facade]="newsAgencyFacade" [title]="'สื่อ'" [fieldTable]="fieldTable" [actions]="actions"
-                    [fieldSearch]="fieldSearch" (create)="clickCreateForm()" (edit)="clickEditForm($event)" (delete)="clickDelete($event)"></admin-table-component>
+                <admin-table-component #table [facade]="newsAgencyFacade" [title]="'สื่อ'" [fieldTable]="fieldTable"
+                    [actions]="actions" [fieldSearch]="fieldSearch" (create)="clickCreateForm()"
+                    (edit)="clickEditForm($event)" (delete)="clickDelete($event)"></admin-table-component>
             </div>
         </mat-drawer-content>
     </mat-drawer-container>

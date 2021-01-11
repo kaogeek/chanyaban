@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 .form-admin {
   height: 100%;
   min-width: 275pt;
@@ -26,9 +33,9 @@
       }
       .row {
         display: flex;
-        flex-wrap: wrap; 
+        flex-wrap: wrap;
         flex-direction: column;
-        margin-bottom: 1rem; 
+        margin-bottom: 1rem;
       }
       .btn-test-source {
         .mat-button-wrapper {
@@ -47,8 +54,8 @@
             }
           }
         }
-      }      
-      .correct { 
+      }
+      .correct {
         width: 25px;
         height: 25px;
       }
@@ -78,7 +85,7 @@
           display: flex;
           background-color: $color-active;
           color: #fff;
-          >.mat-spinner {
+          > .mat-spinner {
             display: flex;
           }
         }
@@ -88,7 +95,7 @@
           color: #fff;
           cursor: not-allowed;
           &.active {
-            background-color: $color-active; 
+            background-color: $color-active;
             cursor: pointer !important;
           }
         }

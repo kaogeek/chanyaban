@@ -1,3 +1,10 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div class="wrapper-list-news">
     <ng-container *ngIf="newsRelated && newsRelated.length > 0; else elseNewsRelate">
         <ng-container *ngFor="let lNews of newsRelated">
@@ -8,17 +15,20 @@
             </div>
             <div class="list-news">
                 <ng-container *ngFor="let news of lNews.listNews; let index = index">
-                    <div class="wrapper-news" *ngIf="(!lNews.isLoad && index < 6) || lNews.isLoad" [class.full-news]="((!lNews.isLoad && index < 6 && lNews.listNews.length < 6) || lNews.isLoad) && lNews.listNews.length % 2 > 0  && lNews.listNews.length - 1 === index">
+                    <div class="wrapper-news" *ngIf="(!lNews.isLoad && index < 6) || lNews.isLoad"
+                        [class.full-news]="((!lNews.isLoad && index < 6 && lNews.listNews.length < 6) || lNews.isLoad) && lNews.listNews.length % 2 > 0  && lNews.listNews.length - 1 === index">
                         <a class="news" href="{{news.link}}" target="_blank">
                             <div class="news-source" *ngIf="news.sourceDetail">
                                 <div class="wrapper-source">
                                     <img class="icon-source" src="{{news.sourceDetail.image}}" alt="">
                                     <div class="label-source">{{news.sourceDetail.name}}</div>
                                 </div>
-                                <img class="icon-source-type" *ngIf="news.sourceTypeDetail.name === 'facebook'" src="../../../../assets/img/facebook.svg"
-                                    alt="">
-                                <img class="icon-source-type" *ngIf="news.sourceTypeDetail.name === 'twitter'" src="../../../../assets/img/twitter.svg" alt="">
-                                <img class="icon-source-type" *ngIf="news.sourceTypeDetail.name === 'web'" src="../../../../assets/img/web.svg" alt="">
+                                <img class="icon-source-type" *ngIf="news.sourceTypeDetail.name === 'facebook'"
+                                    src="../../../../assets/img/facebook.svg" alt="">
+                                <img class="icon-source-type" *ngIf="news.sourceTypeDetail.name === 'twitter'"
+                                    src="../../../../assets/img/twitter.svg" alt="">
+                                <img class="icon-source-type" *ngIf="news.sourceTypeDetail.name === 'web'"
+                                    src="../../../../assets/img/web.svg" alt="">
                             </div>
                             <div class="news-body">
                                 <div class="news-title">{{news.title}}</div>
@@ -28,18 +38,25 @@
                             </div>
                         </a>
                         <div class="wrapper-footer-news">
-                            <div class="list-journalist" [class.full-list]="!news.listEntity || news.listEntity.length === 0" *ngIf="news.listJournalist && news.listJournalist.length > 0">
+                            <div class="list-journalist"
+                                [class.full-list]="!news.listEntity || news.listEntity.length === 0"
+                                *ngIf="news.listJournalist && news.listJournalist.length > 0">
                                 <div class="label">นักข่าว: </div>
                                 <ng-container *ngFor="let journalist of news.listJournalist">
-                                    <img class="avatar" matTooltip="{{journalist.name}}" matTooltipClass="avatar-tooltip" src="{{journalist.image}}" alt="">
+                                    <img class="avatar" matTooltip="{{journalist.name}}"
+                                        matTooltipClass="avatar-tooltip" src="{{journalist.image}}" alt="">
                                 </ng-container>
                             </div>
-                            <div class="list-entity" [class.full-list]="!news.listJournalist || news.listJournalist.length === 0" *ngIf="news.listEntity && news.listEntity.length > 0">
+                            <div class="list-entity"
+                                [class.full-list]="!news.listJournalist || news.listJournalist.length === 0"
+                                *ngIf="news.listEntity && news.listEntity.length > 0">
                                 <div class="label" *ngIf="news.listJournalist && news.listJournalist.length > 0">อื่นๆ:
                                 </div>
                                 <div class="group-entity" *ngFor="let groupEntity of news.listEntity">
-                                    <img class="avatar" *ngFor="let entity of groupEntity" matTooltip="{{entity.entityType.name+': '+entity.name}}" matTooltipClass="avatar-tooltip"
-                                        (click)="addEntityInUrl(entity.name)" src="{{entity.image}}" alt="">
+                                    <img class="avatar" *ngFor="let entity of groupEntity"
+                                        matTooltip="{{entity.entityType.name+': '+entity.name}}"
+                                        matTooltipClass="avatar-tooltip" (click)="addEntityInUrl(entity.name)"
+                                        src="{{entity.image}}" alt="">
                                 </div>
                             </div>
                         </div>

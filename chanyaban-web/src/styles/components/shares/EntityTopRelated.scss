@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 entity-top-related {
   > .entity-top-related {
     position: relative;
@@ -173,9 +180,7 @@ entity-top-related {
         }
         > .selecte-entity {
           padding-right: 15pt !important;
-          > .mat-form-field-wrapper
-            > .mat-form-field-flex
-            > .mat-form-field-infix {
+          > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix {
             width: 160pt !important;
           }
         }
@@ -198,9 +203,7 @@ entity-top-related {
         }
         > .selecte-entity {
           padding-right: 10pt !important;
-          > .mat-form-field-wrapper
-            > .mat-form-field-flex
-            > .mat-form-field-infix {
+          > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix {
             width: 140pt !important;
           }
         }

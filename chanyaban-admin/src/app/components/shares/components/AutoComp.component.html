@@ -1,8 +1,16 @@
+<!--
+    @license Chanyaban v0.1
+    (c) 2020-2021 KaoGeek. http://kaogeek.dev
+    License: MIT. https://opensource.org/licenses/MIT
+    Author:  oilNEWlio <apidech.s@absolute.co.th>
+-->
+
 <div style="display: flex;">
     <mat-form-field>
-        <input #inPut type="text" placeholder="{{title}}" matInput [formControl]="autoCompControl" [matAutocomplete]="autoComplete"
-            [readonly]="isDisabledInput()">
-        <button mat-button *ngIf="autoComp && !isDisabledInput()" matSuffix mat-icon-button aria-label="Clear" (click)="clearAutoComp()">
+        <input #inPut type="text" placeholder="{{title}}" matInput [formControl]="autoCompControl"
+            [matAutocomplete]="autoComplete" [readonly]="isDisabledInput()">
+        <button mat-button *ngIf="autoComp && !isDisabledInput()" matSuffix mat-icon-button aria-label="Clear"
+            (click)="clearAutoComp()">
             <mat-icon>close</mat-icon>
         </button>
         <mat-autocomplete #autoComplete="matAutocomplete" (optionSelected)="selectAutoComp($event.option.value)">

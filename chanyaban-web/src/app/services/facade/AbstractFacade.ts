@@ -1,3 +1,10 @@
+/*
+ * @license Chanyaban v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: oilNEWlio <apidech.s@absolute.co.th>
+ */
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { AuthenManager } from '../AuthenManager.service';
@@ -46,7 +53,7 @@ export abstract class AbstractFacade {
 
   public search(search: SearchFilter): Promise<any[]> {
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/'+this.nameFacade+"/search";
+      let url: string = this.baseURL + '/' + this.nameFacade + "/search";
       this.http.post(url, search, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
@@ -57,7 +64,7 @@ export abstract class AbstractFacade {
 
   public findById(id: string): Promise<any[]> {
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/'+this.nameFacade+"/"+id;
+      let url: string = this.baseURL + '/' + this.nameFacade + "/" + id;
       this.http.get(url, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
@@ -68,7 +75,7 @@ export abstract class AbstractFacade {
 
   public add(data: any): Promise<any> {
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/'+this.nameFacade;
+      let url: string = this.baseURL + '/' + this.nameFacade;
       if (!data) {
         reject("require is data.");
       }
@@ -82,7 +89,7 @@ export abstract class AbstractFacade {
 
   public update(id: string, data: any): Promise<any> {
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/'+this.nameFacade+'/'+id;
+      let url: string = this.baseURL + '/' + this.nameFacade + '/' + id;
       if (!data) {
         reject("require is data.");
       }
@@ -96,7 +103,7 @@ export abstract class AbstractFacade {
 
   public delete(id: string): Promise<any> {
     return new Promise((resolve, reject) => {
-      let url: string = this.baseURL + '/'+this.nameFacade+'/'+id;
+      let url: string = this.baseURL + '/' + this.nameFacade + '/' + id;
       this.http.delete(url, this.getDefaultOptions()).toPromise().then((response: any) => {
         resolve(response);
       }).catch((error: any) => {
