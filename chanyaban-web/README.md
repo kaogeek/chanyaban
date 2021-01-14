@@ -1,4 +1,4 @@
-# Chanyaban Admin
+# Chanyaban Web
 
 1. Run `npm install` command
 2. Setup Enviromnent settings inside `src/environment.ts` file
