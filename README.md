@@ -1,6 +1,5 @@
 # Chanyaban Project
-
-+ [Live Demo](https://www.chanyaban.com)
++ <a href="https://www.chanyaban.com" target="_blank">Live Demo</a>
 
 ### What's included
 + [Chanyaban API](https://github.com/kaogeek/chanyaban/tree/main/chanyaban-api)
