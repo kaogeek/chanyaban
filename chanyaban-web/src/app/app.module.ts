@@ -140,7 +140,7 @@ const DIRECTIVE_CLASSES: any[] = [
   ],
   providers: SERVICE_CLASSES,
   bootstrap: BOOSTRAP_CLASSES,
-  declarations: COMPONENTS.concat(PIPE_CLASSES).concat(DIRECTIVE_CLASSES),
+  declarations: [COMPONENTS, PIPE_CLASSES, DIRECTIVE_CLASSES],
   entryComponents: COMPONENTS
 })
 export class AppModule { } 
